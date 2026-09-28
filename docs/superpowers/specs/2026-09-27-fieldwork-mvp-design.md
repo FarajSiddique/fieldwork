@@ -4,6 +4,8 @@ Date: 2026-09-27 · Revised: 2026-09-28 · Status: awaiting review
 
 The first version of this spec defined a YAML document format with its own `when` expression language. This revision replaces it with a TypeScript library built directly on TypeSafe's SDK. The YAML version is in git history.
 
+A later revision on 2026-09-28 changed the example and benchmark schema from fintech to e-commerce support, because the benchmark dataset (Bitext) is e-commerce: the fintech categories, the `amount` pick and the ledger tool had nothing in the data to measure against.
+
 ## Purpose
 
 Fieldwork lets an application declare the output it needs instead of prompting a model to "return JSON like this." Each field is filled by the right worker: jev (TypeSafe's System One model) for judgments, a reasoning model for text, or the application's own function for facts. Every field comes back typed, with its confidence or score, the worker that produced it, and its timing.
@@ -34,6 +36,7 @@ An open-source TypeScript library, a reproducible published benchmark, and a sup
 | Tool arguments | `pick` fields: code finds candidate values, a jev Choice selects one. No model generates arguments. |
 | Dependencies | Each field lists the earlier fields it reads (`after`). A field can only depend on fields declared before it, so cycles are impossible. |
 | Scheduling | Step by step: dependency levels, one `systemOne` call per level for all its judgments and picks |
+| Example and benchmark schema | E-commerce support triage, matching the benchmark data and TypeSafe's intent-routing example |
 | Benchmark data | Public dataset (Bitext customer support, CDLA-Sharing-1.0), 200-ticket stratified sample with added hand labels |
 | Baselines | One structured-output call to a frontier model, and one to a cheap model |
 
@@ -60,37 +63,48 @@ One package plus a separate `bench/` workspace. Node 24, pnpm, strict TypeScript
 
 ### Public API
 
+The example is an e-commerce support triage. It follows the customer service example on TypeSafe's intent-routing pattern page (an intent Choice plus a complexity Score, with low confidence or a complex complaint going to a person), and it matches the benchmark data.
+
 ```ts
-import { choice, noul, TypeSafeClient } from "@typesafe-ai/sdk";
+import { choice, noul, score, TypeSafeClient } from "@typesafe-ai/sdk";
 import { fieldwork } from "fieldwork";
 
 const triage = fieldwork<{ ticket: string }>()
-  .judge("category", choice("The customer's main problem", {
-    billing: null, transfer_delay: null, login: null, fraud: null, other: null,
+  .judge("category", choice("The primary intent of this customer message", {
+    order: "Placing, changing, cancelling or tracking an order",
+    shipping: "Delivery options, delivery times or the shipping address",
+    refund: "Refund policy, requesting a refund or tracking one",
+    payment: "Payment methods or a problem with a payment",
+    invoice: "Finding or getting an invoice",
+    account: "Creating, editing, recovering or deleting an account",
+    complaint: "Unhappy with the experience and wants resolution",
+    other: "Anything else, including feedback, newsletters or asking for contact details",
   }), { gate: 0.85 })
-  .judge("urgency", choice("How urgent this ticket is", {
-    low: null, normal: null, high: "Money is stuck and the customer names a deadline",
-  }), { gate: 0.85 })
+  .judge("complexity", score("How complex is this request to resolve", [
+    "Simple lookup or standard procedure",
+    "Requires some judgment or multi-step process",
+    "Unusual situation, edge case, or escalation needed",
+  ]), { gate: 0.85 })
   .judge("isRepeat", noul("Does the customer say this problem happened before?"))
-  .pick("amount", {
-    instructions: "The amount of the transfer the customer says is missing",
-    candidates: (input) => findAmounts(input.ticket), // regex in app code
+  .pick("orderNumber", {
+    instructions: "The order number the customer is asking about",
+    candidates: (input) => findOrderNumbers(input.ticket), // regex in app code
   })
-  .tool("transfer", {
-    after: ["category", "amount"],
-    when: (f) => f.category.choice === "transfer_delay" && f.amount.value !== null,
-    call: (f) => ledger.lookup({ amount: parseAmount(f.amount.value!) }),
+  .tool("order", {
+    after: ["category", "orderNumber"],
+    when: (f) => f.category.choice === "order" && f.orderNumber.value !== null,
+    call: (f) => orders.lookup({ orderNumber: f.orderNumber.value! }),
   })
   .text("reply", {
-    after: ["category", "urgency", "transfer"],
-    when: (f) => f.category.passed && f.urgency.choice !== "high",
+    after: ["category", "complexity", "order"],
+    when: (f) => f.category.passed && f.complexity.passed && f.complexity.score < 2,
     reasoning: "low",
     instructions: "Reply to the customer",
     style: "warm, under 80 words, no promises about dates",
   })
   .text("escalationNote", {
-    after: ["category", "urgency", "isRepeat", "transfer"],
-    when: (f) => !f.category.passed || f.urgency.choice === "high",
+    after: ["category", "complexity", "isRepeat", "order"],
+    when: (f) => !f.category.passed || !f.complexity.passed || f.complexity.score === 2,
     reasoning: "high",
     instructions: "Summarize the ticket for the on-call agent",
     style: "one line",
@@ -103,14 +117,14 @@ const result = await triage.run({ ticket }, {
 });
 
 result.fields.category;
-// { status: "filled", choice: "transfer_delay", confidence: 0.94, probabilities: {...}, passed: true, worker: "jev", model: "jev-1.13.0", ms: 190 }
+// { status: "filled", choice: "refund", confidence: 0.94, probabilities: {...}, passed: true, worker: "jev", model: "jev-1.13.0", ms: 190 }
 result.fields.reply;
 // { status: "skipped", passed: false, reason: "when returned false" }
 result.trace;
 // { steps: [{ fields, calls: [{ worker, model, ms, inputTokens, outputTokens, estCostUsd }] }], totalMs, estCostUsd }
 ```
 
-`f` inside `when` and `call` contains only the fields named in `after`, so reading any other field is a compile error. Result types come from the question: `f.category.choice` is the union of the declared labels.
+`f` inside `when` and `call` contains only the fields named in `after`, so reading any other field is a compile error. Result types come from the question: `f.category.choice` is the union of the declared labels, and `f.complexity.score` is a level index counted from zero, as in TypeSafe's Score.
 
 ## Field kinds
 
@@ -135,7 +149,7 @@ A pick's `candidates` function returns strings found by code (amounts, dates, ac
 - `{ status: "skipped", passed: false, reason }`
 - `{ status: "failed", passed: false, error }`, where `error` is a short code and message, never a raw provider or tool payload
 
-Inside `when`, a skipped or failed dependency has `passed: false` and its value properties are `undefined`. So `f.urgency.choice === "high"` is false when `urgency` failed, and `!f.category.passed` is true. A failed field never fails the run. A `when` or `call` function that throws marks only its own field `failed`.
+Inside `when`, a skipped or failed dependency has `passed: false` and its value properties are `undefined`. So `f.complexity.score === 2` is false when `complexity` failed, and `!f.category.passed` is true. The field types are unions discriminated on `passed`, so checking `f.complexity.passed` narrows `score` to a number before a comparison such as `score < 2`. A failed field never fails the run. A `when` or `call` function that throws marks only its own field `failed`.
 
 ## Execution
 
@@ -192,19 +206,21 @@ From TypeSafe's jev 1.13 notes:
 
 ### Pilot (week 1)
 
-Before building the library: run 50 hand-labeled tickets through a plain `systemOne` call and through one cheap structured-output call, then write one page of findings. This checks that jev's confidence separates right from wrong answers on this data before the library is built around it.
+Before building the library: run 50 hand-labeled tickets through a plain `systemOne` call and through one cheap structured-output call, then write one page of findings. This checks that jev's confidence separates right from wrong answers on this data before the library is built around it. The pilot also confirms the SDK behavior the design assumes (several questions per request keyed by id, `usage` and a versioned `model` in the response, a custom `fetch`) and the Bitext facts above (intent list, placeholder format, share of likely escalations).
 
 ### Data
 
-- Source: `bitext/Bitext-customer-support-llm-chatbot-training-dataset` on Hugging Face, CDLA-Sharing-1.0. The published relabeled sample is shared under the same license; benchmark results are not restricted.
-- Draw a stratified sample of 200 tickets, fixed seed, with the dataset's categories mapped to about 8 benchmark categories (mapping stored in the repo).
-- Add two hand labels per ticket: `urgency` (low, normal, high) and `needs_escalation` (yes/no), with a written labeling guide.
-- Add a small tagged set of hard cases: mixed intents, relative dates, and injected instructions. These tickets are written by hand, labeled as synthetic, and reported separately.
-- Split 50 dev / 150 test. Questions, criteria and gates are tuned only on dev. The test run happens once, after tuning is frozen.
+- Source: `bitext/Bitext-customer-support-llm-chatbot-training-dataset` on Hugging Face, CDLA-Sharing-1.0, loaded at a pinned revision. It is e-commerce support data (orders, shipping, refunds, payments, invoices, accounts, complaints), which is why the benchmark schema is e-commerce. The published relabeled sample is shared under the same license; benchmark results are not restricted.
+- Map the dataset's intents to the 8 benchmark categories in the triage schema. The mapping is stored in the repo; this gives the `category` label without hand work.
+- Bitext tickets use placeholders such as `{{Order Number}}`. Data preparation replaces them with generated values from a fixed seed, and records the value put in for the order number. That value is the `orderNumber` label, so the pick is scored without hand labels. The pilot confirms the placeholder format and how many tickets carry an order number.
+- Draw a stratified sample of 200 tickets, fixed seed. Intents likely to need escalation (complaints, payment problems, asking for a person) are oversampled so that escalation recall rests on enough positives; the report states the sampling weights.
+- Add two hand labels per ticket: `complexity` (the three levels of the schema's Score) and `needs_escalation` (yes/no), with a written labeling guide.
+- Add a small tagged set of hard cases: mixed intents, relative dates, and injected instructions. Injected instructions are drawn from `TrustAIRLab/in-the-wild-jailbreak-prompts` (the set TypeSafe's guardrails cookbook uses) and embedded in ordinary tickets, subject to a license check before redistribution; the rest are written by hand. All are labeled as synthetic and reported separately.
+- Split 50 dev / 150 test. The 50 pilot tickets become the dev split. Questions, criteria and gates are tuned only on dev. The test run happens once, after tuning is frozen.
 
 ### Systems
 
-1. Fieldwork with the triage schema above (`category`, `urgency`, `isRepeat`, `reply` when not escalating, `escalationNote` when escalating; the ledger tool is stubbed).
+1. Fieldwork with the triage schema above (`category`, `complexity`, `isRepeat`, `orderNumber`, `reply` when not escalating, `escalationNote` when escalating; `orders.lookup` is stubbed). A run escalates when `escalationNote` is filled.
 2. Frontier single call: one structured-output request returning all fields plus a self-reported confidence per judgment.
 3. Cheap single call: the same request to a cheap model.
 
@@ -215,7 +231,8 @@ All three use the same instruction wording.
 | Metric | Purpose |
 |---|---|
 | Category accuracy, macro-F1 | Core correctness |
-| Escalation recall and precision | Missing an urgent ticket is the costly error |
+| Escalation recall and precision | Missing a ticket that needs a person is the costly error |
+| Complexity accuracy; order number exact match, including correct `none` | The other judgments, and the pick |
 | Estimated cost per ticket; p50 and p95 latency | The cost claim, and its latency price |
 | Accuracy at a given coverage, expected calibration error | The confidence claim, compared against self-reported confidence |
 | Hard-case results by jev weak spot | The failure report |
@@ -223,7 +240,7 @@ All three use the same instruction wording.
 
 ### Reproducibility
 
-`pnpm bench` runs all systems on a chosen split and writes `results/<run>.json` and `results/<run>.md`. Every model response is cached by request hash, so reruns and report changes cost nothing. The cache is not committed; the results and the labeled sample are.
+`pnpm bench` runs all systems on a chosen split and writes `results/<run>.json` and `results/<run>.md`. Every model response is cached by request hash, so reruns and report changes cost nothing. The results, the labeled sample and the response cache for the published runs are committed, so readers reproduce the numbers without API spend, as TypeSafe's cookbooks do with their shipped `json_cache.json`.
 
 ## Testing
 
