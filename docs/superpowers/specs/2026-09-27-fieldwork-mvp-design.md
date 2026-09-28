@@ -6,6 +6,8 @@ The first version of this spec defined a YAML document format with its own `when
 
 A later revision on 2026-09-28 changed the example and benchmark schema from fintech to e-commerce support, because the benchmark dataset (Bitext) is e-commerce: the fintech categories, the `amount` pick and the ledger tool had nothing in the data to measure against.
 
+A third revision the same day split the benchmark into two sets after profiling Bitext. Its tickets are one-line requests whose need for escalation follows from intent alone, so Bitext is used at scale for intent, category, confidence and the pick. A hand-written set carries escalation, complexity and hard cases. jev now chooses among 27 intents rolled up to 8 categories. The `complexity` conditions compare the Score's expected value against a threshold, because it can fall between levels.
+
 ## Purpose
 
 Fieldwork lets an application declare the output it needs instead of prompting a model to "return JSON like this." Each field is filled by the right worker: jev (TypeSafe's System One model) for judgments, a reasoning model for text, or the application's own function for facts. Every field comes back typed, with its confidence or score, the worker that produced it, and its timing.
@@ -19,7 +21,7 @@ Walkthrough of the finished MVP: https://claude.ai/artifact/CKS4uZDcRpkahrdBn7wZ
 
 An open-source TypeScript library, a reproducible published benchmark, and a support-triage cookbook contributed to TypeSafe's docs. The MVP succeeds if the benchmark shows that Fieldwork:
 
-1. matches a frontier single structured-output call on category accuracy and escalation recall,
+1. matches a frontier single structured-output call on category accuracy (Bitext set) and escalation recall (written set),
 2. costs close to a cheap single structured-output call per ticket,
 3. gives confidence values that hold up on held-out data, so "act automatically above the gate" is safe at a stated coverage, and
 4. reports its failures plainly, mapped to TypeSafe's published list of jev weak spots.
@@ -37,7 +39,8 @@ An open-source TypeScript library, a reproducible published benchmark, and a sup
 | Dependencies | Each field lists the earlier fields it reads (`after`). A field can only depend on fields declared before it, so cycles are impossible. |
 | Scheduling | Step by step: dependency levels, one `systemOne` call per level for all its judgments and picks |
 | Example and benchmark schema | E-commerce support triage, matching the benchmark data and TypeSafe's intent-routing example |
-| Benchmark data | Public dataset (Bitext customer support, CDLA-Sharing-1.0), 200-ticket stratified sample with added hand labels |
+| Benchmark data | Two sets. Bitext (CDLA-Sharing-1.0) at scale with its own labels, for intent, category, confidence and the pick. About 60 hand-written multi-sentence tickets, reported as synthetic, for escalation, complexity and hard cases. |
+| Intent granularity | jev chooses among Bitext's 27 intents; code rolls up to 8 categories and gates on category probability |
 | Baselines | One structured-output call to a frontier model, and one to a cheap model |
 
 ### Out of scope for the MVP
@@ -63,23 +66,22 @@ One package plus a separate `bench/` workspace. Node 24, pnpm, strict TypeScript
 
 ### Public API
 
-The example is an e-commerce support triage. It follows the customer service example on TypeSafe's intent-routing pattern page (an intent Choice plus a complexity Score, with low confidence or a complex complaint going to a person), and it matches the benchmark data.
+The example is an e-commerce support triage. It follows the customer service example on TypeSafe's intent-routing pattern page (an intent Choice plus a complexity Score, with low confidence or a complex request going to a person), and it matches the benchmark data.
+
+jev chooses among the 27 fine-grained intents; code rolls the probabilities up to 8 categories and gates on the category's total probability. This is the pattern in TypeSafe's "Classification using confidence" and "Hierarchical classification" cookbooks: when the model is unsure between two intents in the same category, the category can still be acted on. It also gives the benchmark enough errors to measure confidence against.
 
 ```ts
 import { choice, noul, score, TypeSafeClient } from "@typesafe-ai/sdk";
 import { fieldwork } from "fieldwork";
+import { INTENTS, rollUpToCategory } from "./intents"; // 27 intents with descriptions; intent → category map
 
 const triage = fieldwork<{ ticket: string }>()
-  .judge("category", choice("The primary intent of this customer message", {
-    order: "Placing, changing, cancelling or tracking an order",
-    shipping: "Delivery options, delivery times or the shipping address",
-    refund: "Refund policy, requesting a refund or tracking one",
-    payment: "Payment methods or a problem with a payment",
-    invoice: "Finding or getting an invoice",
-    account: "Creating, editing, recovering or deleting an account",
-    complaint: "Unhappy with the experience and wants resolution",
-    other: "Anything else, including feedback, newsletters or asking for contact details",
-  }), { gate: 0.85 })
+  .judge("intent", choice("The primary intent of this customer message", INTENTS))
+  .tool("category", {
+    after: ["intent"],
+    when: (f) => f.intent.passed, // no gate, so this means "filled"
+    call: (f) => rollUpToCategory(f.intent.probabilities), // { category, probability }
+  })
   .judge("complexity", score("How complex is this request to resolve", [
     "Simple lookup or standard procedure",
     "Requires some judgment or multi-step process",
@@ -92,19 +94,21 @@ const triage = fieldwork<{ ticket: string }>()
   })
   .tool("order", {
     after: ["category", "orderNumber"],
-    when: (f) => f.category.choice === "order" && f.orderNumber.value !== null,
+    when: (f) => f.category.value?.category === "order" && f.orderNumber.value !== null,
     call: (f) => orders.lookup({ orderNumber: f.orderNumber.value! }),
   })
   .text("reply", {
     after: ["category", "complexity", "order"],
-    when: (f) => f.category.passed && f.complexity.passed && f.complexity.score < 2,
+    when: (f) => (f.category.value?.probability ?? 0) >= 0.85
+      && f.complexity.passed && f.complexity.score < 1.5,
     reasoning: "low",
     instructions: "Reply to the customer",
     style: "warm, under 80 words, no promises about dates",
   })
   .text("escalationNote", {
     after: ["category", "complexity", "isRepeat", "order"],
-    when: (f) => !f.category.passed || !f.complexity.passed || f.complexity.score === 2,
+    when: (f) => (f.category.value?.probability ?? 0) < 0.85
+      || !f.complexity.passed || f.complexity.score >= 1.5,
     reasoning: "high",
     instructions: "Summarize the ticket for the on-call agent",
     style: "one line",
@@ -116,15 +120,15 @@ const result = await triage.run({ ticket }, {
   deadlineMs: 10_000,
 });
 
-result.fields.category;
-// { status: "filled", choice: "refund", confidence: 0.94, probabilities: {...}, passed: true, worker: "jev", model: "jev-1.13.0", ms: 190 }
+result.fields.intent;
+// { status: "filled", choice: "track_refund", confidence: 0.94, probabilities: {...}, passed: true, worker: "jev", model: "jev-1.13.0", ms: 190 }
 result.fields.reply;
 // { status: "skipped", passed: false, reason: "when returned false" }
 result.trace;
 // { steps: [{ fields, calls: [{ worker, model, ms, inputTokens, outputTokens, estCostUsd }] }], totalMs, estCostUsd }
 ```
 
-`f` inside `when` and `call` contains only the fields named in `after`, so reading any other field is a compile error. Result types come from the question: `f.category.choice` is the union of the declared labels, and `f.complexity.score` is a level index counted from zero, as in TypeSafe's Score.
+`f` inside `when` and `call` contains only the fields named in `after`, so reading any other field is a compile error. Result types come from the question: `f.intent.choice` is the union of the declared labels. `f.complexity.score` is TypeSafe's expected score over levels counted from zero, so it can fall between levels (1.7, say); `when` functions compare it against thresholds such as `1.5`, never test it for equality with a level.
 
 ## Field kinds
 
@@ -136,6 +140,8 @@ result.trace;
 | `pick(name, ...)` | jev | `instructions`, `candidates(input)`, `gate?` | `value` (a candidate string, or `null` for none), `confidence` | `confidence >= gate` |
 | `tool(name, ...)` | Your function | `call(f, input)` | `value` (JSON-serializable) | always `passed: true` |
 | `text(name, ...)` | AI SDK model | `instructions`, `style?`, `reasoning` or `model`, `grade?` (default `true`), `minScore?` | `value` (string), `score` or `null`, `heuristic: true` | `score >= minScore` when set |
+
+A Choice, Score or pick with no `gate` has `passed: true` whenever it is filled.
 
 Every field also takes `after` (earlier fields it reads), `when` (a function of those fields and the inputs), and `timeoutMs`. `judge` and `pick` fields may also list `after` fields; their results are added to that request's state as named data.
 
@@ -149,7 +155,7 @@ A pick's `candidates` function returns strings found by code (amounts, dates, ac
 - `{ status: "skipped", passed: false, reason }`
 - `{ status: "failed", passed: false, error }`, where `error` is a short code and message, never a raw provider or tool payload
 
-Inside `when`, a skipped or failed dependency has `passed: false` and its value properties are `undefined`. So `f.complexity.score === 2` is false when `complexity` failed, and `!f.category.passed` is true. The field types are unions discriminated on `passed`, so checking `f.complexity.passed` narrows `score` to a number before a comparison such as `score < 2`. A failed field never fails the run. A `when` or `call` function that throws marks only its own field `failed`.
+Inside `when`, a skipped or failed dependency has `passed: false` and its value properties are `undefined`. So `f.complexity.score >= 1.5` is false when `complexity` failed, and `!f.complexity.passed` is true. The field types are unions discriminated on `passed`, so checking `f.complexity.passed` narrows `score` to a number before a comparison such as `score < 1.5`. A failed field never fails the run. A `when` or `call` function that throws marks only its own field `failed`.
 
 ## Execution
 
@@ -206,21 +212,33 @@ From TypeSafe's jev 1.13 notes:
 
 ### Pilot (week 1)
 
-Before building the library: run 50 hand-labeled tickets through a plain `systemOne` call and through one cheap structured-output call, then write one page of findings. This checks that jev's confidence separates right from wrong answers on this data before the library is built around it. The pilot also confirms the SDK behavior the design assumes (several questions per request keyed by id, `usage` and a versioned `model` in the response, a custom `fetch`) and the Bitext facts above (intent list, placeholder format, share of likely escalations).
+Before building the library: run the Bitext dev split through a plain `systemOne` call (the 27-intent Choice and the order-number pick) and through one cheap structured-output call, then write one page of findings. This checks that jev's confidence separates right from wrong answers on this data before the library is built around it. It needs no hand labels, because Bitext's own labels are the answers. The pilot also confirms the SDK behavior the design assumes (several questions per request keyed by id, `usage` and a versioned `model` in the response, a custom `fetch`).
 
 ### Data
 
-- Source: `bitext/Bitext-customer-support-llm-chatbot-training-dataset` on Hugging Face, CDLA-Sharing-1.0, loaded at a pinned revision. It is e-commerce support data (orders, shipping, refunds, payments, invoices, accounts, complaints), which is why the benchmark schema is e-commerce. The published relabeled sample is shared under the same license; benchmark results are not restricted.
-- Map the dataset's intents to the 8 benchmark categories in the triage schema. The mapping is stored in the repo; this gives the `category` label without hand work.
-- Bitext tickets use placeholders such as `{{Order Number}}`. Data preparation replaces them with generated values from a fixed seed, and records the value put in for the order number. That value is the `orderNumber` label, so the pick is scored without hand labels. The pilot confirms the placeholder format and how many tickets carry an order number.
-- Draw a stratified sample of 200 tickets, fixed seed. Intents likely to need escalation (complaints, payment problems, asking for a person) are oversampled so that escalation recall rests on enough positives; the report states the sampling weights.
-- Add two hand labels per ticket: `complexity` (the three levels of the schema's Score) and `needs_escalation` (yes/no), with a written labeling guide.
-- Add a small tagged set of hard cases: mixed intents, relative dates, and injected instructions. Injected instructions are drawn from `TrustAIRLab/in-the-wild-jailbreak-prompts` (the set TypeSafe's guardrails cookbook uses) and embedded in ordinary tickets, subject to a license check before redistribution; the rest are written by hand. All are labeled as synthetic and reported separately.
-- Split 50 dev / 150 test. The 50 pilot tickets become the dev split. Questions, criteria and gates are tuned only on dev. The test run happens once, after tuning is frozen.
+There are two sets, reported separately.
+
+**Bitext set.** Real customer phrasing, labels from the dataset, used for intent, category, confidence and the pick.
+
+- Source: `bitext/Bitext-customer-support-llm-chatbot-training-dataset` on Hugging Face, CDLA-Sharing-1.0, pinned to revision `430d1a89bd93bd1fa23c16f29dd53e73f0087443` (file `Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv`, 26,872 rows, 27 intents in 11 dataset categories). The published sample is shared under the same license; benchmark results are not restricted.
+- Tickets are single requests, a median of 48 characters, with typos and slang. They carry no escalation signal: whether a ticket needs a person follows from its intent alone. So the Bitext set is not used for escalation, complexity or `isRepeat`.
+- The 27 intents map to the 8 benchmark categories. The mapping is stored in the repo.
+- Placeholders such as `{{Order Number}}`, `{{Person Name}}` and `{{Refund Amount}}` are replaced with values generated from a fixed seed. The value put in for `{{Order Number}}` is the `orderNumber` label; tickets without one are labeled `none`. Only `cancel_order`, `track_order` and `change_order` tickets contain an order number, each at most once, and invoice tickets contain invoice numbers such as `#12588` that the pick must reject.
+- Sample stratified by intent, fixed seed: 10 per intent for dev (270) and 40 per intent for test (1,080). Balanced intents make macro metrics direct, and the test size gives enough errors to measure calibration.
+
+**Written set.** About 60 multi-sentence tickets written by hand in the same e-commerce domain, all labeled as synthetic. They carry the judgments one-line Bitext requests cannot.
+
+- Hand labels: `intent`, `complexity` (the Score's three levels), `needs_escalation`, `isRepeat`, and `orderNumber` (or `none`).
+- About half need escalation, so recall rests on enough positives. Tickets with an order number also mention other numbers (invoice numbers, amounts, dates) so the pick has real distractors.
+- Tagged hard cases: mixed intents, relative dates, and injected instructions. Injected instructions are drawn from `TrustAIRLab/in-the-wild-jailbreak-prompts` (the set TypeSafe's guardrails cookbook uses) and embedded in ordinary tickets, subject to a license check before redistribution.
+- A written labeling guide defines each complexity level and when a ticket needs escalation.
+- Split 20 dev / 40 test.
+
+Questions, criteria and gates are tuned only on the dev splits. Each test split is run once, after tuning is frozen.
 
 ### Systems
 
-1. Fieldwork with the triage schema above (`category`, `complexity`, `isRepeat`, `orderNumber`, `reply` when not escalating, `escalationNote` when escalating; `orders.lookup` is stubbed). A run escalates when `escalationNote` is filled.
+1. Fieldwork with the triage schema above (`intent` rolled up to `category`, `complexity`, `isRepeat`, `orderNumber`, `reply` when not escalating, `escalationNote` when escalating; `orders.lookup` is stubbed). A run escalates when `escalationNote` is filled.
 2. Frontier single call: one structured-output request returning all fields plus a self-reported confidence per judgment.
 3. Cheap single call: the same request to a cheap model.
 
@@ -228,15 +246,18 @@ All three use the same instruction wording.
 
 ### Metrics
 
-| Metric | Purpose |
-|---|---|
-| Category accuracy, macro-F1 | Core correctness |
-| Escalation recall and precision | Missing a ticket that needs a person is the costly error |
-| Complexity accuracy; order number exact match, including correct `none` | The other judgments, and the pick |
-| Estimated cost per ticket; p50 and p95 latency | The cost claim, and its latency price |
-| Accuracy at a given coverage, expected calibration error | The confidence claim, compared against self-reported confidence |
-| Hard-case results by jev weak spot | The failure report |
-| Reply quality: blind pairwise judgment by a model family not used for generation, plus a 30-reply human spot check | Secondary |
+| Metric | Set | Purpose |
+|---|---|---|
+| Category accuracy and macro-F1; intent accuracy | Bitext | Core correctness |
+| Accuracy at a given coverage, expected calibration error, for category probability and intent confidence | Bitext | The confidence claim, compared against self-reported confidence |
+| Order number exact match, including correct `none` | Both | The pick |
+| Estimated cost per ticket; p50 and p95 latency | Both | The cost claim, and its latency price |
+| Escalation recall and precision | Written | Missing a ticket that needs a person is the costly error |
+| Complexity accuracy (expected score rounded to the nearest level); `isRepeat` accuracy | Written | The other judgments |
+| Hard-case results by jev weak spot | Written | The failure report |
+| Reply quality: blind pairwise judgment by a model family not used for generation, plus a 30-reply human spot check | Written | Secondary |
+
+Every metric is reported with a 95% bootstrap confidence interval, since the written set is small.
 
 ### Reproducibility
 
@@ -256,10 +277,10 @@ About six weeks at 10 to 15 hours a week.
 
 | Week | Work |
 |---|---|
-| 1 | Pilot: 50 labeled tickets, plain `systemOne` against one cheap structured-output call, one-page finding |
-| 2 | `builder` and its types, `plan`, fake-client tests |
+| 1 | Pilot on the Bitext dev split: data preparation, plain `systemOne` against one cheap structured-output call, one-page finding |
+| 2 | `builder` and its types, `plan`, fake-client tests. Start writing the written set. |
 | 3 | `resolvers`, `grade`, `run`, `trace`; live contract test; the triage example |
-| 4 | `bench/`: sampling, labeling guide and labels, hard cases, both baselines |
+| 4 | `bench/`: labeling guide, finish and label the written set, hard cases, frontier baseline, metrics and report |
 | 5 | Tune on dev, freeze, run test once |
 | 6 | Publish results, write-up, cookbook pull request to TypeSafe's docs |
 
