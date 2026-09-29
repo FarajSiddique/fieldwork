@@ -70,6 +70,7 @@ describe("runStructured", () => {
       orderNumber: "#482913",
       orderNumberConfidence: 0.95,
       model: "test/cheap",
+      provider: null,
       ms: expect.any(Number),
       inputTokens: 420,
       outputTokens: 38,

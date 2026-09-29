@@ -13,6 +13,8 @@ export interface Prediction {
   orderNumber: string | null;
   orderNumberConfidence: number;
   model: string;
+  /** The provider AI Gateway routed the call to, when the response reports it; otherwise null. */
+  provider: string | null;
   ms: number;
   inputTokens: number;
   outputTokens: number;
@@ -41,6 +43,7 @@ export function failedPrediction(
     orderNumber: null,
     orderNumberConfidence: 0,
     model,
+    provider: null,
     ms: 0,
     inputTokens: 0,
     outputTokens: 0,

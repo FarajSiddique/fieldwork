@@ -78,6 +78,7 @@ export async function runStructured(
       orderNumber: output.orderNumber,
       orderNumberConfidence: output.orderNumberConfidence,
       model: system.modelId,
+      provider: null,
       ms: entry.ms,
       inputTokens: entry.value.inputTokens,
       outputTokens: entry.value.outputTokens,

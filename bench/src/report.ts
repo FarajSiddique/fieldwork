@@ -47,7 +47,8 @@ export function renderPilotReport(
     "",
     "## SDK checks",
     "",
-    `- Versioned jev model ids: ${checks.versionedModelIds.join(", ") || "none"} (${pass(checks.allVersioned)})`,
+    `- One jev model id: ${checks.modelIds.join(", ") || "none"} (${pass(checks.oneModel)}; AI Gateway does not report the jev version)`,
+    `- Every jev answer served by typesafe-ai: ${checks.providers.join(", ") || "none"} (${pass(checks.onlyTypeSafe)})`,
     `- Token usage on every jev response: ${pass(checks.usageReported)}`,
     "",
   ].join("\n");

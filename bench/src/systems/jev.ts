@@ -39,8 +39,18 @@ export function buildJevRequest(ticket: string, model: string = JEV_MODEL) {
 
 interface JevCall {
   model: string;
+  /** AI Gateway's `provider_metadata.gateway.routing.finalProvider`, or null when absent. */
+  provider: string | null;
   answers: Record<string, unknown>;
   usage: { input_tokens: number; output_tokens: number };
+}
+
+/** The TypeSafe SDK's result type omits AI Gateway's `provider_metadata`, but the parsed body keeps it. */
+function finalProvider(response: object): string | null {
+  const provider = (
+    response as { provider_metadata?: { gateway?: { routing?: { finalProvider?: unknown } } } }
+  ).provider_metadata?.gateway?.routing?.finalProvider;
+  return typeof provider === "string" ? provider : null;
 }
 
 function asChoice(answer: unknown, name: string): ChoiceResponse {
@@ -89,6 +99,7 @@ function toPrediction(
     orderNumber,
     orderNumberConfidence,
     model: call.model,
+    provider: call.provider,
     ms: meta.ms,
     inputTokens: call.usage.input_tokens,
     outputTokens: call.usage.output_tokens,
@@ -112,6 +123,7 @@ export async function runJev(
         const response = await client.systemOne(request);
         return {
           model: response.model,
+          provider: finalProvider(response),
           answers: response.answers as Record<string, unknown>,
           usage: response.usage,
         };

@@ -49,6 +49,7 @@ const ok = (over: Partial<Prediction> & Pick<Prediction, "ticketId">): Predictio
   orderNumber: null,
   orderNumberConfidence: 1,
   model: "jev-1.13.0",
+  provider: "typesafe-ai",
   ms: 100,
   inputTokens: 1_000_000,
   outputTokens: 0,
@@ -107,22 +108,27 @@ describe("normalizeOrderNumber", () => {
 });
 
 describe("jevChecks", () => {
-  it("passes versioned ids with usage", () => {
+  it("passes one model id, served only by TypeSafe, with usage", () => {
     expect(jevChecks(predictions)).toEqual({
-      versionedModelIds: ["jev-1.13.0"],
-      allVersioned: true,
+      modelIds: ["jev-1.13.0"],
+      oneModel: true,
+      providers: ["typesafe-ai"],
+      onlyTypeSafe: true,
       usageReported: true,
     });
   });
-  it("accepts a gateway id only when it carries a version", () => {
-    expect(jevChecks([ok({ ticketId: "a", model: "typesafe-ai/jev-1.13.0" })]).allVersioned).toBe(
-      true,
-    );
-    expect(jevChecks([ok({ ticketId: "a", model: "typesafe-ai/jev" })]).allVersioned).toBe(false);
+  it("fails when answers report more than one model id", () => {
+    const checks = jevChecks([
+      ok({ ticketId: "a", model: "typesafe-ai/jev" }),
+      ok({ ticketId: "b", model: "typesafe-ai/jev-1.14.0" }),
+    ]);
+    expect(checks.oneModel).toBe(false);
   });
-  it("fails an alias or missing usage", () => {
-    const checks = jevChecks([ok({ ticketId: "a", model: "jev-latest", inputTokens: 0 })]);
-    expect(checks.allVersioned).toBe(false);
-    expect(checks.usageReported).toBe(false);
+  it("fails when another provider or no provider served an answer", () => {
+    expect(jevChecks([ok({ ticketId: "a", provider: "digitalocean" })]).onlyTypeSafe).toBe(false);
+    expect(jevChecks([ok({ ticketId: "a", provider: null })]).onlyTypeSafe).toBe(false);
+  });
+  it("fails missing usage", () => {
+    expect(jevChecks([ok({ ticketId: "a", inputTokens: 0 })]).usageReported).toBe(false);
   });
 });

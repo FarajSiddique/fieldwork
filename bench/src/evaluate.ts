@@ -11,7 +11,7 @@ import {
   type Scored,
 } from "./metrics.ts";
 import { createRng } from "./rng.ts";
-import { findOrderNumbers } from "./systems/jev.ts";
+import { findOrderNumbers, JEV_PROVIDER } from "./systems/jev.ts";
 import type { Prediction } from "./systems/types.ts";
 
 export interface Price {
@@ -122,19 +122,25 @@ export function summarize(
 }
 
 export interface JevChecks {
-  versionedModelIds: string[];
-  allVersioned: boolean;
+  modelIds: string[];
+  oneModel: boolean;
+  providers: string[];
+  onlyTypeSafe: boolean;
   usageReported: boolean;
 }
 
-/** The SDK behavior the design relies on: a versioned model id and token usage on every response. */
+/**
+ * The behavior the design relies on. AI Gateway reports no jev version, so instead of a pinned
+ * version the checks require one model id, every answer served by TypeSafe, and token usage.
+ */
 export function jevChecks(predictions: readonly Prediction[]): JevChecks {
   const ok = predictions.filter((p) => p.status === "ok");
   const ids = [...new Set(ok.map((p) => p.model))].sort();
   return {
-    versionedModelIds: ids,
-    allVersioned:
-      ids.length > 0 && ids.every((id) => /^(typesafe-ai\/)?jev-\d+\.\d+\.\d+$/.test(id)),
+    modelIds: ids,
+    oneModel: ids.length === 1,
+    providers: [...new Set(ok.map((p) => p.provider ?? "unknown"))].sort(),
+    onlyTypeSafe: ok.length > 0 && ok.every((p) => p.provider === JEV_PROVIDER),
     usageReported: ok.length > 0 && ok.every((p) => p.inputTokens > 0),
   };
 }

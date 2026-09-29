@@ -28,7 +28,13 @@ const summary: SystemSummary = {
 it("renders a table with one column per system and the SDK checks", () => {
   const md = renderPilotReport(
     [summary, { ...summary, system: "cheap-structured" }],
-    { versionedModelIds: ["jev-1.13.0"], allVersioned: true, usageReported: true },
+    {
+      modelIds: ["typesafe-ai/jev"],
+      oneModel: true,
+      providers: ["typesafe-ai"],
+      onlyTypeSafe: true,
+      usageReported: true,
+    },
     { split: "dev", tickets: 270, seed: 20260928 },
   );
   expect(md).toContain("| Metric | jev | cheap-structured |");
@@ -37,5 +43,8 @@ it("renders a table with one column per system and the SDK checks", () => {
   expect(md).toContain("n/a (price missing)");
   expect(md).toContain("97.0% of 60");
   expect(md).toContain("180 / 320 ms");
-  expect(md).toContain("- Versioned jev model ids: jev-1.13.0 (pass)");
+  expect(md).toContain(
+    "- One jev model id: typesafe-ai/jev (pass; AI Gateway does not report the jev version)",
+  );
+  expect(md).toContain("- Every jev answer served by typesafe-ai: typesafe-ai (pass)");
 });

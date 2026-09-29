@@ -77,6 +77,7 @@ describe("runJev", () => {
         },
       },
       usage,
+      provider_metadata: { gateway: { routing: { finalProvider: "typesafe-ai" } } },
     });
     const p = await runJev(ticket("where is order #482913"), client, cache);
 
@@ -97,10 +98,21 @@ describe("runJev", () => {
       orderNumber: "#482913",
       orderNumberConfidence: 0.97,
       model: "typesafe-ai/jev",
+      provider: "typesafe-ai",
       inputTokens: 812,
       cached: false,
     });
     expect(p.categoryConfidence).toBeGreaterThan(0.91);
+  });
+
+  it("reports a null provider when the response has no gateway routing metadata", async () => {
+    const { client } = fakeTypeSafe({
+      model: "typesafe-ai/jev",
+      answers: { intent: intentAnswer("track_order") },
+      usage,
+    });
+    const p = await runJev(ticket("where is my package"), client, cache);
+    expect(p).toMatchObject({ status: "ok", provider: null });
   });
 
   it("sends and reports a configured jev model", async () => {
