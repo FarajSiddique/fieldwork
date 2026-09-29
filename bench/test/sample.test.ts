@@ -79,7 +79,12 @@ describe("sampleBitext", () => {
 
   it("keeps invoice tickets with literal invoice numbers", () => {
     expect(
-      isEligible({ index: 0, flags: "B", instruction: "download bill #12588", intent: "get_invoice" }),
+      isEligible({
+        index: 0,
+        flags: "B",
+        instruction: "download bill #12588",
+        intent: "get_invoice",
+      }),
     ).toBe(true);
   });
 

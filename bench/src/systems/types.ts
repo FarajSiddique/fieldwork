@@ -26,7 +26,9 @@ export function failedPrediction(
   model: string,
   err: unknown,
 ): Prediction {
-  const firstLine = (err instanceof Error ? `${err.name}: ${err.message}` : String(err)).split("\n")[0]!;
+  const firstLine = (err instanceof Error ? `${err.name}: ${err.message}` : String(err)).split(
+    "\n",
+  )[0]!;
   return {
     system,
     ticketId,

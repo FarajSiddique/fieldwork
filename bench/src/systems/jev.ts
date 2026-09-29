@@ -34,7 +34,11 @@ interface JevCall {
 }
 
 function asChoice(answer: unknown, name: string): ChoiceResponse {
-  if (typeof answer !== "object" || answer === null || (answer as { type?: unknown }).type !== "choice") {
+  if (
+    typeof answer !== "object" ||
+    answer === null ||
+    (answer as { type?: unknown }).type !== "choice"
+  ) {
     throw new Error(`missing or malformed answer for ${name}`);
   }
   return answer as ChoiceResponse;
@@ -90,14 +94,18 @@ export async function runJev(
 ): Promise<Prediction> {
   const { request, candidates } = buildJevRequest(ticket.text);
   try {
-    const entry = await cachedCall(cache, { system: "jev", ...request }, async (): Promise<JevCall> => {
-      const response = await client.systemOne(request);
-      return {
-        model: response.model,
-        answers: response.answers as Record<string, unknown>,
-        usage: response.usage,
-      };
-    });
+    const entry = await cachedCall(
+      cache,
+      { system: "jev", ...request },
+      async (): Promise<JevCall> => {
+        const response = await client.systemOne(request);
+        return {
+          model: response.model,
+          answers: response.answers as Record<string, unknown>,
+          usage: response.usage,
+        };
+      },
+    );
     return toPrediction(ticket.id, entry.value, entry, candidates);
   } catch (err) {
     return failedPrediction("jev", ticket.id, JEV_MODEL, err);

@@ -134,7 +134,12 @@ describe("runJev", () => {
   it("returns a failed prediction when the API errors", async () => {
     const { client } = fakeTypeSafe({ error: { message: "server error" } }, 500);
     const p = await runJev(ticket("where is my package"), client, cache);
-    expect(p).toMatchObject({ status: "failed", intent: null, intentConfidence: 0, model: "jev-1.13.0" });
+    expect(p).toMatchObject({
+      status: "failed",
+      intent: null,
+      intentConfidence: 0,
+      model: "jev-1.13.0",
+    });
     expect(p.error).not.toBeNull();
     expect(p.error!.length).toBeLessThanOrEqual(200);
   });

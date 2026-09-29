@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { CATEGORIES, CATEGORY_OF, INTENT_NAMES, isIntent, rollUpToCategory } from "../src/intents.ts";
+import {
+  CATEGORIES,
+  CATEGORY_OF,
+  INTENT_NAMES,
+  isIntent,
+  rollUpToCategory,
+} from "../src/intents.ts";
 
 describe("intents", () => {
   it("has Bitext's 27 intents", () => {

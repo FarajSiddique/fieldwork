@@ -14,7 +14,12 @@ const CSV = [
 describe("parseBitext", () => {
   it("reads rows with their index, flags, instruction and intent", () => {
     expect(parseBitext(CSV)).toEqual([
-      { index: 0, flags: "B", instruction: "cancel order {{Order Number}}", intent: "cancel_order" },
+      {
+        index: 0,
+        flags: "B",
+        instruction: "cancel order {{Order Number}}",
+        intent: "cancel_order",
+      },
       { index: 1, flags: "BL", instruction: "where is my refund", intent: "track_refund" },
     ]);
   });

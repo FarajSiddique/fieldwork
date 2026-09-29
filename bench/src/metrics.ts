@@ -14,7 +14,9 @@ export function accuracy(correct: readonly boolean[]): number {
 }
 
 /** Mean F1 over the labels present in the gold data; a missing prediction counts against its gold label. */
-export function macroF1<L extends string>(pairs: readonly { gold: L; predicted: L | null }[]): number {
+export function macroF1<L extends string>(
+  pairs: readonly { gold: L; predicted: L | null }[],
+): number {
   const labels = [...new Set(pairs.map((p) => p.gold))];
   return mean(
     labels.map((label) => {

@@ -14,12 +14,16 @@ it("keeps results in input order", async () => {
 it("never runs more than the limit at once", async () => {
   let running = 0;
   let peak = 0;
-  await mapLimit(Array.from({ length: 20 }, (_, i) => i), 4, async () => {
-    running++;
-    peak = Math.max(peak, running);
-    await sleep(5);
-    running--;
-  });
+  await mapLimit(
+    Array.from({ length: 20 }, (_, i) => i),
+    4,
+    async () => {
+      running++;
+      peak = Math.max(peak, running);
+      await sleep(5);
+      running--;
+    },
+  );
   expect(peak).toBe(4);
 });
 

@@ -42,7 +42,9 @@ describe("auroc", () => {
 describe("expectedCalibrationError", () => {
   it("weights each bin's gap between accuracy and confidence", () => {
     // bin 9: acc 0.5, conf 0.95 -> 0.45 x 2/3; bin 2: acc 1, conf 0.25 -> 0.75 x 1/3
-    expect(expectedCalibrationError([s(0.95, true), s(0.95, false), s(0.25, true)])).toBeCloseTo(0.55);
+    expect(expectedCalibrationError([s(0.95, true), s(0.95, false), s(0.25, true)])).toBeCloseTo(
+      0.55,
+    );
   });
   it("puts confidence 1 in the last bin", () => {
     expect(expectedCalibrationError([s(1, true)])).toBe(0);
