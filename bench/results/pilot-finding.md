@@ -6,6 +6,18 @@ Date: 2026-09-29 · jev `typesafe-ai/jev` via AI Gateway (version not reported) 
 
 The confidence criterion failed, so by the plan's rule this run is NO-GO. The cause is traced below to our own intent wording, not to jev's confidence, and it is cheap to fix and rerun on the dev split. The go/no-go call is the project owner's.
 
+### Update 2026-09-29: provisional GO
+
+The intent descriptions and order-number question were fixed (commit 74d27ea) and the pilot rerun. The rerun is incomplete: AI Gateway refused 203 of 270 jev calls with `429 No access to this model at this time`, apparently a gateway-side issue on accounts that moved from the free to the paid tier (the refused calls never reached TypeSafe). On the 67 tickets jev did answer, computed offline from the cache:
+
+| Same 67 tickets | Intent accuracy | Errors | Intent AUROC (95% interval) |
+|---|---|---|---|
+| jev, old wording | 91.0% | 6 | 0.567 (0.349–0.850) |
+| jev, new wording | 92.5% | 5 | 0.905 (0.808–0.985) |
+| Haiku 4.5, new wording | 92.5% | 5 | 0.937 (0.849–1.000) |
+
+The four confidence-1.00 errors on these tickets are gone; every new-wording error has confidence 0.91 or lower. The subset is small and not random, so this is a signal rather than the gate. The project owner decided to proceed to M1 provisionally. The full 270-ticket rerun, with the same gate, is still owed once the gateway issue clears, and parts of M1 that depend on jev's confidence stay provisional until then.
+
 ## Criteria
 
 | Criterion | Threshold | Result | Met |
