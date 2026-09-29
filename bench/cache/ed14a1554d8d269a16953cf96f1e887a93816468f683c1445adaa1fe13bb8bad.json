@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_invoice",
+      "intentConfidence": 0.92,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95
+    },
+    "inputTokens": 1044,
+    "outputTokens": 38
+  },
+  "ms": 857
+}

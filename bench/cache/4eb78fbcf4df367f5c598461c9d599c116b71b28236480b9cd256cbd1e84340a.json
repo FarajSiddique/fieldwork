@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1
+    },
+    "inputTokens": 1036,
+    "outputTokens": 38
+  },
+  "ms": 927
+}

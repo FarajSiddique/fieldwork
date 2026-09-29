@@ -10,6 +10,7 @@ import { readJsonl, writeText } from "./io.ts";
 import { renderPilotReport } from "./report.ts";
 import { JEV_MODEL, runJev } from "./systems/jev.ts";
 import { runStructured } from "./systems/structured.ts";
+import type { Prediction } from "./systems/types.ts";
 
 // Every model goes through Vercel AI Gateway, authenticated by AI_GATEWAY_API_KEY.
 const GATEWAY_TYPESAFE_URL = "https://ai-gateway.vercel.sh/typesafe";
@@ -19,7 +20,7 @@ const BASELINE_MODELS = (process.env.BENCH_BASELINE_MODELS ?? "openai/gpt-5.4-mi
   .split(",")
   .map((id) => id.trim())
   .filter((id) => id !== "");
-const CONCURRENCY = 8;
+const CONCURRENCY = Number(process.env.BENCH_CONCURRENCY ?? 8);
 
 // The pilot reads only the dev split. The test split is run once, in M4, after tuning is frozen.
 const tickets = await readJsonl<BitextTicket>(paths.dev);
@@ -35,7 +36,7 @@ const client = new TypeSafeClient({
 });
 
 const jev = await mapLimit(tickets, CONCURRENCY, (t) => runJev(t, client, cache, JEV));
-const structured = [];
+const structured: Prediction[][] = [];
 for (const modelId of BASELINE_MODELS) {
   const system = { name: modelId, model: modelId, modelId };
   structured.push(await mapLimit(tickets, CONCURRENCY, (t) => runStructured(t, system, cache)));
