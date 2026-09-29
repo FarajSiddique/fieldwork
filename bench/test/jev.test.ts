@@ -64,9 +64,9 @@ describe("findOrderNumbers", () => {
 });
 
 describe("runJev", () => {
-  it("asks the intent and the order number in one request with the pinned model", async () => {
+  it("asks the intent and the order number in one gateway request, served only by TypeSafe", async () => {
     const { client, calls } = fakeTypeSafe({
-      model: "jev-1.13.0",
+      model: "typesafe-ai/jev",
       answers: {
         intent: intentAnswer("track_order"),
         orderNumber: {
@@ -83,8 +83,9 @@ describe("runJev", () => {
     expect(calls).toHaveLength(1);
     expect(calls[0]!.url).toMatch(/\/v1\/systemone$/);
     expect(calls[0]!.body).toMatchObject({
-      model: "jev-1.13.0",
+      model: "typesafe-ai/jev",
       state: { ticket: "where is order #482913" },
+      providerOptions: { gateway: { only: ["typesafe-ai"] } },
     });
     expect(Object.keys(calls[0]!.body.questions)).toEqual(["intent", "orderNumber"]);
     expect(p).toMatchObject({
@@ -95,11 +96,22 @@ describe("runJev", () => {
       category: "order",
       orderNumber: "#482913",
       orderNumberConfidence: 0.97,
-      model: "jev-1.13.0",
+      model: "typesafe-ai/jev",
       inputTokens: 812,
       cached: false,
     });
     expect(p.categoryConfidence).toBeGreaterThan(0.91);
+  });
+
+  it("sends and reports a configured jev model", async () => {
+    const { client, calls } = fakeTypeSafe({
+      model: "typesafe-ai/jev-1.13.0",
+      answers: { intent: intentAnswer("track_order") },
+      usage,
+    });
+    const p = await runJev(ticket("where is my package"), client, cache, "typesafe-ai/jev-1.13.0");
+    expect(calls[0]!.body.model).toBe("typesafe-ai/jev-1.13.0");
+    expect(p).toMatchObject({ status: "ok", model: "typesafe-ai/jev-1.13.0" });
   });
 
   it("maps a none pick to a null order number", async () => {
@@ -138,7 +150,7 @@ describe("runJev", () => {
       status: "failed",
       intent: null,
       intentConfidence: 0,
-      model: "jev-1.13.0",
+      model: "typesafe-ai/jev",
     });
     expect(p.error).not.toBeNull();
     expect(p.error!.length).toBeLessThanOrEqual(200);

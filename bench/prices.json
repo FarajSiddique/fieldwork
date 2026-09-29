@@ -1,3 +1,4 @@
 {
-  "jev-1.13.0": { "inputPerMTok": 0.042, "outputPerMTok": 0 }
+  "typesafe-ai/jev": { "inputPerMTok": 0.042, "outputPerMTok": 0 },
+  "openai/gpt-5.4-mini": { "inputPerMTok": 0.75, "outputPerMTok": 4.5 }
 }

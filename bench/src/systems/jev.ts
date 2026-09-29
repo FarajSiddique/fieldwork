@@ -5,7 +5,10 @@ import { INTENTS, isIntent, rollUpToCategory, type Intent } from "../intents.ts"
 import { INTENT_INSTRUCTIONS, ORDER_NUMBER_TARGET } from "../wording.ts";
 import { failedPrediction, type Prediction } from "./types.ts";
 
-export const JEV_MODEL = "jev-1.13.0";
+/** AI Gateway's id for jev. The gateway lists no versioned id, so the version can't be pinned here. */
+export const JEV_MODEL = "typesafe-ai/jev";
+/** Restricting to one provider keeps every ticket on the same jev deployment. */
+export const JEV_PROVIDER = "typesafe-ai";
 export const NONE = "none";
 
 const ORDER_NUMBER_CANDIDATE = /#?\d{5,}/g;
@@ -15,7 +18,7 @@ export function findOrderNumbers(text: string): string[] {
   return [...new Set(text.match(ORDER_NUMBER_CANDIDATE) ?? [])];
 }
 
-export function buildJevRequest(ticket: string) {
+export function buildJevRequest(ticket: string, model: string = JEV_MODEL) {
   const candidates = findOrderNumbers(ticket);
   const questions: Record<string, Question> = { intent: choice(INTENT_INSTRUCTIONS, INTENTS) };
   if (candidates.length > 0) {
@@ -24,7 +27,14 @@ export function buildJevRequest(ticket: string) {
       [NONE]: "None of these is the order number the customer is asking about",
     });
   }
-  return { request: { model: JEV_MODEL, state: { ticket }, questions }, candidates };
+  // The TypeSafe SDK forwards `providerOptions` to AI Gateway, though its request type omits it.
+  const request = {
+    model,
+    state: { ticket },
+    questions,
+    providerOptions: { gateway: { only: [JEV_PROVIDER] } },
+  };
+  return { request, candidates };
 }
 
 interface JevCall {
@@ -91,8 +101,9 @@ export async function runJev(
   ticket: BitextTicket,
   client: TypeSafeClient,
   cache: ResponseCache,
+  model: string = JEV_MODEL,
 ): Promise<Prediction> {
-  const { request, candidates } = buildJevRequest(ticket.text);
+  const { request, candidates } = buildJevRequest(ticket.text, model);
   try {
     const entry = await cachedCall(
       cache,
@@ -108,6 +119,6 @@ export async function runJev(
     );
     return toPrediction(ticket.id, entry.value, entry, candidates);
   } catch (err) {
-    return failedPrediction("jev", ticket.id, JEV_MODEL, err);
+    return failedPrediction("jev", ticket.id, model, err);
   }
 }

@@ -133,7 +133,8 @@ export function jevChecks(predictions: readonly Prediction[]): JevChecks {
   const ids = [...new Set(ok.map((p) => p.model))].sort();
   return {
     versionedModelIds: ids,
-    allVersioned: ids.length > 0 && ids.every((id) => /^jev-\d+\.\d+\.\d+$/.test(id)),
+    allVersioned:
+      ids.length > 0 && ids.every((id) => /^(typesafe-ai\/)?jev-\d+\.\d+\.\d+$/.test(id)),
     usageReported: ok.length > 0 && ok.every((p) => p.inputTokens > 0),
   };
 }

@@ -11,7 +11,14 @@ import { renderPilotReport } from "./report.ts";
 import { JEV_MODEL, runJev } from "./systems/jev.ts";
 import { runStructured } from "./systems/structured.ts";
 
-const CHEAP_MODEL = process.env.BENCH_CHEAP_MODEL ?? "openai/gpt-5.4-mini";
+// Every model goes through Vercel AI Gateway, authenticated by AI_GATEWAY_API_KEY.
+const GATEWAY_TYPESAFE_URL = "https://ai-gateway.vercel.sh/typesafe";
+const JEV = process.env.BENCH_JEV_MODEL ?? JEV_MODEL;
+// Comma-separated AI Gateway model ids; each becomes one structured-output baseline.
+const BASELINE_MODELS = (process.env.BENCH_BASELINE_MODELS ?? "openai/gpt-5.4-mini")
+  .split(",")
+  .map((id) => id.trim())
+  .filter((id) => id !== "");
 const CONCURRENCY = 8;
 
 // The pilot reads only the dev split. The test split is run once, in M4, after tuning is frozen.
@@ -21,18 +28,22 @@ const cache = new ResponseCache(paths.cache);
 
 // "cache-only" lets a fully cached rerun work without keys, as TypeSafe's cookbooks do.
 const client = new TypeSafeClient({
-  apiKey: process.env.TYPESAFE_API_KEY ?? "cache-only",
-  defaultModel: JEV_MODEL,
+  apiKey: process.env.AI_GATEWAY_API_KEY ?? "cache-only",
+  baseURL: GATEWAY_TYPESAFE_URL,
+  defaultModel: JEV,
   logLevel: "warn",
 });
-const cheap = { name: "cheap-structured", model: CHEAP_MODEL, modelId: CHEAP_MODEL };
 
-const jev = await mapLimit(tickets, CONCURRENCY, (t) => runJev(t, client, cache));
-const structured = await mapLimit(tickets, CONCURRENCY, (t) => runStructured(t, cheap, cache));
+const jev = await mapLimit(tickets, CONCURRENCY, (t) => runJev(t, client, cache, JEV));
+const structured = [];
+for (const modelId of BASELINE_MODELS) {
+  const system = { name: modelId, model: modelId, modelId };
+  structured.push(await mapLimit(tickets, CONCURRENCY, (t) => runStructured(t, system, cache)));
+}
 
 const summaries = [
   summarize("jev", tickets, jev, prices, SEED),
-  summarize(cheap.name, tickets, structured, prices, SEED),
+  ...BASELINE_MODELS.map((id, i) => summarize(id, tickets, structured[i]!, prices, SEED)),
 ];
 const checks = jevChecks(jev);
 const report = renderPilotReport(summaries, checks, {
@@ -44,7 +55,7 @@ const report = renderPilotReport(summaries, checks, {
 await writeText(
   join(paths.results, "pilot.json"),
   JSON.stringify(
-    { split: "dev", seed: SEED, summaries, checks, predictions: [...jev, ...structured] },
+    { split: "dev", seed: SEED, summaries, checks, predictions: [...jev, ...structured.flat()] },
     null,
     2,
   ) + "\n",

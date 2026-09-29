@@ -114,6 +114,12 @@ describe("jevChecks", () => {
       usageReported: true,
     });
   });
+  it("accepts a gateway id only when it carries a version", () => {
+    expect(jevChecks([ok({ ticketId: "a", model: "typesafe-ai/jev-1.13.0" })]).allVersioned).toBe(
+      true,
+    );
+    expect(jevChecks([ok({ ticketId: "a", model: "typesafe-ai/jev" })]).allVersioned).toBe(false);
+  });
   it("fails an alias or missing usage", () => {
     const checks = jevChecks([ok({ ticketId: "a", model: "jev-latest", inputTokens: 0 })]);
     expect(checks.allVersioned).toBe(false);
