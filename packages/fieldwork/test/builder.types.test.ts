@@ -148,6 +148,19 @@ describe("builder types", () => {
       .text("a", { instructions: "Write" });
   });
 
+  // A union name would type both fields while only one exists at runtime; a widened string
+  // would skip the duplicate check and give the results a string index.
+  it("rejects names that are not a single literal", () => {
+    const union = "c" as "c" | "d";
+    const wide: string = "c";
+    fieldwork<{ ticket: string }>()
+      // @ts-expect-error: a union name
+      .judge(union, noul("C?"));
+    fieldwork<{ ticket: string }>()
+      // @ts-expect-error: a widened string name
+      .tool(wide, { call: () => 1 });
+  });
+
   it("takes gate for choice and score, yesAbove for noul", () => {
     fieldwork<{ ticket: string }>()
       // @ts-expect-error: noul has no gate

@@ -47,8 +47,14 @@ export function validateWrittenSet(records: readonly unknown[]): WrittenTicket[]
     if (seen.has(t.id)) problems.push(`${t.id}: duplicate id`);
     seen.add(t.id);
     // The pick can only choose a candidate the regex finds, so the label must be one.
-    if (t.orderNumber !== null && !findOrderNumbers(t.text).includes(t.orderNumber)) {
+    const candidates = findOrderNumbers(t.text);
+    if (t.orderNumber !== null && !candidates.includes(t.orderNumber)) {
       problems.push(`${t.id}: orderNumber ${t.orderNumber} is not a candidate found in the text`);
+    } else if (t.orderNumber !== null && candidates.length < 2) {
+      // The spec asks for other numbers too; only ones the regex finds make the pick choose.
+      problems.push(
+        `${t.id}: a ticket with an order number needs another candidate number (5+ digits) as a distractor`,
+      );
     }
     tickets.push(t);
   });

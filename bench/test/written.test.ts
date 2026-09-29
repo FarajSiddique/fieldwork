@@ -33,6 +33,16 @@ describe("validateWrittenSet", () => {
     );
   });
 
+  // The spec asks for other numbers beside the order number; only ones the candidate regex finds
+  // give the pick a real choice.
+  it("requires a distractor candidate beside the order number", () => {
+    expect(() =>
+      validateWrittenSet([ticket({ text: "Where is order #582041? It cost $89.99." })]),
+    ).toThrow(
+      "wr-001: a ticket with an order number needs another candidate number (5+ digits) as a distractor",
+    );
+  });
+
   it("rejects duplicate ids", () => {
     expect(() => validateWrittenSet([ticket(), ticket()])).toThrow("wr-001: duplicate id");
   });

@@ -17,8 +17,20 @@ export class DefinitionError extends Error {
   override name = "DefinitionError";
 }
 
-/** Rejects a name already used by an earlier field. */
-type NewName<N extends string, F> = N extends keyof F ? never : N;
+/** True when `T` is a union of more than one member. */
+type IsUnion<T, U = T> = T extends unknown ? ([U] extends [T] ? false : true) : never;
+
+/**
+ * A single literal name not used by an earlier field. A widened `string` or a union is rejected:
+ * either would type fields that do not exist at runtime.
+ */
+type NewName<N extends string, F> = string extends N
+  ? never
+  : IsUnion<N> extends false
+    ? N extends keyof F
+      ? never
+      : N
+    : never;
 type Empty = Record<never, never>;
 type AnyWhen = NonNullable<FieldSpec["when"]>;
 
@@ -35,7 +47,8 @@ function checkFunction(field: string, option: string, value: unknown, required: 
 }
 
 function checkUnit(field: string, option: string, value: number | undefined, min = 0): void {
-  if (value !== undefined && !(value >= min && value <= 1)) {
+  // The typeof check matters: `null >= 0` and `"0.5" >= 0` are true in JavaScript.
+  if (value !== undefined && !(typeof value === "number" && value >= min && value <= 1)) {
     throw new DefinitionError(`${field}: ${option} must be between ${min} and 1, got ${value}`);
   }
 }

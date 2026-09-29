@@ -69,6 +69,26 @@ describe("fieldwork builder", () => {
     expect(fn).toThrow(message);
   };
 
+  // `null >= 0` is true in JavaScript, so a range check alone lets these through, and a
+  // `confidence >= null` gate would then always pass.
+  it("rejects thresholds that are not numbers", () => {
+    const question = choice("?", { x: null, y: null });
+    rejects(
+      () => untyped().judge!("a", question, { gate: null }),
+      /a: gate must be between 0 and 1, got null/,
+    );
+    rejects(() => untyped().judge!("a", question, { gate: "0.5" }), /a: gate must be between/);
+    rejects(() => untyped().judge!("a", noul("?"), { yesAbove: true }), /a: yesAbove must be/);
+    rejects(
+      () => untyped().pick!("a", { instructions: "?", candidates: () => [], gate: [] }),
+      /a: gate must be between/,
+    );
+    rejects(
+      () => untyped().text!("a", { instructions: "?", minScore: null }),
+      /a: minScore must be between/,
+    );
+  });
+
   it("rejects thresholds outside their range, including NaN", () => {
     rejects(
       () => ticketSchema().judge("a", noul("?"), { yesAbove: 0.4 }),
