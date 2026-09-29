@@ -9,6 +9,7 @@ export const paths = {
   raw: join(root, ".data", "bitext.csv"),
   dev: join(root, "data", "bitext-dev.jsonl"),
   test: join(root, "data", "bitext-test.jsonl"),
+  written: join(root, "data", "written.jsonl"),
   cache: join(root, "cache"),
   results: join(root, "results"),
   prices: join(root, "prices.json"),
