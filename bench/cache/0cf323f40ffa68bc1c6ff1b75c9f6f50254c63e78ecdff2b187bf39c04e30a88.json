@@ -1,0 +1,56 @@
+{
+  "value": {
+    "model": "typesafe-ai/jev",
+    "provider": "typesafe-ai",
+    "answers": {
+      "intent": {
+        "type": "choice",
+        "choice": "track_order",
+        "confidence": 1,
+        "probabilities": {
+          "complaint": 0,
+          "track_refund": 0,
+          "check_invoice": 0,
+          "track_order": 1,
+          "set_up_shipping_address": 0,
+          "get_invoice": 0,
+          "delete_account": 0,
+          "contact_customer_service": 0,
+          "delivery_options": 0,
+          "change_shipping_address": 0,
+          "switch_account": 0,
+          "check_cancellation_fee": 0,
+          "review": 0,
+          "recover_password": 0,
+          "payment_issue": 0,
+          "delivery_period": 0,
+          "contact_human_agent": 0,
+          "change_order": 0,
+          "create_account": 0,
+          "cancel_order": 0,
+          "place_order": 0,
+          "registration_problems": 0,
+          "check_refund_policy": 0,
+          "newsletter_subscription": 0,
+          "get_refund": 0,
+          "check_payment_methods": 0,
+          "edit_account": 0
+        }
+      },
+      "orderNumber": {
+        "type": "choice",
+        "choice": "#653420",
+        "confidence": 1,
+        "probabilities": {
+          "none": 0,
+          "#653420": 1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 966,
+      "output_tokens": 293
+    }
+  },
+  "ms": 205
+}
