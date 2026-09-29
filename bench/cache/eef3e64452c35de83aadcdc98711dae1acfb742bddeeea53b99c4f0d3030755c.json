@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.98,
+      "orderNumber": "386429",
+      "orderNumberConfidence": 0.99
+    },
+    "inputTokens": 1024,
+    "outputTokens": 40
+  },
+  "ms": 1066
+}

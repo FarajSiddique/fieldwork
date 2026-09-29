@@ -1,0 +1,24 @@
+{
+  "name": "fieldwork",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "@typesafe-ai/sdk": "^0.6.0",
+    "ai": "^7.0.122"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "ai": "^7.0.122",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.2"
+  }
+}

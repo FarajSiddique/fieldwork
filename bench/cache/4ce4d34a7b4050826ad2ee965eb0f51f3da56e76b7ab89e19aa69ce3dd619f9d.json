@@ -1,0 +1,47 @@
+{
+  "value": {
+    "model": "typesafe-ai/jev",
+    "provider": "typesafe-ai",
+    "answers": {
+      "intent": {
+        "type": "choice",
+        "choice": "set_up_shipping_address",
+        "confidence": 0.96,
+        "probabilities": {
+          "check_cancellation_fee": 0,
+          "delete_account": 0,
+          "switch_account": 0,
+          "change_order": 0,
+          "create_account": 0,
+          "registration_problems": 0,
+          "check_refund_policy": 0,
+          "set_up_shipping_address": 0.97,
+          "edit_account": 0,
+          "check_payment_methods": 0,
+          "newsletter_subscription": 0,
+          "complaint": 0,
+          "payment_issue": 0,
+          "contact_human_agent": 0,
+          "review": 0,
+          "track_refund": 0,
+          "delivery_options": 0,
+          "change_shipping_address": 0.03,
+          "get_refund": 0,
+          "delivery_period": 0,
+          "place_order": 0,
+          "track_order": 0,
+          "get_invoice": 0,
+          "check_invoice": 0,
+          "cancel_order": 0,
+          "recover_password": 0,
+          "contact_customer_service": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 888,
+      "output_tokens": 251
+    }
+  },
+  "ms": 377
+}

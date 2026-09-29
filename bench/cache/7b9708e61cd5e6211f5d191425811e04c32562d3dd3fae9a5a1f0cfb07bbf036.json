@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.92,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95
+    },
+    "inputTokens": 1040,
+    "outputTokens": 38
+  },
+  "ms": 973
+}

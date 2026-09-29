@@ -1,0 +1,6 @@
+pnpm-lock.yaml
+bench/.data/
+bench/cache/
+bench/data/
+bench/results/
+docs/

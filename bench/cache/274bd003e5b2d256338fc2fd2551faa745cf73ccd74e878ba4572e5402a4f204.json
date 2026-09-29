@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.95,
+      "orderNumber": "#537259",
+      "orderNumberConfidence": 0.95
+    },
+    "inputTokens": 1021,
+    "outputTokens": 40
+  },
+  "ms": 3502
+}

@@ -1,0 +1,1080 @@
+{"id":"bx-139","text":"I can no longer afford order #386162","intent":"cancel_order","category":"order","orderNumber":"#386162","flags":"BLN"}
+{"id":"bx-339","text":"help me to cancel purchase #973381","intent":"cancel_order","category":"order","orderNumber":"#973381","flags":"BL"}
+{"id":"bx-24","text":"help cnceling order #558245","intent":"cancel_order","category":"order","orderNumber":"#558245","flags":"BZ"}
+{"id":"bx-474","text":"I can no longer afford order #493271, can I cancel it?","intent":"cancel_order","category":"order","orderNumber":"#493271","flags":"BCILN"}
+{"id":"bx-107","text":"help with cancelling purchase #152108","intent":"cancel_order","category":"order","orderNumber":"#152108","flags":"BL"}
+{"id":"bx-82","text":"I want assistance to cancel purchase #663088","intent":"cancel_order","category":"order","orderNumber":"#663088","flags":"BL"}
+{"id":"bx-121","text":"i need assistance canceling order #841267","intent":"cancel_order","category":"order","orderNumber":"#841267","flags":"BQ"}
+{"id":"bx-565","text":"want help to cancel order #968257","intent":"cancel_order","category":"order","orderNumber":"#968257","flags":"BQ"}
+{"id":"bx-555","text":"i do not know what to do to cancel purchase #108821","intent":"cancel_order","category":"order","orderNumber":"#108821","flags":"BELQ"}
+{"id":"bx-276","text":"I don't want this item, cancel order #563145","intent":"cancel_order","category":"order","orderNumber":"#563145","flags":"BCLN"}
+{"id":"bx-67","text":"I have a problem witrh cancelling purchase #249628","intent":"cancel_order","category":"order","orderNumber":"#249628","flags":"BLZ"}
+{"id":"bx-300","text":"help  with cancelling order #641341","intent":"cancel_order","category":"order","orderNumber":"#641341","flags":"BZ"}
+{"id":"bx-329","text":"how can I cancel purchase #676315?","intent":"cancel_order","category":"order","orderNumber":"#676315","flags":"BIL"}
+{"id":"bx-62","text":"I cannot pay for the last purchase I have made, cancel it","intent":"cancel_order","category":"order","orderNumber":null,"flags":"BCELNV"}
+{"id":"bx-274","text":"I do not know how to cancel purchase #883801","intent":"cancel_order","category":"order","orderNumber":"#883801","flags":"BEL"}
+{"id":"bx-493","text":"how can I cancel order #816942?","intent":"cancel_order","category":"order","orderNumber":"#816942","flags":"BI"}
+{"id":"bx-800","text":"I need to cancel order #320886","intent":"cancel_order","category":"order","orderNumber":"#320886","flags":"B"}
+{"id":"bx-614","text":"how do I cancel purchae #656109?","intent":"cancel_order","category":"order","orderNumber":"#656109","flags":"BILZ"}
+{"id":"bx-38","text":"I would like to cancel purchase #322263","intent":"cancel_order","category":"order","orderNumber":"#322263","flags":"BLP"}
+{"id":"bx-152","text":"I don't want purchase #657975","intent":"cancel_order","category":"order","orderNumber":"#657975","flags":"BLN"}
+{"id":"bx-796","text":"I need assistance tocancel order #311755","intent":"cancel_order","category":"order","orderNumber":"#311755","flags":"BZ"}
+{"id":"bx-9","text":"i need help canceling purchase #742265","intent":"cancel_order","category":"order","orderNumber":"#742265","flags":"BLQ"}
+{"id":"bx-478","text":"i bought somegoddamn item how do i cancel order #166404","intent":"cancel_order","category":"order","orderNumber":"#166404","flags":"BCILQWZ"}
+{"id":"bx-290","text":"i dont want order #660703","intent":"cancel_order","category":"order","orderNumber":"#660703","flags":"BNQ"}
+{"id":"bx-45","text":"could ya help me cancel order #743619","intent":"cancel_order","category":"order","orderNumber":"#743619","flags":"BIPQ"}
+{"id":"bx-430","text":"is it possible to cxancel order #635797","intent":"cancel_order","category":"order","orderNumber":"#635797","flags":"BIQZ"}
+{"id":"bx-987","text":"I have got to cancel order #678878","intent":"cancel_order","category":"order","orderNumber":"#678878","flags":"B"}
+{"id":"bx-1","text":"i have a question about cancelling oorder #372253","intent":"cancel_order","category":"order","orderNumber":"#372253","flags":"BQZ"}
+{"id":"bx-979","text":"have problems with cancelling purchase #556806","intent":"cancel_order","category":"order","orderNumber":"#556806","flags":"BLMQ"}
+{"id":"bx-321","text":"i dont want purchase #580376 could i cancel it","intent":"cancel_order","category":"order","orderNumber":"#580376","flags":"BCILNPQ"}
+{"id":"bx-176","text":"i dont know how to cancel purchase #706841","intent":"cancel_order","category":"order","orderNumber":"#706841","flags":"BLQ"}
+{"id":"bx-992","text":"I can't afford purchase #434678, I need help canceling it","intent":"cancel_order","category":"order","orderNumber":"#434678","flags":"BCLN"}
+{"id":"bx-744","text":"I bought some bloody articles, cancel order #242469","intent":"cancel_order","category":"order","orderNumber":"#242469","flags":"BCLMW"}
+{"id":"bx-457","text":"I have a question about canceling purchase #191842","intent":"cancel_order","category":"order","orderNumber":"#191842","flags":"BL"}
+{"id":"bx-685","text":"i need help with cancelliung order #409998","intent":"cancel_order","category":"order","orderNumber":"#409998","flags":"BQZ"}
+{"id":"bx-65","text":"I want to cancle purchase #159448","intent":"cancel_order","category":"order","orderNumber":"#159448","flags":"BLZ"}
+{"id":"bx-612","text":"i dont know how to cancel order #551263","intent":"cancel_order","category":"order","orderNumber":"#551263","flags":"BQ"}
+{"id":"bx-710","text":"I can't aford order #587207","intent":"cancel_order","category":"order","orderNumber":"#587207","flags":"BLNZ"}
+{"id":"bx-415","text":"want asistance canceling order #950141","intent":"cancel_order","category":"order","orderNumber":"#950141","flags":"BQZ"}
+{"id":"bx-747","text":"I need help with canxeling purchase #239682","intent":"cancel_order","category":"order","orderNumber":"#239682","flags":"BLZ"}
+{"id":"bx-1556","text":"help to swap a product of order #620352","intent":"change_order","category":"order","orderNumber":"#620352","flags":"BL"}
+{"id":"bx-1434","text":"I cannot add a product to purchase #597948","intent":"change_order","category":"order","orderNumber":"#597948","flags":"BELN"}
+{"id":"bx-1152","text":"I want to switch an item of order #279000, how can I do it?","intent":"change_order","category":"order","orderNumber":"#279000","flags":"BCIL"}
+{"id":"bx-1619","text":"what do I need to do to edit order #544093?","intent":"change_order","category":"order","orderNumber":"#544093","flags":"BIL"}
+{"id":"bx-1748","text":"I need to swap an item of order #375511","intent":"change_order","category":"order","orderNumber":"#375511","flags":"BL"}
+{"id":"bx-1980","text":"i have to correct order #209143","intent":"change_order","category":"order","orderNumber":"#209143","flags":"BLQ"}
+{"id":"bx-1989","text":"how do i change some items of order #858132","intent":"change_order","category":"order","orderNumber":"#858132","flags":"BIMQ"}
+{"id":"bx-1109","text":"help to remove several items from order #187211","intent":"change_order","category":"order","orderNumber":"#187211","flags":"BM"}
+{"id":"bx-1944","text":"how can I switch some articles of purchase #367226?","intent":"change_order","category":"order","orderNumber":"#367226","flags":"BILM"}
+{"id":"bx-1144","text":"how do I modify purchase #693810?","intent":"change_order","category":"order","orderNumber":"#693810","flags":"BIL"}
+{"id":"bx-1186","text":"I cannot update purchase #218008","intent":"change_order","category":"order","orderNumber":"#218008","flags":"BELN"}
+{"id":"bx-1676","text":"need help with switching some articles of an order","intent":"change_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-1741","text":"want help to remove several products from purchase #993221","intent":"change_order","category":"order","orderNumber":"#993221","flags":"BLMQ"}
+{"id":"bx-1418","text":"i try to change some items of order #716893","intent":"change_order","category":"order","orderNumber":"#716893","flags":"BMQ"}
+{"id":"bx-1150","text":"I forgot to include some products in purchase #415768","intent":"change_order","category":"order","orderNumber":"#415768","flags":"BLM"}
+{"id":"bx-1896","text":"I need to remove several articles from purchase #771212","intent":"change_order","category":"order","orderNumber":"#771212","flags":"BLM"}
+{"id":"bx-1321","text":"can i switch a product of order #415478","intent":"change_order","category":"order","orderNumber":"#415478","flags":"BILQ"}
+{"id":"bx-1174","text":"need help swapping a item of purchase #937899","intent":"change_order","category":"order","orderNumber":"#937899","flags":"BLQZ"}
+{"id":"bx-1924","text":"need asistance to modify purchase #435233","intent":"change_order","category":"order","orderNumber":"#435233","flags":"BLQZ"}
+{"id":"bx-1127","text":"how to switch an item of purchase #688724","intent":"change_order","category":"order","orderNumber":"#688724","flags":"BILQ"}
+{"id":"bx-1508","text":"i cant add some articles to purchase #644430","intent":"change_order","category":"order","orderNumber":"#644430","flags":"BLMNQ"}
+{"id":"bx-1686","text":"I have to add a product to purchase #271067, how to do it?","intent":"change_order","category":"order","orderNumber":"#271067","flags":"BCIL"}
+{"id":"bx-1867","text":"i cannot edit order #191235","intent":"change_order","category":"order","orderNumber":"#191235","flags":"BELNQ"}
+{"id":"bx-1988","text":"I need assistajce to remove something from order #696200","intent":"change_order","category":"order","orderNumber":"#696200","flags":"BZ"}
+{"id":"bx-1796","text":"problem with changing purchase #245954","intent":"change_order","category":"order","orderNumber":"#245954","flags":"BL"}
+{"id":"bx-1106","text":"I need to add a product to purchase #968144, help me","intent":"change_order","category":"order","orderNumber":"#968144","flags":"BCL"}
+{"id":"bx-1383","text":"I'd like to add a prdouct to purchase #793646 will uhelp me","intent":"change_order","category":"order","orderNumber":"#793646","flags":"BCILPQZ"}
+{"id":"bx-1532","text":"can you help me to remove a product from order #229285?","intent":"change_order","category":"order","orderNumber":"#229285","flags":"BIL"}
+{"id":"bx-1002","text":"edit purchase #904749","intent":"change_order","category":"order","orderNumber":"#904749","flags":"BKL"}
+{"id":"bx-1454","text":"want help to swap several items of order #635256","intent":"change_order","category":"order","orderNumber":"#635256","flags":"BLMQ"}
+{"id":"bx-1263","text":"i want help changing an item of order #971668","intent":"change_order","category":"order","orderNumber":"#971668","flags":"BQ"}
+{"id":"bx-1616","text":"could I edit purchase #524973?","intent":"change_order","category":"order","orderNumber":"#524973","flags":"BILP"}
+{"id":"bx-1743","text":"wanna swap some items of order #631970","intent":"change_order","category":"order","orderNumber":"#631970","flags":"BLMQ"}
+{"id":"bx-1471","text":"deleting something from order #728822","intent":"change_order","category":"order","orderNumber":"#728822","flags":"BL"}
+{"id":"bx-1888","text":"i need help changing a product of purchase #793500","intent":"change_order","category":"order","orderNumber":"#793500","flags":"BLQ"}
+{"id":"bx-1022","text":"want assistance to remove some items from order #124553","intent":"change_order","category":"order","orderNumber":"#124553","flags":"BMQ"}
+{"id":"bx-1034","text":"I need to add some articles to purchase #546898","intent":"change_order","category":"order","orderNumber":"#546898","flags":"BLM"}
+{"id":"bx-1552","text":"i need help to delete some products from order #565145","intent":"change_order","category":"order","orderNumber":"#565145","flags":"BLMQ"}
+{"id":"bx-1568","text":"can i delete some products from order #246014","intent":"change_order","category":"order","orderNumber":"#246014","flags":"BILMQ"}
+{"id":"bx-1872","text":"can you helo me switch something of order #200857?","intent":"change_order","category":"order","orderNumber":"#200857","flags":"BILZ"}
+{"id":"bx-19475","text":"how to earn some articles","intent":"place_order","category":"order","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-19738","text":"want help to order a few of your article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-19350","text":"help to earn a few of ur article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-19761","text":"I do not know how to order a few of your article","intent":"place_order","category":"order","orderNumber":null,"flags":"BELM"}
+{"id":"bx-19276","text":"what do I have to do to acquire some products?","intent":"place_order","category":"order","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18930","text":"I do not know how to acquire a few of your product","intent":"place_order","category":"order","orderNumber":null,"flags":"BELM"}
+{"id":"bx-19764","text":"where can i shop a few of ur article","intent":"place_order","category":"order","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-19581","text":"earning product","intent":"place_order","category":"order","orderNumber":null,"flags":"BKL"}
+{"id":"bx-18984","text":"I don't know how I can earn a few of your article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19497","text":"how can I earn some articles?","intent":"place_order","category":"order","orderNumber":null,"flags":"BILM"}
+{"id":"bx-19000","text":"shop several articles","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19867","text":"need assistance buying some items","intent":"place_order","category":"order","orderNumber":null,"flags":"BMQ"}
+{"id":"bx-19841","text":"assistance purchasing a few of your item","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19167","text":"need assistance acquiring several articles","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-19405","text":"I don't know how I can acquire an articoe","intent":"place_order","category":"order","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-19359","text":"i do not know what i need to do to earn some of ur article","intent":"place_order","category":"order","orderNumber":null,"flags":"BELMQ"}
+{"id":"bx-19031","text":"I wan assistance purchasing several of your article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMZ"}
+{"id":"bx-19067","text":"help me to earn some of ur item","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-19817","text":"i want help acquiring an article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-19597","text":"can you help me to earn several products?","intent":"place_order","category":"order","orderNumber":null,"flags":"BILM"}
+{"id":"bx-19639","text":"need help acquiring a few of ur product","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-19034","text":"assistance to acquire several products","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19141","text":"what do I need to do to buy an item?","intent":"place_order","category":"order","orderNumber":null,"flags":"BI"}
+{"id":"bx-18971","text":"assistance to purchase something","intent":"place_order","category":"order","orderNumber":null,"flags":"BL"}
+{"id":"bx-19075","text":"I am trying to purchase several items","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19705","text":"where can I acquire some products?","intent":"place_order","category":"order","orderNumber":null,"flags":"BILM"}
+{"id":"bx-19320","text":"assistance shopping some of your product","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19277","text":"I need to earn a goddamn article, could you help me?","intent":"place_order","category":"order","orderNumber":null,"flags":"BCILPW"}
+{"id":"bx-19872","text":"assistance to purchase a few of your product","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19481","text":"I need help shopping several of your item","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18894","text":"how do I order a product?","intent":"place_order","category":"order","orderNumber":null,"flags":"BIL"}
+{"id":"bx-19717","text":"i do not know how i can shop a few of ur product","intent":"place_order","category":"order","orderNumber":null,"flags":"BELMQ"}
+{"id":"bx-18963","text":"I want assistance buying some of your product","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19255","text":"help me acquire some products","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-19045","text":"I don't know how toearn something","intent":"place_order","category":"order","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-19429","text":"I want tobuy an article","intent":"place_order","category":"order","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-19414","text":"what do I have to do to shop several of your item?","intent":"place_order","category":"order","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18924","text":"i needhelp to acquire several items","intent":"place_order","category":"order","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-19668","text":"is it possible to purchase several articles","intent":"place_order","category":"order","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-19127","text":"I want assistance acquiring several items","intent":"place_order","category":"order","orderNumber":null,"flags":"BLM"}
+{"id":"bx-25492","text":"i need help seeing the goddamn eta of purchae #304708","intent":"track_order","category":"order","orderNumber":"#304708","flags":"BLQWZ"}
+{"id":"bx-24888","text":"I need assistance seeing purchase #993694 status","intent":"track_order","category":"order","orderNumber":"#993694","flags":"BL"}
+{"id":"bx-25749","text":"i want help seeing the ETA of order #480193","intent":"track_order","category":"order","orderNumber":"#480193","flags":"BLQ"}
+{"id":"bx-25412","text":"i want help seeing theeta of purchase #394532","intent":"track_order","category":"order","orderNumber":"#394532","flags":"BLQZ"}
+{"id":"bx-25143","text":"show me ETA of purchase #727273","intent":"track_order","category":"order","orderNumber":"#727273","flags":"BKL"}
+{"id":"bx-25547","text":"I'm trying to check the eta of purchase #529096","intent":"track_order","category":"order","orderNumber":"#529096","flags":"BLQ"}
+{"id":"bx-24982","text":"can I check order #798753 current status?","intent":"track_order","category":"order","orderNumber":"#798753","flags":"BIL"}
+{"id":"bx-25159","text":"I want help to see the ETA of order #976429","intent":"track_order","category":"order","orderNumber":"#976429","flags":"BL"}
+{"id":"bx-25153","text":"check ETA of order #465211","intent":"track_order","category":"order","orderNumber":"#465211","flags":"BK"}
+{"id":"bx-25169","text":"will ya shwo me the eta of order #972395","intent":"track_order","category":"order","orderNumber":"#972395","flags":"BIPQZ"}
+{"id":"bx-25723","text":"help me tracking order #319302","intent":"track_order","category":"order","orderNumber":"#319302","flags":"B"}
+{"id":"bx-24929","text":"how do i see purchase  #322618 status","intent":"track_order","category":"order","orderNumber":"#322618","flags":"BILQZ"}
+{"id":"bx-25416","text":"need help seeing purchase #207041 current status","intent":"track_order","category":"order","orderNumber":"#207041","flags":"BLQ"}
+{"id":"bx-25360","text":"where can i check purchase #573463 status","intent":"track_order","category":"order","orderNumber":"#573463","flags":"BILQ"}
+{"id":"bx-25848","text":"can ushow me the ETA of purchase #378653","intent":"track_order","category":"order","orderNumber":"#378653","flags":"BILQ"}
+{"id":"bx-24966","text":"locate order #584218","intent":"track_order","category":"order","orderNumber":"#584218","flags":"BL"}
+{"id":"bx-25353","text":"I do not know how to track order #418761","intent":"track_order","category":"order","orderNumber":"#418761","flags":"BE"}
+{"id":"bx-25017","text":"were could i locate purchase #923107","intent":"track_order","category":"order","orderNumber":"#923107","flags":"BILPQZ"}
+{"id":"bx-25760","text":"need assistance to check purchase #225382 status","intent":"track_order","category":"order","orderNumber":"#225382","flags":"BLQ"}
+{"id":"bx-25472","text":"help to seee the eta of purchase #726606","intent":"track_order","category":"order","orderNumber":"#726606","flags":"BLQZ"}
+{"id":"bx-25747","text":"how can i see the status of purchase #905081","intent":"track_order","category":"order","orderNumber":"#905081","flags":"BILQ"}
+{"id":"bx-25428","text":"I want help locating order #922849","intent":"track_order","category":"order","orderNumber":"#922849","flags":"BL"}
+{"id":"bx-25028","text":"check status of order #822896","intent":"track_order","category":"order","orderNumber":"#822896","flags":"BK"}
+{"id":"bx-25440","text":"see order #648573 stats","intent":"track_order","category":"order","orderNumber":"#648573","flags":"BLZ"}
+{"id":"bx-25343","text":"showing me order #332488 current status","intent":"track_order","category":"order","orderNumber":"#332488","flags":"BKL"}
+{"id":"bx-25616","text":"help to check the ETA of order #569207","intent":"track_order","category":"order","orderNumber":"#569207","flags":"B"}
+{"id":"bx-25665","text":"can ya help me to see the ETA of the purchase #429615","intent":"track_order","category":"order","orderNumber":"#429615","flags":"BILQ"}
+{"id":"bx-25047","text":"I have to check the ETA of the purchase #328456","intent":"track_order","category":"order","orderNumber":"#328456","flags":"BL"}
+{"id":"bx-25110","text":"can i check purchase #314824 status","intent":"track_order","category":"order","orderNumber":"#314824","flags":"BILQ"}
+{"id":"bx-25755","text":"I try to seethe status of purchase #713282","intent":"track_order","category":"order","orderNumber":"#713282","flags":"BLZ"}
+{"id":"bx-25631","text":"hlw do i check the ETA of purchase #154479","intent":"track_order","category":"order","orderNumber":"#154479","flags":"BILQZ"}
+{"id":"bx-25188","text":"help me see the status of order #941767","intent":"track_order","category":"order","orderNumber":"#941767","flags":"BL"}
+{"id":"bx-25752","text":"could uhelp me checkingb the eta of the purchase #220067","intent":"track_order","category":"order","orderNumber":"#220067","flags":"BILPQZ"}
+{"id":"bx-25408","text":"can you help me see purchase #464845 status?","intent":"track_order","category":"order","orderNumber":"#464845","flags":"BIL"}
+{"id":"bx-25479","text":"i cant see the status of order #838640","intent":"track_order","category":"order","orderNumber":"#838640","flags":"BLNQ"}
+{"id":"bx-25055","text":"wanna chedk order #491289 status help me","intent":"track_order","category":"order","orderNumber":"#491289","flags":"BCQZ"}
+{"id":"bx-25022","text":"order #194727 current status","intent":"track_order","category":"order","orderNumber":"#194727","flags":"BKL"}
+{"id":"bx-25536","text":"how can i see order #285015 status","intent":"track_order","category":"order","orderNumber":"#285015","flags":"BILQ"}
+{"id":"bx-25264","text":"I don't know how I can see the ETA of purchase #510997","intent":"track_order","category":"order","orderNumber":"#510997","flags":"BL"}
+{"id":"bx-25224","text":"i need assistance to locate purchase #105492","intent":"track_order","category":"order","orderNumber":"#105492","flags":"BLQ"}
+{"id":"bx-11992","text":"do ya deoiver to Toronto","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIQSZ"}
+{"id":"bx-11950","text":"how can I check what shipment methods are available?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILM"}
+{"id":"bx-12565","text":"I want assistance seeing the options for shipping","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12032","text":"is it possible to place a goddamn order from Spain","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIQSW"}
+{"id":"bx-12651","text":"is it possible to place a bloody order from Osaka","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIQSW"}
+{"id":"bx-12615","text":"check the available delivery options","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-11908","text":"help to see what delivery methods are available","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12012","text":"I have got to see what shipment options I can choose","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12377","text":"what do I have to do to see the delivery options?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-12143","text":"could you help me see what damn shipment methods you offer?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILMPW"}
+{"id":"bx-12085","text":"I want help to check what options for delivery you offer","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BM"}
+{"id":"bx-12344","text":"where do I see what delivery methods I can choose?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILM"}
+{"id":"bx-11917","text":"I would like to know more about the options for shipment","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLP"}
+{"id":"bx-12391","text":"check the available options for shipping","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12436","text":"I am calling to check what methods for delivery are there","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-11924","text":"help me to check what delivery methods i can choose","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-12251","text":"I call to see the shipping methods","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12107","text":"can you show me what bloody methods for delivery are there?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILMW"}
+{"id":"bx-12164","text":"assistance seeing what shipping methods are there","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12113","text":"can I see the shipping options?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-12049","text":"need help to see what shipping methods are there","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-12353","text":"I don't know what I have to do to see the delivery options","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12414","text":"need to check what shipping options are available","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-12191","text":"I want to see the methods for delivery, can you help me?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-12268","text":"wanna see the delivery options help me","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-12231","text":"I don't know what I need to do to check the shipment options","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12742","text":"I don't know how to see what delivery methods I have","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12680","text":"I don't know what to do to check the options for delivery","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"B"}
+{"id":"bx-12839","text":"I want help checking what methods for delivery are there","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12499","text":"can you help me to see what options for delivery I have?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILM"}
+{"id":"bx-12597","text":"I don't know what I need to do to see the shipment options","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12696","text":"is it possible to see what delivery options I have?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILM"}
+{"id":"bx-12507","text":"I need help seeing what shipment methods are there","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-12637","text":"can you help me seeing the options for delivery?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-11923","text":"help seeing the delivery options","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12805","text":"where could I see what options for delivery I have?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BILMP"}
+{"id":"bx-12488","text":"could i place an orde from Japan","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BIPQSZ"}
+{"id":"bx-12276","text":"information about the options for shipping","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-11964","text":"I would like to see what shipment methods I have, help me","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BCLMP"}
+{"id":"bx-11926","text":"is it possible to order from Chicago ?","intent":"delivery_options","category":"shipping","orderNumber":null,"flags":"BISZ"}
+{"id":"bx-13870","text":"I need to see when will my package arrive, how can I do it?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-13406","text":"i want assisyance to see how soon can i expect my product","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-13402","text":"how can I see how long it takes for the package to arrive?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-13183","text":"I want to see how soon can I expect my damn order, help me","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCLW"}
+{"id":"bx-13837","text":"i have got to check how long the shipment takes","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-13883","text":"could you tell me about shipping periods?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BILP"}
+{"id":"bx-13523","text":"I am trying to see when my package is going to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13557","text":"i need information about delivery periods","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BQ"}
+{"id":"bx-13030","text":"need help to see when my product is gonna arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-13369","text":"wanna see how soon can i expect the shipment help me","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-13655","text":"assistancxe checking how soon can I expect my product","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-12900","text":"need help seeing when my packageis going to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-13345","text":"wanna see how long it takes for my purchase to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-13332","text":"want assistance to see how soon can i expectr my shipment","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-13573","text":"I want to see how soon can I expect my delivery, help me","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCL"}
+{"id":"bx-13679","text":"I have got to see when will my item arrive, can you help me?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-13174","text":"need to check when my parcel is gonna arrive help me","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-13830","text":"how could I see how soon can I expect my order?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BILP"}
+{"id":"bx-13119","text":"is it possible to see how soon can I expect the order?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-13536","text":"i have to check how long the shipment takes","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-13770","text":"I have to see how soon can I expect my product, help me","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BCL"}
+{"id":"bx-13313","text":"can uhelp me check when my order is gonna arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-13531","text":"can I check when will my product arrive?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-13650","text":"how can i see how long the shipping takes","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-13180","text":"I have got to see when my package is going to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13490","text":"wanna check how soon can i expect my article","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-13429","text":"how to check how soon can I expect the order?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-13878","text":"can I check how long it takes for the product to arrive?","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-13712","text":"I have to see how long it takes for my shipment to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-12920","text":"assistance to see how long it takes for my item to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13457","text":"i have to see how long i takes for my article to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-13591","text":"I want assitsance to see when my package is going to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-13872","text":"i do not know how to see when my delivery is gonna arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-13177","text":"I want to check how long the shipment takes","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13268","text":"how do i see how long it takes for my delivery to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-13839","text":"I want to know moreabout the delivery period","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BZ"}
+{"id":"bx-13736","text":"assistance to check how soon can I expect the product","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13598","text":"I am calling to check when my purchase is going to arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-13048","text":"Ineed to check how long the shipment takes","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-13403","text":"i dont know how i can check when my order is gonna arrive","intent":"delivery_period","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2280","text":"I need help to correct the delivery address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2503","text":"there is an issue trying to change the shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2717","text":"help to modiy the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-2559","text":"error correcting delivery address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BKL"}
+{"id":"bx-2052","text":"support changing the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2908","text":"need support modifying the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2609","text":"my address has changed, I want to edit it","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCL"}
+{"id":"bx-2423","text":"i haev issues correcting my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-2436","text":"I want assistance trying to change my shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2561","text":"i have errors trying to modify the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-2605","text":"I have an error updating my fucking shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLW"}
+{"id":"bx-2952","text":"i need assistance to correct the shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2876","text":"I need help trying to edit the shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2147","text":"I can't change my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2337","text":"where to update the shipping address?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-2746","text":"I want assistance trying to change the shipping addrses","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-2354","text":"can ya help me change my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-2760","text":"can you help me to correct my address?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-2331","text":"problems with a goddamn address update","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLMW"}
+{"id":"bx-2106","text":"error editing shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BKL"}
+{"id":"bx-2249","text":"need assistance to update the shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2900","text":"I need help tryingto change my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-2738","text":"can you tell me more about a delivery address correction?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-2562","text":"need assistance modifying the delivery address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2915","text":"I want supports changing my delivery address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-2201","text":"there are errors trying to modify my shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-2014","text":"i have an error trying to correct my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2158","text":"trouble correcting address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BKL"}
+{"id":"bx-2046","text":"I have a trouble editing the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2630","text":"wanna know about correcting my address find some information","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-2451","text":"want assistance trying to update the address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-2262","text":"I entered a wrong delivery address, can you correct it?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-2684","text":"there are troubles modifying my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-2276","text":"I want to modify the address, how can I do it?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-2175","text":"can you tell me about a shipping address update?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-2716","text":"could you tell me about correcting my shipping address?","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BILP"}
+{"id":"bx-2547","text":"tell me about correcting the shipping address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-2711","text":"I have problems trying to update my address","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-2247","text":"the address has changed, help me modify it","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCL"}
+{"id":"bx-2602","text":"the shipping address changed could ya help me changing it","intent":"change_shipping_address","category":"shipping","orderNumber":null,"flags":"BCIPQ"}
+{"id":"bx-23689","text":"y i cant set the delivery adress valid up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-23351","text":"I have to set my new delivery address up, I need assistance","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BCL"}
+{"id":"bx-23445","text":"can i set the shipping address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-23324","text":"I have a trouble setting m new delivery address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-22944","text":"assistance setting my new shipping address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23602","text":"i cant set up the new shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-23123","text":"help me setting another delivery address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23595","text":"I cannot set a shipping address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BEL"}
+{"id":"bx-23557","text":"my new shipping address is invalid, can you help me?","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-23727","text":"I try to enter a different delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23787","text":"is it possible to set up a damn different delivery address?","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BILW"}
+{"id":"bx-23459","text":"issues setting a secondary shipping address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23402","text":"i need help to set another shipping address pu","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BQZ"}
+{"id":"bx-23651","text":"help me submit my shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23090","text":"need assistance submitting a shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-23876","text":"there are errors setting up a different shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23378","text":"there is an issue entering my secondary delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23303","text":"I have problems entering a different shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23695","text":"i have got to set u a bloody delivery address i need help","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BCLQWZ"}
+{"id":"bx-22962","text":"i want help to set another shipping address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BQ"}
+{"id":"bx-22941","text":"need to submit a secondary shipping address how to do it","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-23516","text":"I want assistancesubmitting the bloody new shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLWZ"}
+{"id":"bx-23760","text":"I have issues entering another delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-22931","text":"problems submitting the shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23829","text":"I need assistance to set my secondary delivery address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23369","text":"want assistgance to submit the secondary shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-23038","text":"there is a problem submitting the fucking shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLW"}
+{"id":"bx-23267","text":"I haave to submit a secondary delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-23279","text":"can i submit the secondary delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-23835","text":"there are troubles setting up another shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23664","text":"there is an issue entering the secondary shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23718","text":"i have got to submit a delivery addres","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-23143","text":"I need assistance to enter a secondary shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BL"}
+{"id":"bx-23492","text":"i need help entering another delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-23434","text":"errors submitting my fucking secondary delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLMW"}
+{"id":"bx-23120","text":"I need to set my shipping address up, how do I do it?","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-22888","text":"what do I have to do to enter my new shipping address?","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BIL"}
+{"id":"bx-23622","text":"problems submitting a delivery address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-23668","text":"issues setting up another shipping address","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BM"}
+{"id":"bx-23440","text":"errors setting a delivery address up","intent":"set_up_shipping_address","category":"shipping","orderNumber":null,"flags":"BLM"}
+{"id":"bx-6563","text":"help checking in which cases can I request reimbursements","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6226","text":"how to check ur refund policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BIQ"}
+{"id":"bx-6874","text":"i have to see how long refunds take how do i do it","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-6418","text":"I want to check in which situations can I request refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6268","text":"hlp seeing ur money back guarantee","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-6430","text":"can ya help me see u refund policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-6650","text":"I need to see in what situations can I ask to be reimbursed","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6790","text":"I have to check in what cases can I ask for a reimbursement","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6835","text":"in which cases can i ask for reimbursements","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-5982","text":"in what situations can I ask to be reimbursed?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-6702","text":"need to check under what circumstances can i request refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6421","text":"I don't know how I can see your refund policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6001","text":"help seeing under what circumstances can I request refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6438","text":"assistance checking in which cases can i ask to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6721","text":"help me see ur money back guarantee","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6540","text":"assistance to see in which cases can i ask for refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6519","text":"help me checking in what situations can I ask for a refund","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6149","text":"assistance to check in what cases can I ask to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"B"}
+{"id":"bx-6248","text":"check in which cases can I ask to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6234","text":"am I entitled to a refund according to your policy?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BI"}
+{"id":"bx-6122","text":"I want to see how long refunds take, how to do it?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-6074","text":"show me in which cases can I request to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6019","text":"I have to see in what situations can I ask for a refund","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6653","text":"want help to see ur reimbursement policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6136","text":"wanna check in wshat situations can i ask for a refund","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-6679","text":"wanna check in which cases can i ask for refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6769","text":"can ya help me check how long reimbursemenst take","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-6593","text":"I do not know how I  can see your money back guarantee","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-6806","text":"check in what cases can i request to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-6369","text":"could I check in which cases can I ask for my money back?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILP"}
+{"id":"bx-6380","text":"help me  to check in what cases can i ask to be refunded","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BQZ"}
+{"id":"bx-6351","text":"under which circumstances can I request refunds?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-6543","text":"what do i have to do to check  ur damn reimbursement policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILQWZ"}
+{"id":"bx-6504","text":"awnna see in what cases can i request reimbursements","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-6560","text":"i have got to see ur refund policy can uhelp me","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-6844","text":"I do not know what I need to do to check your refund policy","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BE"}
+{"id":"bx-6051","text":"see how long refunds usually take","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-6299","text":"are service charges reimbursable?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-6824","text":"how to see your goddamn reimbursement policy?","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BILW"}
+{"id":"bx-6223","text":"I am trying to see in what cases can I request refunds","intent":"check_refund_policy","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16344","text":"refunding£277.29","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BKMZ"}
+{"id":"bx-16601","text":"could you help me receiving a rebate of money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BILP"}
+{"id":"bx-16182","text":"i have got to demand restitutions of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16054","text":"reimbursing 318.31 dollars","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-16047","text":"I need help to ask for a compensation of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16158","text":"I have got to ask for a rebate","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16583","text":"i dont know what i have to do to receive a reimbursement","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-16625","text":"where to request compensations of money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BILM"}
+{"id":"bx-16420","text":"could you help me get compensations of my money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BILMP"}
+{"id":"bx-16461","text":"I paid £399.94 for a purchase, how to receive a compensation?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BCILM"}
+{"id":"bx-15927","text":"I paid $353.84 for this order, help me getting a compensation","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BCLM"}
+{"id":"bx-16518","text":"i want assistance to get rebates of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16279","text":"i dont know how to ask for compensations of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16552","text":"I paid €407.49 for this item, want help to get a rebate","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BCLMQ"}
+{"id":"bx-16298","text":"I have got to ask for a rebate, can you help me?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-15980","text":"help me ask for a compensation","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16496","text":"i dont kno how to request a refund of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-16179","text":"help me request damn restitutions of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMW"}
+{"id":"bx-16136","text":"I need help to request refunds","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLM"}
+{"id":"bx-15950","text":"I don't know how I can request a rebate","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16226","text":"need help requesting reimbursements of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16682","text":"I have to get a compensation of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-16582","text":"I donot know what to do to demand a refund","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-16817","text":"what do I have to do to request a restitution of money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-16628","text":"help me to receive rebates of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLM"}
+{"id":"bx-16027","text":"where to ask for a rebate of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-16051","text":"i do not know how to get a refund of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BEQ"}
+{"id":"bx-16278","text":"what do I need to do to get refunds of money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BIM"}
+{"id":"bx-16515","text":"I don't know how I can get a compensation of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-15922","text":"need assistance to request a reimbursement of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-15930","text":"rebating  233.70 dollars","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BKLMZ"}
+{"id":"bx-16349","text":"I paid £390.68 for a product, where can I get a fucking rebate?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BCILMW"}
+{"id":"bx-16263","text":"i dont know what i need to do to obtain rebates of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16285","text":"want assistance to receive a refund of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-16115","text":"I do not knowhow to receive compensations of my money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BELMZ"}
+{"id":"bx-16035","text":"I do not know what to do to ask for refunds","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BELM"}
+{"id":"bx-16860","text":"need help obtaining rebates","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-16621","text":"I have got to receive compensations","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BLM"}
+{"id":"bx-15961","text":"I do not know how I can obtain a rebate of money","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BEL"}
+{"id":"bx-16695","text":"how long until I receive areimbursement of money?","intent":"get_refund","category":"refund","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-26763","text":"I am trying to check the status of the restitution","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26550","text":"I expect a bloody rebate of £47.29, was it processed already","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BCLW"}
+{"id":"bx-26385","text":"can you show me the compensation status?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-26157","text":"i do not know how i can see the current status of the rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-26741","text":"I want assistance to check my reimbursement status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26155","text":"I don't know what I have to do to see my compensation status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26185","text":"I need to see if there are any updates on my rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLM"}
+{"id":"bx-26219","text":"I'm waiting for a refund of 172.73 dollrs","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BQZ"}
+{"id":"bx-26344","text":"help me to check the status of the restitution","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-25977","text":"I'm waiting for a restitution oof $476.68","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-26061","text":"I expect a restitution of $333.14","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26350","text":"help seeing if there is anything wrong with the rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26697","text":"assistance to see my compensation status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26723","text":"i dont know how i could track the rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLPQ"}
+{"id":"bx-25927","text":"i dont know how i can see the current status of the rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-26598","text":"could you help me see if there are any news on my rebate?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILMP"}
+{"id":"bx-26588","text":"I am waiting for an bloody restitution of 347.76 dollars","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLWZ"}
+{"id":"bx-26668","text":"want help to check the restitution status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-26381","text":"I don't know how I can check my restitution status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26283","text":"I am waiting for a restitution of €387.17","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26556","text":"how do i see if there are any news on the restitution","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-26316","text":"how to see the reimbursement current status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-26543","text":"I have to see my compensation status, help me","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BCL"}
+{"id":"bx-26108","text":"I do not know what I need to do to track the restitution","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BEL"}
+{"id":"bx-25988","text":"I am waiting for an rebate of $55.19","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-26038","text":"where to know if there are any news on my compensation?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILM"}
+{"id":"bx-26032","text":"I have to see the status of my rebate, how to do it?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-25994","text":"I'm trying to see my refund current status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-25921","text":"i expect a rebate of £228.46","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-26815","text":"can you help me see the status of the reimbursement?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-26267","text":"assistance to track the rebate","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26775","text":"i expect a compensation of 360.83 dollars was it processed","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-26029","text":"is it possible to check my damn rebate current status?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILW"}
+{"id":"bx-26433","text":"know if there is anything new on my restitution","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-25971","text":"i expect a refund of 205.32 dollars has it been processed","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-26172","text":"I want help to see my rebate current status","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BL"}
+{"id":"bx-26114","text":"I can't see if there is anything new on the refund","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BLN"}
+{"id":"bx-25888","text":"could i know if there are any news on the refund","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILMPQ"}
+{"id":"bx-25902","text":"where to track the reimbursement","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-26370","text":"what do I have to do to check the status of the rebate?","intent":"track_refund","category":"refund","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5405","text":"I want to see what payment options are availabl","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-5682","text":"assistance to see the accepted payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5758","text":"i want help to list ur allowed payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-4929","text":"where to see your accepted payment methods?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5202","text":"I need help to see what payment options you accept","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5550","text":"i want help listing the available payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5691","text":"want assistance checking what payment methods are accepted","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5510","text":"is it possible to check hwat payment methods ya accept","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIQZ"}
+{"id":"bx-5013","text":"need assistance seeing the payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5215","text":"want help listing the accepted payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5357","text":"I want help to see your available payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5191","text":"I want assistance to see the payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-4996","text":"help me to see ur allowed payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5324","text":"I want help seeing the allowed payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5406","text":"wanna check the available payment options help me","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-5303","text":"how to list ur accepted payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-5414","text":"I want to check your payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5632","text":"i want assistance to list the accepted payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5130","text":"assistance to check what payment methods you accept","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"B"}
+{"id":"bx-5481","text":"I have got to list the damn payment methods, how to do it?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BCILW"}
+{"id":"bx-4957","text":"what do I need to do to see your payment methods?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5138","text":"i have to se ur available payment methods could ya help me","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BCILPQZ"}
+{"id":"bx-4927","text":"how to see the allowed payment modalities?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5654","text":"can you help me seeing the payment options?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5271","text":"i dont know how to list ur payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-4954","text":"I want to check the bloody payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLW"}
+{"id":"bx-5656","text":"I need assistance to list the allowed payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5519","text":"where can I list your available payment modalities?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-5409","text":"assistance checking your accepted payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5612","text":"how could I see the payment methods?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILP"}
+{"id":"bx-5770","text":"I need help seeing your payment options","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-5876","text":"want help checking your available payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5186","text":"is it possible to list the allowed payment mthods?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-4966","text":"what are the payment payment modalities available?","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-4921","text":"see ur payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-5335","text":"see the allowed paymnet modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-5908","text":"need assistance to list ur fucking payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BLQW"}
+{"id":"bx-5477","text":"is it possible to check the allowed paymentmodalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-5157","text":"what are ur available payment methods","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-5147","text":"can i see ur available payment modalities","intent":"check_payment_methods","category":"payment","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-18196","text":"i do not know how to notify of a trouble with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-18287","text":"want help to report a trouble with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-18759","text":"i do not know what to do to report a trouble with payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-17941","text":"where can I notify of problems with payent?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMZ"}
+{"id":"bx-18845","text":"I want to notify of an issue with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18039","text":"I cannot make a payment, I need to inform of issues","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BCELM"}
+{"id":"bx-18455","text":"how can I report payment errors?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18231","text":"is it possible to inform of issues with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-18825","text":"i want assistance solving issues with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-18732","text":"i try to notify of an issue with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-18794","text":"I'm trying to report issues with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-17966","text":"assistance informing of errors with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18000","text":"would it be possible to inform of a problem with payment?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILP"}
+{"id":"bx-17961","text":"i want help informing of issues with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-18549","text":"where can I report an error with payments?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18699","text":"i have got to notify of an sisue with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-18264","text":"I do not know how to inform of errors with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BELM"}
+{"id":"bx-18558","text":"hw to report troubles with payment?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMZ"}
+{"id":"bx-18856","text":"can you help me report an error with payments?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18019","text":"I have to inform of an error with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-18637","text":"can you help me to inform of a trouble with payment?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17935","text":"I don't know what to do to notify of a payment error","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-18298","text":"want help reporting bloody troubles with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQW"}
+{"id":"bx-18687","text":"assistance to notify of issues with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18096","text":"I need help to report a trouble with online payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BL"}
+{"id":"bx-18790","text":"is it possible to notify of an error with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-18623","text":"I'm trying to notify of problems with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-18658","text":"I want help to report a bloody error with onlien payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMWZ"}
+{"id":"bx-18102","text":"I want help to notify of issues with payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18784","text":"i do not know what to do toi inform of payment problems","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BELMQZ"}
+{"id":"bx-18216","text":"I have got to inform of an issue with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18305","text":"I have to report problems with payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18404","text":"I cannot pay, I have to inform of a problem with payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BCELM"}
+{"id":"bx-18210","text":"what do I have to do to report problems with online payment?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILM"}
+{"id":"bx-18660","text":"how do i inform of payment issues","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-18340","text":"help me to notify of issues with payment","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLM"}
+{"id":"bx-18888","text":"want help informing of an issue with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-18008","text":"can you help me report fucking errors with payment?","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BILMW"}
+{"id":"bx-17950","text":"i  need assistance reporting troubles with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-18473","text":"wanna report a trouble with online payments","intent":"payment_issue","category":"payment","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-3948","text":"checking invoice from September","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BK"}
+{"id":"bx-4114","text":"check invoices from two purchases ago","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BKM"}
+{"id":"bx-4835","text":"wanty assistance checking my goddamn bill from James Chen","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLQWZ"}
+{"id":"bx-4908","text":"where do I locate my invoices from Aisha Khan?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILM"}
+{"id":"bx-4325","text":"see the invoice #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4524","text":"want help taking a quick look at the bill #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-4413","text":"seein invoices from Tom Becker","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BKLMZ"}
+{"id":"bx-3977","text":"assistance giving a quick look at the bill #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4681","text":"checking invoice #37777","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BK"}
+{"id":"bx-4435","text":"need to check the bill from Maria Lopez","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-4618","text":"I want assistance to locate bill #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4347","text":"I want assistance to locate my bill #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4754","text":"where to locaet my invoice #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-4380","text":"I lost the bills from Tom Becker, find it for me","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BCLM"}
+{"id":"bx-4846","text":"want assistance to take a quick look at the invoice #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BQ"}
+{"id":"bx-4590","text":"I do not know how to find invoice #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BE"}
+{"id":"bx-4398","text":"where do I see my bill from Aisha Khan ?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-4722","text":"can you help me to find the bill #37777?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BIL"}
+{"id":"bx-4001","text":"can you help me to check the bills from Tom Becker?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILM"}
+{"id":"bx-4405","text":"I have to find the bills from Tom Becker","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLM"}
+{"id":"bx-4284","text":"where can I give a quick look at my bill #37777 ?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-3970","text":"i want help looking for my bills from Aisha Khan","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-4304","text":"can uhelp me  look for invoice #12588","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-3992","text":"can you help me to check my invoice #37777?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BI"}
+{"id":"bx-4288","text":"i cannot find invoiced #00108","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BENQZ"}
+{"id":"bx-4557","text":"I don't know how I cansee my invoices from Aisha Khan","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLMZ"}
+{"id":"bx-4453","text":"I want help to look for my invoice #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4638","text":"what do i have to do to give a quick look at the bill #37777","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-3956","text":"wanna see the bill from Tom Becker","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-4099","text":"i need assistance seeing my invoice from Maria Lopez","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-3973","text":"I don't know what to do to look for my bill from James Chen","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4049","text":"see the invoice #12588","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-4699","text":"i do not know how to check bill #12588","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-4594","text":"I would like to find my bills from Maria Lopez, how to do it?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BCILMP"}
+{"id":"bx-4874","text":"I don't know what  to do to find the bills from Tom Becker","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLMZ"}
+{"id":"bx-4863","text":"I don't know how I could look for invoice #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLP"}
+{"id":"bx-4063","text":"what do i have to do to look for the invoice #85632","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-4698","text":"I want assistance locating the invoices from Aisha Khan","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BLM"}
+{"id":"bx-4476","text":"how can I check bill  #12588?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-4220","text":"what do I have to do to see my invoice from James Chen?","intent":"check_invoice","category":"invoice","orderNumber":null,"flags":"BIL"}
+{"id":"bx-15867","text":"send me invoice #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BKL"}
+{"id":"bx-15595","text":"can uhelp me downloading the invoice from Aisha Khan","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-15394","text":"i dont know what to do to get the invoice #00108","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BQ"}
+{"id":"bx-15125","text":"I want assistance to get the bill from Tom Becker","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15343","text":"downloading invoice from Maria Lopez","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BKL"}
+{"id":"bx-15612","text":"get bill fromMs. Hawkings","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-14920","text":"I don't know what I need to do to download my bill #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15784","text":"I don't know what to do to get the invoice #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"B"}
+{"id":"bx-14915","text":"I don't know what I have to do to get the bill #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15580","text":"I have got to get my bill #37777, I need assistance","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BCL"}
+{"id":"bx-15555","text":"where can I download the invoice #37777?","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BIL"}
+{"id":"bx-15276","text":"I don't know how to download the invoice from Sofia Rossi","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15699","text":"I do not know how to download invoice #85632","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BEL"}
+{"id":"bx-15427","text":"I do not know what I need to d to download the bill #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-15316","text":"I do not know how I could get the bill from Tom Becker","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BELP"}
+{"id":"bx-15674","text":"i need help getting the invoice from James Chen","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BQ"}
+{"id":"bx-15531","text":"i have got to get my invoice #12588 can i get some help","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BCIQ"}
+{"id":"bx-15775","text":"send me invoice #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BKL"}
+{"id":"bx-15239","text":"need help to download my invoice #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-15035","text":"how to get bill #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-15795","text":"i dont know what ineed to do to download invoice #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-15052","text":"i do not know what to do to get my invoice from Tom Becker","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-15630","text":"I don't know what to do to get my invoice from Tom Becker","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15664","text":"want help getting my invoice #85632","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BQ"}
+{"id":"bx-15416","text":"I do't know how to download my bills from James Chen","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLMZ"}
+{"id":"bx-14967","text":"I have to download the invoice from James Chen, help me","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BCL"}
+{"id":"bx-15020","text":"I don't know how I can download my invoice #85632","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15151","text":"I have got to download the invoice #37777, how can I do it?","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-15439","text":"i dont know what i have to do to download my invoice #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-15483","text":"i need asssistance getting my bill #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-15001","text":"I need help downloading my bill #00108","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15627","text":"need to get the invoicefrom Aisha Khan can i get some help","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BCIQZ"}
+{"id":"bx-14999","text":"I do not know what I need to do to download the bill #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BEL"}
+{"id":"bx-15751","text":"I don't know what to do to download my bill #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15799","text":"help downloading the invoice #85632","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15748","text":"I call to download the invoice #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-15134","text":"get bill #12588","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BKL"}
+{"id":"bx-15295","text":"want heop downloading the bill from James Chen","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-15009","text":"help me to get the invoice fro Aisha Khan","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BZ"}
+{"id":"bx-15889","text":"I call to get my bill #37777","intent":"get_invoice","category":"invoice","orderNumber":null,"flags":"BL"}
+{"id":"bx-10280","text":"how to open a Premium account for my dad?","intent":"create_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-10888","text":"I do not know how I can create a Free account","intent":"create_account","category":"account","orderNumber":null,"flags":"BEL"}
+{"id":"bx-10222","text":"i aint registered yet assistance creating a Business account","intent":"create_account","category":"account","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-10185","text":"i need assistance creating a Free account","intent":"create_account","category":"account","orderNumber":null,"flags":"BQ"}
+{"id":"bx-10520","text":"give me information about creating pro accounts","intent":"create_account","category":"account","orderNumber":null,"flags":"BM"}
+{"id":"bx-10717","text":"opening new premium account","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-10045","text":"where to create a standard account","intent":"create_account","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-10762","text":"i have got to create a personal account","intent":"create_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-10193","text":"I want to know more about opening a standard account","intent":"create_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10862","text":"new freemium account for wife","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-10789","text":"I don't know how I can create a freemium account","intent":"create_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-10054","text":"i have got to create a Business account for my dad","intent":"create_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-10027","text":"open Free account for wife","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-10053","text":"nmeed help opening a premium account","intent":"create_account","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-10012","text":"I have to create a Free acocunt for my fiance","intent":"create_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-10385","text":"another freemium accounmt for father","intent":"create_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-10133","text":"I can't create a family account","intent":"create_account","category":"account","orderNumber":null,"flags":"BLN"}
+{"id":"bx-10837","text":"opening business account for wife","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-10431","text":"I need to create a business account for my fiance","intent":"create_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10266","text":"where can i find information about creating a Standard account","intent":"create_account","category":"account","orderNumber":null,"flags":"BIQ"}
+{"id":"bx-10797","text":"information about creating personal accounts","intent":"create_account","category":"account","orderNumber":null,"flags":"BM"}
+{"id":"bx-9966","text":"open premium account","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-10272","text":"I don't know how to create a premium account for my fiance","intent":"create_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10319","text":"another standard account for father","intent":"create_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-9963","text":"Iam looking for information about opening a personal account","intent":"create_account","category":"account","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-10065","text":"I do not have a Standard account yet, I try to register","intent":"create_account","category":"account","orderNumber":null,"flags":"BCELN"}
+{"id":"bx-10230","text":"I am not registered, how to open a pro account with you?","intent":"create_account","category":"account","orderNumber":null,"flags":"BCEIL"}
+{"id":"bx-10624","text":"how do i create a family account","intent":"create_account","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-10805","text":"have a problem with creating a platinum account","intent":"create_account","category":"account","orderNumber":null,"flags":"BQ"}
+{"id":"bx-10217","text":"open a platinum account","intent":"create_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10136","text":"how can I create a personal account?","intent":"create_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-10761","text":"i need informqtion about creating platinum accounts","intent":"create_account","category":"account","orderNumber":null,"flags":"BMQZ"}
+{"id":"bx-10014","text":"can I open a freemium account?","intent":"create_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-10449","text":"where to create a family account for my daughter?","intent":"create_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-10110","text":"i have a problem with opening a Business account","intent":"create_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-10077","text":"I don't know how I can create a Standard account","intent":"create_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-10118","text":"opdn Standard account","intent":"create_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-10524","text":"i need a student account create it","intent":"create_account","category":"account","orderNumber":null,"flags":"BCLQ"}
+{"id":"bx-10345","text":"i do nothave a Standard account help signing up","intent":"create_account","category":"account","orderNumber":null,"flags":"BCELNQZ"}
+{"id":"bx-9965","text":"i havent signed up yet how do i open a Standard account wirh you","intent":"create_account","category":"account","orderNumber":null,"flags":"BCILQZ"}
+{"id":"bx-11246","text":"question about my Standard account cancellation","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10951","text":"have a problem with the termination of a personal account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-11123","text":"I need to cancel a Free account, could you help me?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BCILP"}
+{"id":"bx-11240","text":"how to close a platinum account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-11473","text":"canceling standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-11429","text":"problem with the termination of my business account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-11121","text":"I have problems with the removal of my premium account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLM"}
+{"id":"bx-11749","text":"want assistance cancelling my pro account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-11043","text":"cancelling personal account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-11059","text":"I never use the Premium account, can you help me to cancel it?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BCEIL"}
+{"id":"bx-11622","text":"how can I delete the standard account?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-11063","text":"what do I need to do to remove my standard account?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-11318","text":"problem with platinum account removals","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLM"}
+{"id":"bx-11376","text":"could uhelp me to close my freemium account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILPQ"}
+{"id":"bx-10961","text":"I do not know what I have to do to delete a gold account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BEL"}
+{"id":"bx-11803","text":"I don't know how I can cancel the pro account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10916","text":"I do not know what I have to do to cancel a business account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BEL"}
+{"id":"bx-11203","text":"can you help me to delete the platinum account?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-11897","text":"I don't use the goddamn gold account, I want to delete it","intent":"delete_account","category":"account","orderNumber":null,"flags":"BCLW"}
+{"id":"bx-11466","text":"clsoe platinum account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-11034","text":"clsoe student account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-11244","text":"delete Standard acvount","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-11585","text":"I havea question about the termination of my Standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-11270","text":"information about the cancellation of a pro account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-11712","text":"how can I get information about business account removals?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILM"}
+{"id":"bx-11446","text":"find informationabout the termination of a freemium account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-11547","text":"I need information about the termination of a pro account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-11580","text":"what do I need to do to cancell a student account?","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-10945","text":"removing Business account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-11413","text":"i dont know what i have to do to close my gold account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-10936","text":"what do i need to do to cancel a bloody platinum account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILQW"}
+{"id":"bx-11418","text":"I do not know how I can cancel the standard acconut","intent":"delete_account","category":"account","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-11426","text":"information about the termination of my pro account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-10969","text":"I do not know what I have to do to remove a damn Standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BELW"}
+{"id":"bx-11881","text":"help to close my personal acount","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-10987","text":"i dont know what i need to do to remove my standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-11015","text":"I do not know how I could remove the Standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BELP"}
+{"id":"bx-11608","text":"cancel Standard acount","intent":"delete_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-11671","text":"can ya help me to close my Standard account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-11602","text":"i want help to cancel the platinum account","intent":"delete_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-14625","text":"can ya help me updating the details included on my account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-13991","text":"I want to update the user data, how can I do it?","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-14223","text":"edit details on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-13903","text":"edit premium accont","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-14654","text":"i do not know how to update my personal info","intent":"edit_account","category":"account","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-14283","text":"how can I modify some of the details on my user account?","intent":"edit_account","category":"account","orderNumber":null,"flags":"BILM"}
+{"id":"bx-14765","text":"edit info on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLQ"}
+{"id":"bx-14634","text":"changing detais on business account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLMZ"}
+{"id":"bx-14082","text":"correcting data on gold account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-14067","text":"modifying ingormation on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-14312","text":"help to correct the information included on my user","intent":"edit_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-13964","text":"editing details on student account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-14363","text":"correcting data on standard account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-14125","text":"editting details on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLMZ"}
+{"id":"bx-14759","text":"I have to correct some of my personal details, how to do it?","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCILM"}
+{"id":"bx-14610","text":"editing data on premium account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-13960","text":"update details on family account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-14559","text":"update details on premium account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-14389","text":"how do I update the information included on my account?","intent":"edit_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-14671","text":"I'd like to modify the details on my user how can i do it","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCILMPQ"}
+{"id":"bx-14782","text":"i want help to change the info on my user","intent":"edit_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-14293","text":"i have got to correct the info included on my user profile","intent":"edit_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-14156","text":"changing informatiln on family account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-14229","text":"correct data on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-13921","text":"change information on standard account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-14486","text":"I don't know what I need to do to edit my user information","intent":"edit_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-14673","text":"update information on Business account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-14835","text":"need to correct the damn data on my user how do i do it","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCILQW"}
+{"id":"bx-14859","text":"correct details on platinum account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-13933","text":"editing data on family acocunt","intent":"edit_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-14323","text":"updating information on premium account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-14572","text":"updaing info on family account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLQZ"}
+{"id":"bx-14148","text":"I have to edit some of my user details, how to do it?","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCILM"}
+{"id":"bx-14153","text":"change information on family account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-13917","text":"editdata on standard account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLZ"}
+{"id":"bx-14017","text":"update personal account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-14514","text":"i have got to update my account can i get some help","intent":"edit_account","category":"account","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-14511","text":"edit info on pro account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLQ"}
+{"id":"bx-14167","text":"changing info on freeaccount","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKLQZ"}
+{"id":"bx-13911","text":"modifying business account","intent":"edit_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-20399","text":"need assistance to recover my account PIN code","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-19982","text":"can you help me to restore my access key?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-20682","text":"where can I get information about my forgotten password?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-20861","text":"I need assistance retrieving the PIN of my user","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20163","text":"can you help me to recober the PIN of my account?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-20758","text":"I need to reset my damn PIN code","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLW"}
+{"id":"bx-20031","text":"where do I retrieve my user password?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-20841","text":"what do I need to do to recover my user account PIN code?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-20129","text":"I donot know how to recover my pwd","intent":"recover_password","category":"account","orderNumber":null,"flags":"BELQZ"}
+{"id":"bx-20238","text":"help me to retrieve the pwd of my account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-20297","text":"i try to recover my account pass","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-19975","text":"what do i have to do to reset the pwd of my user","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-19905","text":"I need helo to recover the password of my user","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-20734","text":"i have gog to restore the pin code of my account i need help","intent":"recover_password","category":"account","orderNumber":null,"flags":"BCLQZ"}
+{"id":"bx-20828","text":"I want assistance retrieving my user access key","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20278","text":"isit possible to recover my user pin code","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-20588","text":"i have got to reset mny access key","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-20438","text":"I want assistance to reset the PIN code of my account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20195","text":"how can i find information about my access key recovery","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-20578","text":"how to reset the apssword of my account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-20845","text":"help to retrieve my user profile pass","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-20602","text":"I do not know what I need too do to reset my user PIN","intent":"recover_password","category":"account","orderNumber":null,"flags":"BELZ"}
+{"id":"bx-20728","text":"I don't know what I have to do to erset my user account pass","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-20107","text":"would it be possible to retrieve my profile access key?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILP"}
+{"id":"bx-20139","text":"I need assistance to restore the password of my profile","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20405","text":"I need to recover my user account access key","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20762","text":"how to reset the access key of my account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-20457","text":"i need assistance to reset my pwd","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-20607","text":"I need to retrieve my user accountPIN","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-20518","text":"I would like to retrieve the goddamn PIN code of my profile","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLPW"}
+{"id":"bx-20237","text":"how to restore my profile access key?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-20245","text":"help me reset my user pwd","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-20450","text":"information about the password retrieval","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20489","text":"want help recovering the pass of my profile","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-20038","text":"I have to recover the key of my user account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-20331","text":"I would like information about the lost PIN","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLP"}
+{"id":"bx-20440","text":"can youhelp me recover the PIN code of my user account?","intent":"recover_password","category":"account","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-20449","text":"i try to rettieve my profile access key","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-20180","text":"I cannot remember my account PIN, I haved to reset it","intent":"recover_password","category":"account","orderNumber":null,"flags":"BCELZ"}
+{"id":"bx-20227","text":"I want to retrieve the pw of my user account","intent":"recover_password","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-21419","text":"I want assistance notifying of a sign-up error","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21310","text":"I need to inform of a sign-up problem","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21311","text":"I cannot create a user profile, help reporting signup issues","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCELMN"}
+{"id":"bx-21639","text":"could you help me notify of an issue with a registration?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILP"}
+{"id":"bx-21520","text":"reporting issue opening user","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-21532","text":"i cant create an account were can i report a sign-up problem","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCILNQZ"}
+{"id":"bx-21531","text":"i try to niform of issues with a signup","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-21640","text":"I can't create a profile, I want to inform of signup issues","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCLMN"}
+{"id":"bx-21803","text":"report a registration error","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21530","text":"where to inform of a sign-up error?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-21080","text":"need help reporting errors with registratons","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-21055","text":"I don't know how to report a problem with an sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-21830","text":"where to notify of problems with an sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILMQZ"}
+{"id":"bx-21422","text":"i have got to notify of problems with a registration","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-21534","text":"I do not know what to do to inform of issues with a sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELM"}
+{"id":"bx-21500","text":"I have to report a problem with a registration","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21048","text":"I have signup issues","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLM"}
+{"id":"bx-21486","text":"would it be possible to notify of a fucking signup error?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILPW"}
+{"id":"bx-21342","text":"I don't know how to notify of an error with a sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21234","text":"I want assistance informing of issues with sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLM"}
+{"id":"bx-20893","text":"I cannot create a user, help to inform of a signup problem","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCELN"}
+{"id":"bx-21285","text":"I can't create an account, how to notify of signup issues?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCILMN"}
+{"id":"bx-21749","text":"is it possible to report issues with signup?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILM"}
+{"id":"bx-21296","text":"i want assistance to notify of an issue with reegistrations","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-21480","text":"what do I need to do to notify of an error with a signup?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-21644","text":"I cannot inform of an issue with a signup","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELN"}
+{"id":"bx-21588","text":"could y help me notifying of an issue with sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILPQZ"}
+{"id":"bx-21503","text":"I cannot sign up, I would like to report a sign-up issue","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BCELNP"}
+{"id":"bx-21411","text":"issues creating user","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BKM"}
+{"id":"bx-20888","text":"ik do not know how i can notify of a sign-up problem","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELQZ"}
+{"id":"bx-21232","text":"help me inform of a sign-up problem","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-21406","text":"i have got to reeport issues with signup","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-21788","text":"i do not know how i could notify of a sign-up error","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELPQ"}
+{"id":"bx-21347","text":"I'm having issues trying to register","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELMQ"}
+{"id":"bx-21312","text":"i canno notify of errors with a sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELMNQZ"}
+{"id":"bx-21153","text":"where do I report an issue wiht signup?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-21624","text":"I cannot report problems with sign-up","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BELMN"}
+{"id":"bx-21162","text":"report problems with signup","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BLM"}
+{"id":"bx-20995","text":"where could I inform of issues with a signup?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BILMP"}
+{"id":"bx-21883","text":"where to notify of an error with signup?","intent":"registration_problems","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-24789","text":"i dont knowq what i need to do to switch to the Standard account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BQZ"}
+{"id":"bx-23888","text":"changing to platinum account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BKL"}
+{"id":"bx-23933","text":"help me change to the family account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-24730","text":"I want to change to the freemium account, could you help me?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BCILP"}
+{"id":"bx-24343","text":"help me use the freemium profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-24284","text":"howdo i use the gold account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIQZ"}
+{"id":"bx-24462","text":"how can I use the family account?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BI"}
+{"id":"bx-24772","text":"I don't know how I can change to the platinum account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-23962","text":"what do I need to do to switch to the pro account?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BI"}
+{"id":"bx-24095","text":"I try to switch to the student account","intent":"switch_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-24835","text":"how do I use the gold profile?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-24589","text":"what do i need to do to swigch to the standard account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIQZ"}
+{"id":"bx-24430","text":"I want assistance to change to the Gold account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-24659","text":"want help to use the Business account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BQ"}
+{"id":"bx-23979","text":"could you help me changing to the Free account?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BILP"}
+{"id":"bx-24315","text":"I want assistance to use the Free profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-24614","text":"i want help using the Standard profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-24639","text":"I have got to use the freemium profile, I need help","intent":"switch_account","category":"account","orderNumber":null,"flags":"BCL"}
+{"id":"bx-24294","text":"help to use the bloody gold profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BLW"}
+{"id":"bx-24830","text":"help using the gold account","intent":"switch_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-24249","text":"need assistance switching to the pro account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BQ"}
+{"id":"bx-24712","text":"using business accouny","intent":"switch_account","category":"account","orderNumber":null,"flags":"BKZ"}
+{"id":"bx-24557","text":"can I change to the family account?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIL"}
+{"id":"bx-24272","text":"I want help to use the bloody personal profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BLW"}
+{"id":"bx-24062","text":"i have to use the standard account i need help","intent":"switch_account","category":"account","orderNumber":null,"flags":"BCQ"}
+{"id":"bx-24801","text":"I would like to change to the goddamn Business account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BLPW"}
+{"id":"bx-23949","text":"how do i use the Standard profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-24234","text":"how do i use the platinum account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIQ"}
+{"id":"bx-24215","text":"help touse the pro profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-24045","text":"switch to  premium account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BKZ"}
+{"id":"bx-24703","text":"I want to use the pro profile, can I get some help?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-24411","text":"I am trying to switch to the business account","intent":"switch_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-24247","text":"use freemium acdcount","intent":"switch_account","category":"account","orderNumber":null,"flags":"BKZ"}
+{"id":"bx-24237","text":"help using the gold profile","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-24871","text":"I have got to use the personal profile, how to do it?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-24225","text":"where do i switch to the pro account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BIQ"}
+{"id":"bx-24825","text":"I have to use the pro account","intent":"switch_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-24525","text":"I don't know how I can switch to the Premium account","intent":"switch_account","category":"account","orderNumber":null,"flags":"B"}
+{"id":"bx-24240","text":"how to use the gold account?","intent":"switch_account","category":"account","orderNumber":null,"flags":"BI"}
+{"id":"bx-23931","text":"change to the premium account","intent":"switch_account","category":"account","orderNumber":null,"flags":"BL"}
+{"id":"bx-3796","text":"I need to check the withdrawal penalties","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLM"}
+{"id":"bx-3901","text":"i do not know how i can ese the termination charges","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BELMQZ"}
+{"id":"bx-3245","text":"what are the fees for breaking the contract?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILM"}
+{"id":"bx-3870","text":"can you help me seeing the early termination charges?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILM"}
+{"id":"bx-3762","text":"I need to see the cancellation penalties, will you help me?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BCILMP"}
+{"id":"bx-3299","text":"where do i check the withdrawal fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-3240","text":"check the early termination charges","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLM"}
+{"id":"bx-3066","text":"how do i see the withdrawal fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-3062","text":"I'm trying to see the early exit fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLMQ"}
+{"id":"bx-3861","text":"nded to check the termination penalties how to do it","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BCILMQZ"}
+{"id":"bx-3392","text":"how to check the fucking early termination charge?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILW"}
+{"id":"bx-3442","text":"i cant find the bloody early exit fee could yahelp me","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BCILPQWZ"}
+{"id":"bx-3768","text":"i need assistance seeing the cancellaion penalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-3126","text":"can you shlw me the termination charges?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMZ"}
+{"id":"bx-3200","text":"can uhelp me seeing the termination fee","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-2972","text":"need assistance to see the withdrawal fee","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-3832","text":"is it possible to check the termination charge?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-3048","text":"I want to check the early exit fees, can you help me?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BCILM"}
+{"id":"bx-3770","text":"i dont know how i can see the early exit charegs","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLMQZ"}
+{"id":"bx-3776","text":"could uhelp me to check the early exit fee","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILPQ"}
+{"id":"bx-3301","text":"I need help seeing the early termination fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLM"}
+{"id":"bx-3509","text":"how can i see the early termination penalties","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-3743","text":"I don't know how to see the bloody withdrawal penalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLW"}
+{"id":"bx-3671","text":"are there cancellation penalties","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-3505","text":"i need assistance to check the cancellation penalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-3030","text":"could ya help me to check the termination fee","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILPQ"}
+{"id":"bx-3405","text":"could you help me check the termination penalty?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILP"}
+{"id":"bx-3498","text":"help checking the termmination fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLMZ"}
+{"id":"bx-3490","text":"show cancellation penalties","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BKLM"}
+{"id":"bx-3112","text":"i dont know  how i can see the cancellation penalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-3114","text":"I don't know what to do to see the early termination charges","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLM"}
+{"id":"bx-3302","text":"can you help me check the early exit penalties?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILM"}
+{"id":"bx-3445","text":"I am trying to check the fucking early exit charge","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLW"}
+{"id":"bx-3630","text":"assistance checking the early termination fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BLM"}
+{"id":"bx-3028","text":"is it possible to see the withdrawal penalties","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMQ"}
+{"id":"bx-3618","text":"where do I check the cancellation penalties ?","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BILMZ"}
+{"id":"bx-3526","text":"I need help to check the early exit penalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-3208","text":"assistance to check the cancellation fees","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BM"}
+{"id":"bx-3124","text":"i do not know how i can see the terminationpenalty","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BELQZ"}
+{"id":"bx-3646","text":"I want to see the termination fee, help me","intent":"check_cancellation_fee","category":"other","orderNumber":null,"flags":"BCL"}
+{"id":"bx-8876","text":"assistance to contact goddamn customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLW"}
+{"id":"bx-8682","text":"how do I see what hours I can contact customer assistance?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8463","text":"i want help to talk to customer assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8768","text":"want help to check what hours i can reach customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8013","text":"do ya have an e-mail to contact customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-8430","text":"help me check at what time i can contact cuswtomer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-8622","text":"can I check at what time I can call custoer assistance?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-8851","text":"i have to check at what time i can rach customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-8387","text":"need to seee at what time i can contact customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-8869","text":"wanna see at what time customer service available is","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8473","text":"what is your damn customer assistance number?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILW"}
+{"id":"bx-8673","text":"i need help seeing what hours i csn call customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-8089","text":"I don't know how I can talk with customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8294","text":"help to check at what time customer support available is","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8257","text":"do you have a toll-free customer assistance phone no?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-8504","text":"is it possible to talk to customer support?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8907","text":"I try to see at what time I can reach customer assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8469","text":"I would like to call customer service, how to do it?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BCILP"}
+{"id":"bx-8366","text":"i need assistance to speak with customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8168","text":"do ya have an e-mail address to contact customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-8524","text":"show me at what time I can reach customer assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8703","text":"where can I check what hours I can contact customer support?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8491","text":"need to speak to customere assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-8291","text":"how do I check at what time I can contact customer support?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8502","text":"how to see at what time i can reach customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-8757","text":"want help seeing at what time i can contact customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8860","text":"can you help me calling customer support?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7975","text":"I try to check at what time I can reach customer assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8683","text":"I want help to contact customer assistance","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-7981","text":"I want to speak with customer assistance, can you help me?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-8868","text":"call customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-8578","text":"can you help me to speak to customer support?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8000","text":"can you help me getting in touch with customer service?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8856","text":"I need to speak with fucking customer assistance, help me","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BCLW"}
+{"id":"bx-8766","text":"can i see at what time i can contact customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-8573","text":"i dont know what i have to do to talk with customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-8228","text":"do you have an e-mail to contact customer assistance?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-8011","text":"can i speak to customer service","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-8606","text":"were do I see at what time I can reach customer service?","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-8478","text":"I want to see at what time I can call customer support","intent":"contact_customer_service","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9352","text":"i have to speak with someone i need hrlp","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BCLQZ"}
+{"id":"bx-9874","text":"i need help to speak with an human agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-9179","text":"I try to speak with someone","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9442","text":"could you help me chatting with a live agent?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BILP"}
+{"id":"bx-9093","text":"can you help me to contact a person?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9075","text":"i do not know what i have to do to speak with a live agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-9533","text":"I need assistance to speak with an assistant","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9401","text":"i do not know what i need to do to speak with a person","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-9872","text":"how do I talk with somebody?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9610","text":"can you help me speaking with a human agent ?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-9831","text":"I need assistance to chat with a human agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9900","text":"I need assistance contacting an goddamn assistant","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLWZ"}
+{"id":"bx-9395","text":"I want to chat with an operator","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9589","text":"I cannot understand you, I need help speaking to someone","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BCEL"}
+{"id":"bx-9805","text":"speak to an assistnat","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-9095","text":"i want assistance talking with somebody","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-9511","text":"can I contact someone?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9543","text":"i do not know what i have to do to contac a live agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BELQZ"}
+{"id":"bx-9274","text":"can I contact a human agent?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9558","text":"want assistance to talk with an operator","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-9774","text":"need assistance to contcat an assistant","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-9027","text":"speak  to person","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-9600","text":"I do not know how to speak with an agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BEL"}
+{"id":"bx-9660","text":"i try to chat with a person","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-9094","text":"ii have got to chat with an operator","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-9567","text":"can I speak with a person?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9177","text":"how to talk to a fucking person?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BILW"}
+{"id":"bx-9060","text":"I don't know what I need to do to contact an operator","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9405","text":"i have to speak to an human agent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-9478","text":"talk to assistant","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BKL"}
+{"id":"bx-9219","text":"you are not helpful, can I speak with a person?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BCEIL"}
+{"id":"bx-9749","text":"i do not know what i have to do to chat with somebody","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BELQ"}
+{"id":"bx-9204","text":"i do not know how to speak with sommeone","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BELQZ"}
+{"id":"bx-9281","text":"can you direct to me a human agent?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-9791","text":"can I talk with a bloody agent?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BILW"}
+{"id":"bx-9814","text":"could you help me talking with somebody?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BILP"}
+{"id":"bx-9089","text":"I want assistance contacting an assistant","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-9220","text":"I can't understand aword you say, can I talk to somebody?","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BCILZ"}
+{"id":"bx-9324","text":"I don't know how to contact an asgent","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BZ"}
+{"id":"bx-9141","text":"help me speaking to someone","intent":"contact_human_agent","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-7440","text":"I need to lodge a claim against your organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-6936","text":"how can i make a customer complaint against ur organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-7292","text":"can ya hrlp me make a claim against ur organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-7387","text":"where can I make a consumer claim?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7369","text":"I want help filing an customer claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-7216","text":"my experience with uwas too bad help to file a reclqmation","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BCLQZ"}
+{"id":"bx-7228","text":"I want to make a consumer claim against your organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7433","text":"can you help me file a customer claim?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7523","text":"what do i have to do to make a consumer compoaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-7736","text":"help to file a consumer complaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7788","text":"I need to lodge a consumer complaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-6928","text":"I have to file a consumer complaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7255","text":"where do I lodge a complaint against your company?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7377","text":"can ya help me to lodge a consumer claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-7494","text":"I need assistance making a customer claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7761","text":"I would like to make a complaint, I need assistance","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BCLP"}
+{"id":"bx-7241","text":"I do not know how to lodge a complaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BEL"}
+{"id":"bx-6995","text":"help to make a customer complaint against your business","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7605","text":"I want to lodge a customer claim against your organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7759","text":"where can i file a customer complaint agaist ur company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-6963","text":"I'm  calling to make a claim against ur company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-7686","text":"assistance to lodge a complaint against your business","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7316","text":"lodging consumer complaint against ur business","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-7340","text":"I have to make a complaint against your company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7036","text":"i want help to lodge a customer complaint","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-7604","text":"what do I have to do to file a customer complaint?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7797","text":"could I make a goddamn reclamation?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILPW"}
+{"id":"bx-7407","text":"help me filing a reclamation against your business","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-6915","text":"where can i make a consumer claim against ur organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-7372","text":"help making a customer reclamation against ur company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-7592","text":"assistance to file a customer claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7420","text":"need to file a consumer complaint against ur organization","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-7336","text":"I am very unhappy with your service, I try to lodge a claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BCL"}
+{"id":"bx-7785","text":"where do I lodge a consumer claim?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7374","text":"i try to make a complaint against ur company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-7317","text":"the experience with you has been bad, make a reclamation","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BCL"}
+{"id":"bx-7164","text":"help lodging a consumer claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-7891","text":"can I make a claim?","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BIL"}
+{"id":"bx-7591","text":"the experience with you was too bad, make a bloody claim","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BCLW"}
+{"id":"bx-7853","text":"I try to lodge a consumer claim against your company","intent":"complaint","category":"complaint","orderNumber":null,"flags":"BL"}
+{"id":"bx-22509","text":"I'm calling to leave my feedback","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-22225","text":"want assistance to leave a review for your prducts","intent":"review","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-22408","text":"i have to send feedback can i get some help","intent":"review","category":"other","orderNumber":null,"flags":"BCILQ"}
+{"id":"bx-22640","text":"Iwant assistance to leave my feedback","intent":"review","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-22310","text":"do you have a method to leave an opinion for your services?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-22625","text":"I need to send some feedback for a service, how do I do it?","intent":"review","category":"other","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-22262","text":"help submitting some feedback for ur products","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-22216","text":"need assistance to submit my feedback for your services","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-22868","text":"I have got to leave a comment for a product, how do I do it?","intent":"review","category":"other","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-22030","text":"I don't know how I could leave a comment about your company","intent":"review","category":"other","orderNumber":null,"flags":"BLP"}
+{"id":"bx-22587","text":"I am calling to write a review for a service","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22165","text":"where could I send some feedback about a service?","intent":"review","category":"other","orderNumber":null,"flags":"BILP"}
+{"id":"bx-22645","text":"I need assistance leaving my feedback for your products","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22240","text":"I want to leave a comment, how could I do it?","intent":"review","category":"other","orderNumber":null,"flags":"BCILP"}
+{"id":"bx-22209","text":"uhave an address to send some feedback for a product","intent":"review","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-22577","text":"coulduhelp me leave feedback for a product","intent":"review","category":"other","orderNumber":null,"flags":"BILPQZ"}
+{"id":"bx-22648","text":"I need assistance leaving feedback for a product","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22798","text":"wanna leave  an opinion about ur company","intent":"review","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-22164","text":"is there an e-mail to submit some feedback for a product","intent":"review","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-22331","text":"is there a method to leave a review for a product?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-22021","text":"help me to leave an opinion about your products","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22528","text":"what do I need to do to write an opinion for your products?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-22135","text":"i have got to leabe a damn opinion for a service","intent":"review","category":"other","orderNumber":null,"flags":"BLQWZ"}
+{"id":"bx-21954","text":"is it possible to send some feedback abouta product?","intent":"review","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-22641","text":"is there a way to send my feedback","intent":"review","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-22646","text":"i have got to write an opinion","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-22126","text":"want help sending my feedback","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-22736","text":"I want to send my feedback about your products","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22188","text":"i try to send feedback about ur services","intent":"review","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-21969","text":"do you have a way to send a comment about your products?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-22466","text":"need help to leave a comment for your productsa","intent":"review","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-22556","text":"can you help me to write an opinion about your products?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-22848","text":"I have to send some damn feedback about a service","intent":"review","category":"other","orderNumber":null,"flags":"BLW"}
+{"id":"bx-21956","text":"can I leave a comment about a service?","intent":"review","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-21921","text":"I don't know how I can leave feedback for your company","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22759","text":"I need assistance to send feedback for your company","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22457","text":"I have to leave feedback for a product, I need help","intent":"review","category":"other","orderNumber":null,"flags":"BCL"}
+{"id":"bx-22254","text":"I don't know how to leave some feedback","intent":"review","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-22514","text":"I want toleave an opinion for a service","intent":"review","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-22024","text":"how can i leave a comment","intent":"review","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-17351","text":"help me to unsubscribe from the company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-17612","text":"I want help canceling the subscription to the newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-17506","text":"can ya help me cancel my corporate newsletter subscription","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-17646","text":"how do i cancel the subscription to ur company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIQ"}
+{"id":"bx-17421","text":"I want to unsubscribe to your newsletter, I need help","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BCL"}
+{"id":"bx-17767","text":"I want assistance to sign up to the company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-17682","text":"where to sign up to your newsletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17096","text":"can I receive your newesletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-16960","text":"help me sign up to ur company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17007","text":"I want to know about receiving your corporate neswletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-17635","text":"I want help receoving the newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-17605","text":"i need assistance to sign up to ur company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17745","text":"can you help me receiving your fucking corporate newslettee?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILWZ"}
+{"id":"bx-17824","text":"ineed assistance receiving ur company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-17832","text":"I have got to unsubscribe to the newsletter, how do I do it?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BCIL"}
+{"id":"bx-17331","text":"I need to receive thecorporate newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-17850","text":"can i subscribe to ur corporate newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-16965","text":"need help signing up to the newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17353","text":"what do I need to do to sign up to your newsletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17240","text":"can i see thed status of my subscription to ur newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-17684","text":"need asisstance to cancel my subscription to the newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-17492","text":"can uhelp me cancel the corporate newsetter subscription","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILQZ"}
+{"id":"bx-17071","text":"wanna cancel the company newsletter subscription help me","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BCQ"}
+{"id":"bx-17222","text":"I want to unsubscribe from your company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-17648","text":"can you help md unsubscribing to your company newsletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILZ"}
+{"id":"bx-17655","text":"need help cancelling my subscription to ur newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17195","text":"subscription to ur corporate newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BKLQ"}
+{"id":"bx-17076","text":"can ya help me receive the newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BILQ"}
+{"id":"bx-17686","text":"how to unsubscribe to your newsletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17413","text":"help me subscribe to ur newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17358","text":"tell me about canceling the subscription to ur newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17205","text":"help to subscribe  to your newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLZ"}
+{"id":"bx-17125","text":"i dont know what to do to cancel the newsletter subscription","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQ"}
+{"id":"bx-17541","text":"where do I cancel my subscription to your newsletter?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17799","text":"I need to cancel the company newsletter subscription","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"B"}
+{"id":"bx-17352","text":"i want help unsubscribnig from ur corporate newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-17574","text":"is it possible to cancel my newsletter subscription?","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BIL"}
+{"id":"bx-17216","text":"i want assistance canceling the newslettersubscription","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BLQZ"}
+{"id":"bx-17801","text":"I want assistance to receive your company newsletter","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BL"}
+{"id":"bx-17072","text":"I need to cancel my damn newsletter subscription, help me","intent":"newsletter_subscription","category":"other","orderNumber":null,"flags":"BCLW"}

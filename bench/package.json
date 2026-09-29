@@ -1,0 +1,22 @@
+{
+  "name": "@fieldwork/bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json",
+    "data": "node src/prepare.ts",
+    "pilot": "node --env-file-if-exists=.env src/pilot.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.2"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0",
+    "ai": "^7.0.122",
+    "csv-parse": "^7.0.3",
+    "zod": "^4.6.5"
+  }
+}

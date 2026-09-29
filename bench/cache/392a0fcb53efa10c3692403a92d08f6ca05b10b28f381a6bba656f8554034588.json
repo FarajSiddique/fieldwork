@@ -1,0 +1,13 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.85,
+      "orderNumber": "366408",
+      "orderNumberConfidence": 0.95
+    },
+    "inputTokens": 1038,
+    "outputTokens": 40
+  },
+  "ms": 962
+}
