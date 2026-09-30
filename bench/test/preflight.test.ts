@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { cacheKey, ResponseCache } from "../src/cache.ts";
-import { preflightSystem, renderPreflight } from "../src/preflight.ts";
+import { preflightSystem, renderDryRun, renderPreflight } from "../src/preflight.ts";
 
 const prices = { "m/cheap": { inputPerMTok: 1, outputPerMTok: 5 } };
 const tokensOf = (v: unknown) => v as { input: number; output: number };
@@ -50,5 +50,39 @@ describe("preflightSystem", () => {
     });
     expect(row.estLiveCostUsd).toBeNull();
     expect(renderPreflight("dev", [row])).toContain("Estimated spend: no price.");
+  });
+});
+
+describe("renderDryRun", () => {
+  const prices = {
+    "typesafe-ai/jev": { inputPerMTok: 0.042, outputPerMTok: 0 },
+    "anthropic/claude-opus-5.5": { inputPerMTok: 4, outputPerMTok: 20 },
+  };
+
+  it("counts missed calls per system and model, as a lower bound with a guessed cost", () => {
+    const missed = new Map<string, unknown>([
+      [
+        "k1",
+        { system: "fieldwork-jev", model: "typesafe-ai/jev", body: { state: { ticket: "x" } } },
+      ],
+      ["k2", { system: "triage-structured", modelId: "anthropic/claude-opus-5.5", prompt: "p" }],
+      ["k3", { system: "triage-structured", modelId: "anthropic/claude-opus-5.5", prompt: "q" }],
+    ]);
+
+    const out = renderDryRun("dev", missed, prices);
+
+    expect(out).toContain("| fieldwork-jev | typesafe-ai/jev | 1 |");
+    expect(out).toContain("| triage-structured | anthropic/claude-opus-5.5 | 2 |");
+    expect(out).toContain("Live calls: at least 3. Estimated spend: at least $");
+    expect(out).toContain("not reached");
+  });
+
+  it("says when a model has no price", () => {
+    const missed = new Map<string, unknown>([["k", { system: "reply-judge", modelId: "x/y" }]]);
+
+    const out = renderDryRun("dev", missed, prices);
+
+    expect(out).toContain("| reply-judge | x/y | 1 | no price |");
+    expect(out).toContain("Estimated spend: unknown, a model has no price.");
   });
 });

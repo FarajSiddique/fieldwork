@@ -1,6 +1,6 @@
 ---
 name: bench-runbook
-description: Use when running, rerunning or re-rendering the Fieldwork benchmark or pilot in bench/, estimating what a run will cost, handling AI Gateway failures (429, 403, "No access to this model") or predictions that fail the same way every run, deciding what to commit from bench/cache or bench/results, or when anyone asks to touch the test split.
+description: Use when running, rerunning or re-rendering the Fieldwork benchmark (`pnpm bench`) or pilot in bench/, estimating what a run will cost, handling AI Gateway failures (429, 403, "No access to this model") or predictions that fail the same way every run, deciding what to commit from bench/cache or bench/results, or when anyone asks to touch the test split.
 ---
 
 # Bench runbook
@@ -13,13 +13,16 @@ Every model call in `bench/` is cached on disk by request hash and committed, so
 
 Run from anywhere in the repo. `pnpm --filter` runs each script inside `bench/`, which reads `bench/.env`.
 
-| Need                                      | Command                                                                                                                                                   |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Live calls and estimated cost, no network | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench preflight` (append `test` to count the test split; counting is harmless) |
-| Run the pilot (dev split only)            | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench pilot`                                                                   |
-| Re-render `pilot.md` from `pilot.json`    | `pnpm --filter @fieldwork/bench report` (calls nothing)                                                                                                   |
-| Cache files for one ticket                | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench cache-file <ticketId>`                                                   |
-| Checks                                    | `pnpm --filter @fieldwork/bench test && pnpm typecheck`                                                                                                   |
+| Need                                                | Command                                                                                                                                                   |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Live calls and estimated cost, no network           | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench preflight` (append `test` to count the test split; counting is harmless) |
+| Run the pilot (dev split only)                      | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench pilot`                                                                   |
+| Benchmark live calls and estimated cost, no network | `pnpm bench dev --dry-run` (a lower bound: calls after a missed call are not reached)                                                                     |
+| Run the benchmark (dev split only)                  | `pnpm bench dev`                                                                                                                                          |
+| Re-render `bench-dev.md` from `bench-dev.json`      | `pnpm --filter @fieldwork/bench report bench-dev` (calls nothing)                                                                                         |
+| Re-render `pilot.md` from `pilot.json`              | `pnpm --filter @fieldwork/bench report` (calls nothing)                                                                                                   |
+| Cache files for one ticket                          | `BENCH_BASELINE_MODELS=anthropic/claude-haiku-4.5 pnpm --filter @fieldwork/bench cache-file <ticketId>`                                                   |
+| Checks                                              | `pnpm --filter @fieldwork/bench test && pnpm typecheck`                                                                                                   |
 
 ## Facts that aren't obvious from the code
 
@@ -28,6 +31,14 @@ Run from anywhere in the repo. `pnpm --filter` runs each script inside `bench/`,
 - **Any change to wording, intents, questions, the schema or the model changes the request hashes**, so those calls all go live again. Run preflight after such a change.
 - **Preflight's cost is an estimate.** It uses cached calls' usage when there are some, otherwise request size. Nothing enforces a budget: if the estimate is more than the owner allowed, stop and ask.
 - **Every run overwrites `bench/results/pilot.md` and `pilot.json`.** `report` re-renders whichever run `pilot.json` holds.
+
+## The benchmark (`pnpm bench`)
+
+- It runs Fieldwork (the triage schema), a frontier and a cheap single-call baseline, and a reply judge, on the Bitext split and the written set's split together. It writes `bench/results/bench-<split>.{json,md}` and `bench-<split>-spotcheck.md`. Models come from `BENCH_*` variables over the defaults in `bench/src/config.ts`; every one needs a price in `bench/prices.json`.
+- The written set must be fully labeled (`"status": "final"`) for the split, or the run refuses to start.
+- Fieldwork's jev and text calls are cached by the replay layer (`bench/src/replay.ts`) under the same `bench/cache/` directory, and replayed with their original latency. A fully cached rerun therefore takes minutes, not seconds; for report changes, re-render instead.
+- Failures: `jq -c '.predictions[]|select(.status=="failed")|{system,ticketId,error}' bench/results/bench-dev.json`, and for failed fields `jq -c '.predictions[]|select(.fieldErrors|length>0)|{system,ticketId,fieldErrors}' bench/results/bench-dev.json`. The ≤ 1% limit applies to failed predictions: at most 8 of 870 on dev.
+- `pnpm bench test` refuses to run without `BENCH_ALLOW_TEST=1`. Setting it is the owner's decision under "Test split" below, never yours.
 
 ## Failures
 
@@ -69,4 +80,4 @@ Put results in their own commit, separate from code changes, after the checks pa
 
 ## Test split
 
-The test split is run once, after tuning is frozen (M4). `pilot.ts` reads only dev, so running test also means changing the code. When asked to run or "just look at" test before the freeze, decline and explain: looking turns it into a second dev set, and the one unbiased number is lost. Offer the dev rerun instead. Only an explicit reply from the owner that they understand this and want to spend the test split now counts as the decision. Then record it in the finding before running.
+The test split is run once, after tuning is frozen (M4). `pilot.ts` reads only dev, and `pnpm bench test` needs `BENCH_ALLOW_TEST=1`. When asked to run or "just look at" test before the freeze, decline and explain: looking turns it into a second dev set, and the one unbiased number is lost. Offer the dev rerun instead. Only an explicit reply from the owner that they understand this and want to spend the test split now counts as the decision. Then record it in the finding before running.

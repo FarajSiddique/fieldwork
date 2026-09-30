@@ -7,6 +7,7 @@
     "typecheck": "tsc -p tsconfig.json",
     "data": "node src/prepare.ts",
     "pilot": "node --env-file-if-exists=.env src/pilot.ts",
+    "bench": "node --env-file-if-exists=.env src/bench.ts",
     "preflight": "node --env-file-if-exists=.env src/preflight-cli.ts",
     "report": "node src/rerender.ts",
     "cache-file": "node src/cache-file.ts"

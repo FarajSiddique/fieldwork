@@ -19,7 +19,7 @@ export interface SystemPreflight {
 }
 
 /** Rough tokens for a call never made: about 3 characters per input token, a fixed output allowance. */
-function guessTokens(request: unknown, outputTokens: number): Tokens {
+export function guessTokens(request: unknown, outputTokens: number): Tokens {
   return { input: Math.ceil(stableStringify(request).length / 3), output: outputTokens };
 }
 
@@ -95,4 +95,65 @@ export function renderPreflight(split: string, rows: readonly SystemPreflight[])
     `Live calls: ${rows.reduce((s, r) => s + r.live, 0)}. Estimated spend: ${usd(total)}.`,
   );
   return lines.join("\n") + "\n";
+}
+
+/** Output tokens assumed per missed call, by the cache request's `system`. */
+const GUESS_OUTPUT: Record<string, number> = {
+  "fieldwork-jev": 0,
+  "fieldwork-text": 150,
+  "triage-structured": 450,
+  "reply-judge": 10,
+};
+
+/**
+ * What a dry run could not serve from the cache, per system and model, with a cost guessed from
+ * request size. Calls that depend on a missed call are never reached, so these are lower bounds.
+ */
+export function renderDryRun(
+  split: string,
+  missed: ReadonlyMap<string, unknown>,
+  prices: PriceTable,
+): string {
+  const rows = new Map<
+    string,
+    { system: string; model: string; live: number; cost: number | null }
+  >();
+  for (const request of missed.values()) {
+    const { system, model, modelId } = request as {
+      system: string;
+      model?: string;
+      modelId?: string;
+    };
+    const id = model ?? modelId ?? "unknown";
+    const row = rows.get(`${system} ${id}`) ?? { system, model: id, live: 0, cost: 0 };
+    const price = prices[id];
+    const tokens = guessTokens(request, GUESS_OUTPUT[system] ?? 200);
+
+    row.live++;
+    row.cost =
+      row.cost === null || !price
+        ? null
+        : row.cost +
+          (tokens.input * price.inputPerMTok + tokens.output * price.outputPerMTok) / 1e6;
+    rows.set(`${system} ${id}`, row);
+  }
+
+  const usd = (v: number | null) => (v === null ? "no price" : `$${v.toFixed(4)}`);
+  const all = [...rows.values()];
+  const total = all.some((r) => r.cost === null)
+    ? null
+    : all.reduce((sum, r) => sum + (r.cost ?? 0), 0);
+  const spend = total === null ? "unknown, a model has no price" : `at least ${usd(total)}`;
+
+  return [
+    `Dry run: ${split} split. No calls were made and no results were written.`,
+    "",
+    "| System | Model | Live calls | Est. cost |",
+    "|---|---|---|---|",
+    ...all.map((r) => `| ${r.system} | ${r.model} | ${r.live} | ${usd(r.cost)} |`),
+    "",
+    `Live calls: at least ${missed.size}. Estimated spend: ${spend}.`,
+    "Calls that depend on a missed call (Fieldwork's later steps and grading, and the reply judge) are not reached, so the true numbers are higher.",
+    "",
+  ].join("\n");
 }

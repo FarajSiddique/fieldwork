@@ -1,0 +1,95 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { TypeSafeClient } from "@typesafe-ai/sdk";
+import { gateway } from "ai";
+import type { Prices } from "fieldwork";
+import type { BitextTicket } from "./bitext/sample.ts";
+import { runBench } from "./benchRun.ts";
+import { ResponseCache } from "./cache.ts";
+import {
+  benchModels,
+  benchSplit,
+  GATEWAY_TYPESAFE_URL,
+  paths,
+  SEED,
+  type Split,
+} from "./config.ts";
+import type { PriceTable } from "./evaluate.ts";
+import { readJsonl, writeText } from "./io.ts";
+import { renderDryRun } from "./preflight.ts";
+import { replayFetch, replayModel } from "./replay.ts";
+import { renderBenchReport } from "./report.ts";
+import type { FieldworkFactory } from "./systems/fieldwork.ts";
+import { renderSpotCheck } from "./systems/replyJudge.ts";
+import { labeledSplit, loadWrittenSet } from "./written.ts";
+
+// Usage: pnpm bench [dev|test] [--dry-run]. Every model is called through Vercel AI Gateway.
+const args = process.argv.slice(2);
+const dryRun = args.includes("--dry-run");
+let split: Split;
+try {
+  split = benchSplit(args.find((a) => !a.startsWith("--")));
+} catch (err) {
+  console.error((err as Error).message);
+  process.exit(2);
+}
+
+const models = benchModels();
+const CONCURRENCY = Number(process.env.BENCH_CONCURRENCY ?? 8);
+// The spec's example uses 10 s; notes come from the mid model through a gateway, so allow more.
+const DEADLINE_MS = 30_000;
+
+const prices = JSON.parse(await readFile(paths.prices, "utf8")) as PriceTable;
+const cache = new ResponseCache(paths.cache, { offline: dryRun });
+const bitext = await readJsonl<BitextTicket>(paths[split]);
+const written = labeledSplit(await loadWrittenSet(paths.written), split);
+
+// "cache-only" lets a fully cached rerun work without a key, as in the pilot.
+const apiKey = process.env.AI_GATEWAY_API_KEY ?? "cache-only";
+const fieldworkPrices: Prices = { jev: prices[models.jev], text: prices };
+const replay = { delay: !dryRun };
+const fieldwork: FieldworkFactory = (tally) => ({
+  typesafe: new TypeSafeClient({
+    apiKey,
+    baseURL: GATEWAY_TYPESAFE_URL,
+    defaultModel: models.jev,
+    logLevel: "warn",
+    fetch: replayFetch(cache, tally, replay),
+  }),
+  models: {
+    low: replayModel(gateway(models.textLow), cache, tally, replay),
+    high: replayModel(gateway(models.textHigh), cache, tally, replay),
+  },
+  prices: fieldworkPrices,
+  jevModel: models.jev,
+  deadlineMs: DEADLINE_MS,
+});
+
+const run = await runBench(bitext, written, {
+  split,
+  seed: SEED,
+  models,
+  cache,
+  prices,
+  concurrency: CONCURRENCY,
+  fieldwork,
+  frontier: { name: "frontier", model: models.frontier, modelId: models.frontier },
+  cheap: { name: "cheap", model: models.cheap, modelId: models.cheap },
+  judge: { model: models.judge, modelId: models.judge },
+});
+
+if (dryRun) {
+  console.log(renderDryRun(split, cache.missed, prices));
+  if (cache.missed.size > 0 && !process.env.AI_GATEWAY_API_KEY) {
+    console.log("Warning: live calls needed but AI_GATEWAY_API_KEY is not set; they would fail.");
+  }
+} else {
+  const report = renderBenchReport(run);
+  await writeText(join(paths.results, `${run.run}.json`), JSON.stringify(run, null, 2) + "\n");
+  await writeText(join(paths.results, `${run.run}.md`), report);
+  await writeText(
+    join(paths.results, `${run.run}-spotcheck.md`),
+    renderSpotCheck(written, run.predictions, SEED),
+  );
+  console.log(report);
+}
