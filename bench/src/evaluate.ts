@@ -23,6 +23,8 @@ export interface Price {
 export type PriceTable = Record<string, Price>;
 
 export function costUsd(p: Prediction, prices: PriceTable): number | null {
+  if (p.estCostUsd !== undefined) return p.estCostUsd;
+
   const price = prices[p.model];
   if (!price) return null;
   return (p.inputTokens * price.inputPerMTok + p.outputTokens * price.outputPerMTok) / 1e6;

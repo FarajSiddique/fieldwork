@@ -18,6 +18,11 @@ export interface Prediction {
   ms: number;
   inputTokens: number;
   outputTokens: number;
+  /**
+   * Set by systems that price their own calls (Fieldwork, from its trace; the triage baselines).
+   * When absent, the report prices `model`'s tokens.
+   */
+  estCostUsd?: number | null;
   cached: boolean;
 }
 
@@ -48,5 +53,45 @@ export function failedPrediction(
     inputTokens: 0,
     outputTokens: 0,
     cached: false,
+  };
+}
+
+/** A prediction on the full triage schema: the Bitext fields plus the written set's. */
+export interface TriagePrediction extends Prediction {
+  estCostUsd: number | null;
+  /** Expected complexity level, 0 to 2, or null when not answered. */
+  complexity: number | null;
+  complexityConfidence: number;
+  isRepeat: boolean | null;
+  /** Whether the system hands the ticket to a person. */
+  escalates: boolean;
+  /** The text sent to the customer, when the system answered. */
+  reply: string | null;
+  /** The note for the on-call agent, when the system escalated. */
+  escalationNote: string | null;
+  /** `<field>: <code>` for each field that failed, including when the prediction is ok. */
+  fieldErrors: string[];
+}
+
+/**
+ * A triage prediction for a call that failed: wrong everywhere, and escalated, because a person
+ * handles any ticket the system could not. A failed call is not priced.
+ */
+export function failedTriage(
+  system: string,
+  ticketId: string,
+  model: string,
+  err: unknown,
+): TriagePrediction {
+  return {
+    ...failedPrediction(system, ticketId, model, err),
+    estCostUsd: 0,
+    complexity: null,
+    complexityConfidence: 0,
+    isRepeat: null,
+    escalates: true,
+    reply: null,
+    escalationNote: null,
+    fieldErrors: [],
   };
 }

@@ -125,3 +125,12 @@ describe("jevChecks", () => {
     expect(jevChecks([ok({ ticketId: "a", inputTokens: 0 })]).usageReported).toBe(false);
   });
 });
+
+it("uses a prediction's own cost estimate when it has one", () => {
+  const priced = { ...failedPrediction("fieldwork", "a", "typesafe-ai/jev", new Error("x")) };
+  const prices = { "typesafe-ai/jev": { inputPerMTok: 0.042, outputPerMTok: 0 } };
+
+  expect(costUsd({ ...priced, estCostUsd: 0.0021 }, prices)).toBe(0.0021);
+  expect(costUsd({ ...priced, estCostUsd: null }, prices)).toBeNull();
+  expect(costUsd(priced, prices)).toBe(0);
+});
