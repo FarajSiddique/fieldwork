@@ -1,4 +1,4 @@
-import { DefinitionError } from "./builder.ts";
+import { DefinitionError } from "./errors.ts";
 import type { FieldSpec } from "./types.ts";
 
 /**

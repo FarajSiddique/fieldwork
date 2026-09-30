@@ -10,7 +10,7 @@ import { readJsonl, writeText } from "./io.ts";
 import { renderPilotReport } from "./report.ts";
 import { JEV_MODEL, runJev } from "./systems/jev.ts";
 import { runStructured } from "./systems/structured.ts";
-import type { Prediction } from "./systems/types.ts";
+import type { Prediction } from "./systems/prediction.ts";
 
 // Every model goes through Vercel AI Gateway, authenticated by AI_GATEWAY_API_KEY.
 const GATEWAY_TYPESAFE_URL = "https://ai-gateway.vercel.sh/typesafe";
@@ -36,15 +36,16 @@ const client = new TypeSafeClient({
 });
 
 const jev = await mapLimit(tickets, CONCURRENCY, (t) => runJev(t, client, cache, JEV));
-const structured: Prediction[][] = [];
+const baselines: { system: string; predictions: Prediction[] }[] = [];
 for (const modelId of BASELINE_MODELS) {
   const system = { name: modelId, model: modelId, modelId };
-  structured.push(await mapLimit(tickets, CONCURRENCY, (t) => runStructured(t, system, cache)));
+  const predictions = await mapLimit(tickets, CONCURRENCY, (t) => runStructured(t, system, cache));
+  baselines.push({ system: modelId, predictions });
 }
 
 const summaries = [
   summarize("jev", tickets, jev, prices, SEED),
-  ...BASELINE_MODELS.map((id, i) => summarize(id, tickets, structured[i]!, prices, SEED)),
+  ...baselines.map((b) => summarize(b.system, tickets, b.predictions, prices, SEED)),
 ];
 const checks = jevChecks(jev);
 const report = renderPilotReport(summaries, checks, {
@@ -56,7 +57,13 @@ const report = renderPilotReport(summaries, checks, {
 await writeText(
   join(paths.results, "pilot.json"),
   JSON.stringify(
-    { split: "dev", seed: SEED, summaries, checks, predictions: [...jev, ...structured.flat()] },
+    {
+      split: "dev",
+      seed: SEED,
+      summaries,
+      checks,
+      predictions: [...jev, ...baselines.flatMap((b) => b.predictions)],
+    },
     null,
     2,
   ) + "\n",

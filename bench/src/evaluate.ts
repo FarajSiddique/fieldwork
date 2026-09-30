@@ -11,8 +11,9 @@ import {
   type Scored,
 } from "./metrics.ts";
 import { createRng } from "./rng.ts";
-import { findOrderNumbers, JEV_PROVIDER } from "./systems/jev.ts";
-import type { Prediction } from "./systems/types.ts";
+import { findOrderNumbers, normalizeOrderNumber } from "./orderNumbers.ts";
+import { JEV_PROVIDER } from "./systems/jev.ts";
+import type { Prediction } from "./systems/prediction.ts";
 
 export interface Price {
   inputPerMTok: number;
@@ -25,11 +26,6 @@ export function costUsd(p: Prediction, prices: PriceTable): number | null {
   const price = prices[p.model];
   if (!price) return null;
   return (p.inputTokens * price.inputPerMTok + p.outputTokens * price.outputPerMTok) / 1e6;
-}
-
-/** Baselines may drop the "#"; the comparison ignores it and surrounding space. */
-export function normalizeOrderNumber(value: string | null): string | null {
-  return value === null ? null : value.trim().replace(/^#/, "");
 }
 
 export interface Interval {

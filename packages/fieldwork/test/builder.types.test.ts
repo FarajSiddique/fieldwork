@@ -3,6 +3,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { describe, expect, expectTypeOf, it } from "vitest";
 import { fieldwork, type ResultsOf } from "../src/builder.ts";
+import { DefinitionError } from "../src/errors.ts";
 import type { FieldView, NoulValue } from "../src/types.ts";
 
 const INTENTS = { track_order: "Where an order is", get_refund: "Wants money back" } as const;
@@ -162,10 +163,16 @@ describe("builder types", () => {
   });
 
   it("takes gate for choice and score, yesAbove for noul", () => {
-    fieldwork<{ ticket: string }>()
-      // @ts-expect-error: noul has no gate
-      .judge("a", noul("A?"), { gate: 0.5 })
-      // @ts-expect-error: choice has no yesAbove
-      .judge("b", choice("B?", { x: null, y: null }), { yesAbove: 0.9 });
+    // The runtime rejects these too, for untyped callers.
+    expect(() =>
+      fieldwork<{ ticket: string }>()
+        // @ts-expect-error: noul has no gate
+        .judge("a", noul("A?"), { gate: 0.5 }),
+    ).toThrow(DefinitionError);
+    expect(() =>
+      fieldwork<{ ticket: string }>()
+        // @ts-expect-error: choice has no yesAbove
+        .judge("b", choice("B?", { x: null, y: null }), { yesAbove: 0.9 }),
+    ).toThrow(DefinitionError);
   });
 });

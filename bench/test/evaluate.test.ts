@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { BitextTicket } from "../src/bitext/sample.ts";
-import { costUsd, jevChecks, normalizeOrderNumber, summarize } from "../src/evaluate.ts";
-import { failedPrediction, type Prediction } from "../src/systems/types.ts";
+import { costUsd, jevChecks, summarize } from "../src/evaluate.ts";
+import { failedPrediction, type Prediction } from "../src/systems/prediction.ts";
 
 const tickets: BitextTicket[] = [
   {
@@ -97,13 +97,6 @@ describe("summarize", () => {
 describe("costUsd", () => {
   it("is null when the model has no price", () => {
     expect(costUsd(ok({ ticketId: "a", model: "unknown" }), prices)).toBeNull();
-  });
-});
-
-describe("normalizeOrderNumber", () => {
-  it("trims and drops a leading #", () => {
-    expect(normalizeOrderNumber(" #482913 ")).toBe("482913");
-    expect(normalizeOrderNumber(null)).toBeNull();
   });
 });
 
