@@ -2,6 +2,7 @@ import { mkdtemp } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { generateText } from "ai";
+import { MockLanguageModelV4 } from "ai/test";
 import { fakeTextModel } from "fieldwork/testing";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ResponseCache } from "../src/cache.ts";
@@ -143,6 +144,52 @@ describe("replayModel", () => {
     await ask(replayModel(working, cache, tally, { delay: false }));
 
     expect(working.doGenerateCalls).toHaveLength(1);
+  });
+
+  const slowModel = (ms: number) =>
+    new MockLanguageModelV4({
+      modelId: "slow",
+      doGenerate: async () => {
+        await sleep(ms);
+        return {
+          content: [{ type: "text", text: "It has shipped." }],
+          finishReason: { unified: "stop", raw: "stop" },
+          usage: {
+            inputTokens: { total: 5, noCache: 5, cacheRead: 0, cacheWrite: 0 },
+            outputTokens: { total: 15, text: 15, reasoning: 0 },
+          },
+          warnings: [],
+        };
+      },
+    });
+
+  it("waits the original latency on a hit", async () => {
+    await ask(replayModel(slowModel(60), cache, tally, { delay: false }));
+    const inner = fakeTextModel("unused", "slow");
+    const replay = replayModel(inner, cache, tally, { delay: true });
+
+    const started = performance.now();
+    await ask(replay);
+
+    expect(performance.now() - started).toBeGreaterThanOrEqual(50);
+    expect(inner.doGenerateCalls).toHaveLength(0);
+  });
+
+  it("stops waiting when the signal aborts", async () => {
+    await ask(replayModel(slowModel(300), cache, tally, { delay: false }));
+    const replay = replayModel(fakeTextModel("unused", "slow"), cache, tally, { delay: true });
+
+    const started = performance.now();
+    await expect(
+      generateText({
+        model: replay,
+        prompt: "Where is my order?",
+        abortSignal: AbortSignal.timeout(20),
+        maxRetries: 0,
+      }),
+    ).rejects.toThrow();
+
+    expect(performance.now() - started).toBeLessThan(200);
   });
 
   it("in a dry run, records a miss and throws without generating", async () => {

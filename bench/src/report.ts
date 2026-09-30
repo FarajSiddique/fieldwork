@@ -177,7 +177,7 @@ export function renderBenchReport(run: BenchRun): string {
     "- A failed prediction counts as wrong and as escalated: a person handles any ticket a system could not.",
     "- The baselines escalate by the same rule as Fieldwork's schema, applied to their own answers. Their category confidence is their intent confidence, a lower bound, since they give no per-intent probabilities.",
     "- The baselines write both the reply and the escalation note in their one call; the extra output is in their cost.",
-    "- Cached calls are replayed with their original latency, so latency is the live run's.",
+    "- Latency is the live run's: cached calls are replayed with their original latency. Fieldwork's replayed calls exclude any retry backoff, while the baselines' include it, so compare latency only from a run with no gateway retries.",
     "",
   ].join("\n");
 }

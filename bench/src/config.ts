@@ -69,6 +69,13 @@ export function benchModels(env: Env = process.env): BenchModels {
   return models;
 }
 
+/** The distinct model ids, in field order, that have no entry in the price table. */
+export function missingPrices(models: BenchModels, prices: Record<string, unknown>): string[] {
+  const missing = Object.values(models).filter((id) => !(id in prices));
+
+  return [...new Set(missing)];
+}
+
 /**
  * The split a bench command runs on. The test split is run once, after tuning is frozen, so it
  * needs BENCH_ALLOW_TEST=1, which only the owner's decision sets (see the bench-runbook skill).

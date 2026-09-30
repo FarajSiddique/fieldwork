@@ -10,6 +10,7 @@ import {
   benchModels,
   benchSplit,
   GATEWAY_TYPESAFE_URL,
+  missingPrices,
   paths,
   SEED,
   type Split,
@@ -40,6 +41,12 @@ const CONCURRENCY = Number(process.env.BENCH_CONCURRENCY ?? 8);
 const DEADLINE_MS = 30_000;
 
 const prices = JSON.parse(await readFile(paths.prices, "utf8")) as PriceTable;
+const unpriced = missingPrices(models, prices);
+if (unpriced.length > 0) {
+  console.error(`No price for ${unpriced.join(", ")}: add them to bench/prices.json`);
+  process.exit(2);
+}
+
 const cache = new ResponseCache(paths.cache, { offline: dryRun });
 const bitext = await readJsonl<BitextTicket>(paths[split]);
 const written = labeledSplit(await loadWrittenSet(paths.written), split);

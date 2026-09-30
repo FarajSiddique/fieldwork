@@ -37,6 +37,8 @@ Run from anywhere in the repo. `pnpm --filter` runs each script inside `bench/`,
 - It runs Fieldwork (the triage schema), a frontier and a cheap single-call baseline, and a reply judge, on the Bitext split and the written set's split together. It writes `bench/results/bench-<split>.{json,md}` and `bench-<split>-spotcheck.md`. Models come from `BENCH_*` variables over the defaults in `bench/src/config.ts`; every one needs a price in `bench/prices.json`.
 - The written set must be fully labeled (`"status": "final"`) for the split, or the run refuses to start.
 - Fieldwork's jev and text calls are cached by the replay layer (`bench/src/replay.ts`) under the same `bench/cache/` directory, and replayed with their original latency. A fully cached rerun therefore takes minutes, not seconds; for report changes, re-render instead.
+- Latency is the live run's: cached calls are replayed with their original latency. Fieldwork's replayed calls exclude any retry backoff, while the baselines' include it, so compare latency only from a run with no gateway retries. The committed latency numbers should come from a run whose failure and failed-field counts were 0 on the first pass (unify measurement in week 5).
+- `pnpm bench` refuses to start when a model has no price in bench/prices.json.
 - Failures: `jq -c '.predictions[]|select(.status=="failed")|{system,ticketId,error}' bench/results/bench-dev.json`, and for failed fields `jq -c '.predictions[]|select(.fieldErrors|length>0)|{system,ticketId,fieldErrors}' bench/results/bench-dev.json`. The ≤ 1% limit applies to failed predictions: at most 8 of 870 on dev.
 - `pnpm bench test` refuses to run without `BENCH_ALLOW_TEST=1`. Setting it is the owner's decision under "Test split" below, never yours.
 

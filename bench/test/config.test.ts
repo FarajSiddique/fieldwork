@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
-import { benchModels, benchSplit, DEFAULT_MODELS, paths } from "../src/config.ts";
+import { benchModels, benchSplit, DEFAULT_MODELS, missingPrices, paths } from "../src/config.ts";
 import type { PriceTable } from "../src/evaluate.ts";
 
 describe("benchModels", () => {
@@ -34,6 +34,23 @@ describe("benchModels", () => {
     const prices = JSON.parse(await readFile(paths.prices, "utf8")) as PriceTable;
 
     for (const id of Object.values(DEFAULT_MODELS)) expect(prices[id], id).toBeDefined();
+  });
+});
+
+describe("missingPrices", () => {
+  const priced = Object.fromEntries(Object.values(DEFAULT_MODELS).map((id) => [id, {}]));
+
+  it("is empty when every model has a price", () => {
+    expect(missingPrices(DEFAULT_MODELS, priced)).toEqual([]);
+  });
+
+  it("names a model that was overridden without a price, once", () => {
+    const models = benchModels({ BENCH_FRONTIER_MODEL: "anthropic/claude-new" });
+
+    expect(missingPrices(models, priced)).toEqual(["anthropic/claude-new"]);
+    expect(missingPrices({ ...models, cheap: "anthropic/claude-new" }, priced)).toEqual([
+      "anthropic/claude-new",
+    ]);
   });
 });
 

@@ -1,13 +1,15 @@
 import { mkdtemp } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { TypeSafeClient } from "@typesafe-ai/sdk";
 import { MockLanguageModelV4 } from "ai/test";
 import { answer, fakeTextModel, fakeTypeSafe, type JevCall } from "fieldwork/testing";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { BitextTicket } from "../src/bitext/sample.ts";
 import { runBench, type BenchContext } from "../src/benchRun.ts";
 import { ResponseCache } from "../src/cache.ts";
 import { DEFAULT_MODELS } from "../src/config.ts";
+import { replayFetch, replayModel, type Fetch } from "../src/replay.ts";
 import { renderBenchReport } from "../src/report.ts";
 import type { WrittenTicket } from "../src/written.ts";
 
@@ -173,6 +175,50 @@ describe("runBench", () => {
       ["cheap", 1, 1],
     ]);
     expect(run.verdicts.frontier!.map((v) => v.ticketId)).toEqual(["wr-1"]);
+  });
+
+  it("a dry run over an empty offline cache records misses and does not throw", async () => {
+    const offline = new ResponseCache(await mkdtemp(join(tmpdir(), "bench-offline-")), {
+      offline: true,
+    });
+    const tally = { replayed: 0, live: 0 };
+    const replay = { delay: false };
+    const send = vi.fn<Fetch>(() => {
+      throw new Error("a dry run must not send");
+    });
+    const frontier = jsonModel("frontier", baselineAnswer);
+    const cheap = jsonModel("cheap", baselineAnswer);
+    const judge = jsonModel("judge", { better: "tie" });
+    const ctx: BenchContext = {
+      ...context(),
+      cache: offline,
+      fieldwork: () => ({
+        typesafe: new TypeSafeClient({
+          apiKey: "test",
+          logLevel: "off",
+          retry: { maxRetries: 0 },
+          fetch: replayFetch(offline, tally, { ...replay, fetch: send }),
+        }),
+        models: {
+          low: replayModel(fakeTextModel("Your order has shipped.", "low"), offline, tally, replay),
+          high: replayModel(fakeTextModel("Charged twice.", "high"), offline, tally, replay),
+        },
+        prices: {},
+        jevModel: "typesafe-ai/jev",
+        deadlineMs: 5_000,
+      }),
+      frontier: { name: "frontier", model: frontier, modelId: "frontier" },
+      cheap: { name: "cheap", model: cheap, modelId: "cheap" },
+      judge: { model: judge, modelId: "judge" },
+    };
+
+    await runBench(bitext, written, ctx);
+
+    const systems = [...offline.missed.values()].map((m) => (m as { system: string }).system);
+    expect(systems.some((s) => s.includes("fieldwork-jev"))).toBe(true);
+    expect(systems.some((s) => s.includes("triage-structured"))).toBe(true);
+    expect(send).not.toHaveBeenCalled();
+    for (const model of [frontier, cheap, judge]) expect(model.doGenerateCalls).toHaveLength(0);
   });
 
   it("rejects ticket ids that repeat across the sets", async () => {
