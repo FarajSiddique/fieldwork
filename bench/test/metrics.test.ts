@@ -7,6 +7,8 @@ import {
   expectedCalibrationError,
   macroF1,
   percentile,
+  precision,
+  recall,
 } from "../src/metrics.ts";
 import { createRng } from "../src/rng.ts";
 
@@ -78,5 +80,25 @@ describe("bootstrapCi", () => {
   });
   it("collapses for a constant statistic", () => {
     expect(bootstrapCi(5, () => 0.7, createRng(2))).toEqual([0.7, 0.7]);
+  });
+});
+
+describe("recall and precision", () => {
+  const outcomes = [
+    { gold: true, predicted: true },
+    { gold: true, predicted: false },
+    { gold: false, predicted: true },
+    { gold: false, predicted: false },
+    { gold: false, predicted: false },
+  ];
+
+  it("computes each over its own denominator", () => {
+    expect(recall(outcomes)).toBe(0.5);
+    expect(precision(outcomes)).toBe(0.5);
+  });
+
+  it("is NaN when undefined, never a crash", () => {
+    expect(recall([{ gold: false, predicted: true }])).toBeNaN();
+    expect(precision([{ gold: true, predicted: false }])).toBeNaN();
   });
 });

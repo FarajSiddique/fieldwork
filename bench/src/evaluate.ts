@@ -10,7 +10,7 @@ import {
   percentile,
   type Scored,
 } from "./metrics.ts";
-import { createRng } from "./rng.ts";
+import { createRng, type Rng } from "./rng.ts";
 import { findOrderNumbers, normalizeOrderNumber } from "./orderNumbers.ts";
 import { JEV_PROVIDER } from "./systems/jev.ts";
 import type { Prediction } from "./systems/prediction.ts";
@@ -33,6 +33,18 @@ export function costUsd(p: Prediction, prices: PriceTable): number | null {
 export interface Interval {
   value: number;
   ci: [number, number];
+}
+
+/** A statistic over `items`, with its 95% bootstrap interval. */
+export function interval<T>(
+  items: readonly T[],
+  stat: (xs: readonly T[]) => number,
+  rng: Rng,
+): Interval {
+  return {
+    value: stat(items),
+    ci: bootstrapCi(items.length, (idx) => stat(idx.map((i) => items[i]!)), rng),
+  };
 }
 
 export interface SystemSummary {
@@ -77,10 +89,8 @@ export function summarize(
   }));
 
   const rng = createRng(seed);
-  const withCi = (scored: Scored[], stat: (s: readonly Scored[]) => number): Interval => ({
-    value: stat(scored),
-    ci: bootstrapCi(scored.length, (idx) => stat(idx.map((i) => scored[i]!)), rng),
-  });
+  const withCi = (scored: Scored[], stat: (s: readonly Scored[]) => number) =>
+    interval(scored, stat, rng);
   const acc = (s: readonly Scored[]) => accuracy(s.map((x) => x.correct));
 
   const orderCorrect = rows.map(

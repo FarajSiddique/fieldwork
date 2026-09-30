@@ -85,3 +85,18 @@ export function bootstrapCi(
   }
   return [percentile(values, 2.5), percentile(values, 97.5)];
 }
+
+export interface Outcome {
+  gold: boolean;
+  predicted: boolean;
+}
+
+/** Share of gold positives predicted positive; NaN when there are none. */
+export function recall(outcomes: readonly Outcome[]): number {
+  return accuracy(outcomes.filter((o) => o.gold).map((o) => o.predicted));
+}
+
+/** Share of predicted positives that are gold positives; NaN when nothing was predicted positive. */
+export function precision(outcomes: readonly Outcome[]): number {
+  return accuracy(outcomes.filter((o) => o.predicted).map((o) => o.gold));
+}
