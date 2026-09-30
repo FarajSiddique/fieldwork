@@ -274,3 +274,40 @@ describe("askJev", () => {
     expect(calls[0]!.model).toBe("jev-1.13.2");
   });
 });
+
+describe("askJev with responses and state it cannot use", () => {
+  it("fails the request's fields when a 200 response has no answers", async () => {
+    const { results, call } = await ask({ answers: null as never }).pending;
+    for (const name of ["intent", "complexity", "isRepeat", "orderNumber"]) {
+      expect(results[name]).toEqual({
+        status: "failed",
+        passed: false,
+        error: { code: "jev_error", message: "jev: malformed response" },
+      });
+    }
+    expect(call).toMatchObject({ status: "failed" });
+  });
+
+  it("fails the request's fields when state cannot be turned into JSON", async () => {
+    const circular: Record<string, unknown> = {};
+    circular.self = circular;
+    const order: AnyResult = {
+      status: "filled",
+      passed: true,
+      worker: "tool",
+      model: null,
+      ms: 0,
+      value: circular,
+    };
+    const judged = { ...byName("isRepeat"), after: ["order"] } as JevField;
+    const { pending, calls } = ask(good, [judged], { order });
+    const { results, call } = await pending;
+    expect(results.isRepeat).toEqual({
+      status: "failed",
+      passed: false,
+      error: { code: "bad_state", message: "state is not JSON-serializable" },
+    });
+    expect(call).toBeNull();
+    expect(calls).toHaveLength(0);
+  });
+});

@@ -1,4 +1,5 @@
-import type { AnyResult } from "./types.ts";
+import { fieldError } from "./errors.ts";
+import type { AnyResult, FieldError } from "./types.ts";
 
 const META = new Set(["status", "passed", "worker", "model", "ms"]);
 
@@ -35,4 +36,23 @@ export function tooLarge(state: unknown, questions: Readonly<Record<string, unkn
   const longest = Math.max(0, ...questionTokens);
   const all = questionTokens.reduce((sum, tokens) => sum + tokens, 0);
   return stateTokens + longest > STATE_LIMIT_TOKENS || stateTokens + all > REQUEST_LIMIT_TOKENS;
+}
+
+/**
+ * Why a request must not be sent: state that cannot be turned into JSON (a circular tool value,
+ * a bigint input), or state over jev's limits. `null` when it can be sent.
+ */
+export function stateProblem(
+  state: unknown,
+  questions: Readonly<Record<string, unknown>>,
+): FieldError | null {
+  let oversized: boolean;
+  try {
+    oversized = tooLarge(state, questions);
+  } catch {
+    return fieldError("bad_state", "state is not JSON-serializable");
+  }
+  return oversized
+    ? fieldError("state_too_large", "state and questions exceed jev's token limits")
+    : null;
 }

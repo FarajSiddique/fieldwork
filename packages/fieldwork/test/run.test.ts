@@ -276,6 +276,19 @@ describe("run", () => {
     expect(Object.keys(calls[0]!.questions)).toEqual(["intent"]);
   });
 
+  it("fails only the fields that read a value that cannot be JSON, and still resolves", async () => {
+    const circular: Record<string, unknown> = {};
+    circular.self = circular;
+    const schema = fieldwork<{ ticket: string }>()
+      .tool("order", { call: () => circular })
+      .judge("isRepeat", noul("Again?"), { after: ["order"] })
+      .tool("other", { after: ["order"], call: () => "ok" });
+    const { client } = fakeTypeSafe(byQuestion);
+    const { fields } = await schema.run(input, { typesafe: client });
+    expect(fields.isRepeat).toMatchObject({ status: "failed", error: { code: "bad_state" } });
+    expect(fields.other).toMatchObject({ status: "filled", value: "ok" });
+  });
+
   it("leaves no timers running after it returns", async () => {
     const timers = () => process.getActiveResourcesInfo().filter((r) => r === "Timeout").length;
     const schema = fieldwork<{ ticket: string }>().tool("a", { call: () => 1, timeoutMs: 60_000 });

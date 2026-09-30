@@ -60,7 +60,15 @@ export async function runText(
   }
 
   const modelId = typeof model === "string" ? model : model.modelId;
-  const { system, prompt } = textPrompt(field, input, results);
+  let system: string;
+  let prompt: string;
+  try {
+    ({ system, prompt } = textPrompt(field, input, results));
+  } catch {
+    const error = fieldError("bad_state", `${field.name}: data is not JSON-serializable`);
+    return { result: { status: "failed", passed: false, error }, call: null };
+  }
+
   const started = performance.now();
 
   try {

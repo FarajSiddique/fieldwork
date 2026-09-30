@@ -213,3 +213,22 @@ describe("runText", () => {
     });
   });
 });
+
+describe("runText with data it cannot show", () => {
+  it("fails the field when an input cannot be turned into JSON", async () => {
+    const low = fakeTextModel("never");
+    const { result, call } = await runText(
+      reply,
+      { ticket: 10n },
+      { intent },
+      { models: { low }, signal: open() },
+    );
+    expect(result).toEqual({
+      status: "failed",
+      passed: false,
+      error: { code: "bad_state", message: "reply: data is not JSON-serializable" },
+    });
+    expect(call).toBeNull();
+    expect(low.doGenerateCalls).toHaveLength(0);
+  });
+});

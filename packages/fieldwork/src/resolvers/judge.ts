@@ -1,6 +1,6 @@
 import type { JsonValue, Question, SystemOneResult, TypeSafeClient } from "@typesafe-ai/sdk";
 import { fieldError, jevError, thrownError } from "../errors.ts";
-import { buildState, tooLarge } from "../state.ts";
+import { buildState, stateProblem } from "../state.ts";
 import { settle, since } from "../time.ts";
 import { callTrace, type CallTrace, type Prices } from "../trace.ts";
 import type { AnyResult, FieldError, FieldSpec } from "../types.ts";
@@ -40,11 +40,32 @@ export async function sendJev(
     questions,
     ...(ctx.model === undefined ? {} : { model: ctx.model }),
   };
+  const fail = (error: FieldError): Sent => {
+    const call = callTrace(
+      {
+        worker: "jev",
+        model: ctx.model ?? null,
+        fields,
+        status: "failed",
+        ms: since(started),
+        inputTokens: 0,
+        outputTokens: 0,
+      },
+      ctx.prices,
+    );
+    return { ok: false, error, call };
+  };
+
   try {
     const response: SystemOneResult<Record<string, Question>> = await settle(
       ctx.client.systemOne(request, { signal: ctx.signal }),
       ctx.signal,
     );
+
+    // A proxy can answer 200 with a body that is not a systemOne result.
+    if (!isRecord(response.answers))
+      return fail(fieldError("jev_error", "jev: malformed response"));
+
     const ms = since(started);
     const call = callTrace(
       {
@@ -60,19 +81,7 @@ export async function sendJev(
     );
     return { ok: true, answers: response.answers as Answers, model: response.model, ms, call };
   } catch (err) {
-    const call = callTrace(
-      {
-        worker: "jev",
-        model: ctx.model ?? null,
-        fields,
-        status: "failed",
-        ms: since(started),
-        inputTokens: 0,
-        outputTokens: 0,
-      },
-      ctx.prices,
-    );
-    return { ok: false, error: jevError(err), call };
+    return fail(jevError(err));
   }
 }
 
@@ -217,9 +226,9 @@ export async function askJev(
   const names = asked.map((f) => f.name);
 
   const state = buildState(input, results, new Set(asked.flatMap((f) => f.after)));
-  if (tooLarge(state, questions)) {
-    const error = fieldError("state_too_large", "state and questions exceed jev's token limits");
-    for (const name of names) out[name] = failed(error);
+  const problem = stateProblem(state, questions);
+  if (problem !== null) {
+    for (const name of names) out[name] = failed(problem);
     return { results: out, call: null };
   }
 

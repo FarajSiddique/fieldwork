@@ -67,4 +67,14 @@ describe("triage example", () => {
     expect(fields.reply).toMatchObject({ status: "skipped" });
     expect(escalates(fields)).toBe(true);
   });
+
+  it("counts a ticket as escalated when the escalation note failed", async () => {
+    const { client } = fakeTypeSafe(jev([0.05, 0.15, 0.8]));
+    const broken = { ...models, high: fakeTextModel(new Error("provider down")) };
+    const { fields } = await triage.run({ ticket }, { typesafe: client, models: broken });
+
+    expect(fields.escalationNote).toMatchObject({ status: "failed" });
+    expect(fields.reply).toMatchObject({ status: "skipped" });
+    expect(escalates(fields)).toBe(true);
+  });
 });

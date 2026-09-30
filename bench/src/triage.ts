@@ -71,7 +71,10 @@ export const triage = fieldwork<{ ticket: string }>()
 
 export type TriageResults = ResultsOf<typeof triage>;
 
-/** A run escalates when it wrote a note for the on-call agent. */
+/**
+ * A run escalates unless it answered the customer. A note that failed or timed out still means
+ * a person must handle the ticket, so it counts as escalated.
+ */
 export function escalates(fields: TriageResults): boolean {
-  return fields.escalationNote.status === "filled";
+  return fields.reply.status !== "filled";
 }

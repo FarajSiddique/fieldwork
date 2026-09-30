@@ -104,3 +104,20 @@ describe("grade", () => {
     expect(calls).toHaveLength(0);
   });
 });
+
+describe("grade with responses and state it cannot use", () => {
+  it("gives null scores when a 200 response has no answers", async () => {
+    const { pending } = run({ answers: undefined as never });
+    const { scores } = await pending;
+    expect(scores).toEqual({ reply: null, note: null });
+  });
+
+  it("gives null scores instead of sending state that cannot be turned into JSON", async () => {
+    const { client, calls } = fakeTypeSafe({ answers: {} });
+    const signal = new AbortController().signal;
+    const { scores, call } = await grade(items, { ticket: 10n }, { category }, { client, signal });
+    expect(scores).toEqual({ reply: null, note: null });
+    expect(call).toBeNull();
+    expect(calls).toHaveLength(0);
+  });
+});
