@@ -31,6 +31,11 @@ export function buildJevRequest(ticket: string, model: string = JEV_MODEL) {
   return { request, candidates };
 }
 
+/** The request as the response cache keys it; `runJev` and the preflight both use it. */
+export function jevCacheRequest(ticket: string, model: string = JEV_MODEL) {
+  return { system: "jev", ...buildJevRequest(ticket, model).request };
+}
+
 interface JevCall {
   model: string;
   /** AI Gateway's `provider_metadata.gateway.routing.finalProvider`, or null when absent. */
@@ -112,7 +117,7 @@ export async function runJev(
   try {
     const entry = await cachedCall(
       cache,
-      { system: "jev", ...request },
+      jevCacheRequest(ticket.text, model),
       async (): Promise<JevCall> => {
         const response = await client.systemOne(request);
         return {
