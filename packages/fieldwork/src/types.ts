@@ -93,6 +93,9 @@ export type Deps<F, A extends keyof F> = { [K in A]: FieldView<F[K]> };
 
 export type Results<F> = { [K in keyof F]: FieldResult<F[K]> };
 
+/** Any field's result, as the runtime handles it. */
+export type AnyResult = FieldResult<Record<string, unknown>>;
+
 interface Common<I, F, A extends keyof F> {
   /** Earlier fields this one reads. */
   after?: readonly A[];

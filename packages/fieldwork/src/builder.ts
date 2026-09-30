@@ -1,4 +1,5 @@
 import type { Question } from "@typesafe-ai/sdk";
+import { DefinitionError } from "./errors.ts";
 import type {
   FieldSpec,
   JudgeOptions,
@@ -12,10 +13,7 @@ import type {
   ToolValue,
 } from "./types.ts";
 
-/** A schema mistake found while defining or planning fields. */
-export class DefinitionError extends Error {
-  override name = "DefinitionError";
-}
+export { DefinitionError };
 
 /** True when `T` is a union of more than one member. */
 type IsUnion<T, U = T> = T extends unknown ? ([U] extends [T] ? false : true) : never;
