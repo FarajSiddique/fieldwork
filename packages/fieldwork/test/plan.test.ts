@@ -1,6 +1,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { describe, expect, it } from "vitest";
-import { DefinitionError, fieldwork } from "../src/builder.ts";
+import { fieldwork } from "../src/builder.ts";
+import { DefinitionError } from "../src/errors.ts";
 import { plan } from "../src/plan.ts";
 import type { FieldSpec } from "../src/types.ts";
 

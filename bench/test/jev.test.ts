@@ -6,7 +6,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import type { BitextTicket } from "../src/bitext/sample.ts";
 import { ResponseCache } from "../src/cache.ts";
 import { INTENT_NAMES, type Intent } from "../src/intents.ts";
-import { findOrderNumbers, runJev } from "../src/systems/jev.ts";
+import { runJev } from "../src/systems/jev.ts";
 
 function fakeTypeSafe(body: unknown, status = 200) {
   const calls: { url: string; body: { model: string; state: unknown; questions: object } }[] = [];
@@ -50,17 +50,6 @@ const usage = { input_tokens: 812, output_tokens: 0 };
 let cache: ResponseCache;
 beforeEach(async () => {
   cache = new ResponseCache(await mkdtemp(join(tmpdir(), "jev-")));
-});
-
-describe("findOrderNumbers", () => {
-  it("finds candidates in order of appearance, without duplicates", () => {
-    expect(findOrderNumbers("order #482913, not invoice #12588 or #482913")).toEqual([
-      "#482913",
-      "#12588",
-    ]);
-    expect(findOrderNumbers("order732201349959")).toEqual(["732201349959"]);
-    expect(findOrderNumbers("refund of $45.99")).toEqual([]);
-  });
 });
 
 describe("runJev", () => {

@@ -1,6 +1,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { describe, expect, it } from "vitest";
-import { Builder, DefinitionError, fieldwork } from "../src/builder.ts";
+import { Builder, fieldwork } from "../src/builder.ts";
+import { DefinitionError } from "../src/errors.ts";
 import type { FieldSpec } from "../src/types.ts";
 import { answer, FAKE_JEV_MODEL, fakeTextModel, fakeTypeSafe, type JevCall } from "./fakes.ts";
 

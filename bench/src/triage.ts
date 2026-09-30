@@ -1,7 +1,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { fieldwork, type ResultsOf } from "fieldwork";
 import { INTENTS, rollUpToCategory } from "./intents.ts";
-import { findOrderNumbers } from "./systems/jev.ts";
+import { findOrderNumbers } from "./orderNumbers.ts";
 import { INTENT_INSTRUCTIONS, ORDER_NUMBER_TARGET } from "./wording.ts";
 
 /** The benchmark's order system: a stub in which every order exists and has shipped. */

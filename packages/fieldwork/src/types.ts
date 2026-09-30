@@ -96,7 +96,8 @@ export type Results<F> = { [K in keyof F]: FieldResult<F[K]> };
 /** Any field's result, as the runtime handles it. */
 export type AnyResult = FieldResult<Record<string, unknown>>;
 
-interface Common<I, F, A extends keyof F> {
+/** Options every field kind takes. */
+interface CommonOptions<I, F, A extends keyof F> {
   /** Earlier fields this one reads. */
   after?: readonly A[];
   /** Run the field only when this returns true; otherwise it is skipped. */
@@ -104,21 +105,21 @@ interface Common<I, F, A extends keyof F> {
   timeoutMs?: number;
 }
 
-export type JudgeOptions<I, F, A extends keyof F, Q extends Question> = Common<I, F, A> &
+export type JudgeOptions<I, F, A extends keyof F, Q extends Question> = CommonOptions<I, F, A> &
   (Q extends NoulQuestion ? { yesAbove?: number } : { gate?: number });
 
-export interface PickOptions<I, F, A extends keyof F> extends Common<I, F, A> {
+export interface PickOptions<I, F, A extends keyof F> extends CommonOptions<I, F, A> {
   instructions: string;
   /** Candidate strings found by code; Fieldwork adds a `none` option. */
   candidates: (input: I) => readonly string[];
   gate?: number;
 }
 
-export interface ToolOptions<I, F, A extends keyof F, T> extends Common<I, F, A> {
+export interface ToolOptions<I, F, A extends keyof F, T> extends CommonOptions<I, F, A> {
   call: (f: Deps<F, A>, input: I) => T;
 }
 
-export interface TextOptions<I, F, A extends keyof F> extends Common<I, F, A> {
+export interface TextOptions<I, F, A extends keyof F> extends CommonOptions<I, F, A> {
   instructions: string;
   style?: string;
   reasoning?: Reasoning;
@@ -129,24 +130,29 @@ export interface TextOptions<I, F, A extends keyof F> extends Common<I, F, A> {
   minScore?: number;
 }
 
-/** Untyped view of a field, used by `plan` and the runtime. */
-type AnyWhen = (f: Record<string, unknown>, input: unknown) => boolean;
-interface SpecCommon {
+// Untyped views of a field and its functions, used by the builder, `plan` and the runtime.
+export type UntypedWhen = (f: Record<string, unknown>, input: unknown) => boolean;
+export type UntypedCall = (f: Record<string, unknown>, input: unknown) => unknown;
+export type UntypedCandidates = (input: unknown) => readonly string[];
+
+/** The spec properties every field kind has. */
+export interface CommonSpec {
   name: string;
   after: readonly string[];
-  when?: AnyWhen;
+  when?: UntypedWhen;
   timeoutMs?: number;
 }
+
 export type FieldSpec =
-  | (SpecCommon & { kind: "judge"; question: Question; gate?: number; yesAbove?: number })
-  | (SpecCommon & {
+  | (CommonSpec & { kind: "judge"; question: Question; gate?: number; yesAbove?: number })
+  | (CommonSpec & {
       kind: "pick";
       instructions: string;
-      candidates: (input: unknown) => readonly string[];
+      candidates: UntypedCandidates;
       gate?: number;
     })
-  | (SpecCommon & { kind: "tool"; call: (f: Record<string, unknown>, input: unknown) => unknown })
-  | (SpecCommon & {
+  | (CommonSpec & { kind: "tool"; call: UntypedCall })
+  | (CommonSpec & {
       kind: "text";
       instructions: string;
       style?: string;

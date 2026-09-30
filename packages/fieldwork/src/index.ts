@@ -1,4 +1,5 @@
-export { Builder, DefinitionError, fieldwork, type ResultsOf } from "./builder.ts";
+export { Builder, fieldwork, type ResultsOf } from "./builder.ts";
+export { DefinitionError } from "./errors.ts";
 export type { RunOptions, RunResult } from "./run.ts";
 export {
   JEV_PRICE,

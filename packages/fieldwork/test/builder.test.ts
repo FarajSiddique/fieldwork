@@ -1,6 +1,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { describe, expect, it } from "vitest";
-import { Builder, DefinitionError, fieldwork } from "../src/builder.ts";
+import { Builder, fieldwork } from "../src/builder.ts";
+import { DefinitionError } from "../src/errors.ts";
 
 const ticketSchema = () => fieldwork<{ ticket: string }>();
 
@@ -109,6 +110,18 @@ describe("fieldwork builder", () => {
     rejects(
       () => ticketSchema().text("a", { instructions: "?", minScore: 2 }),
       /a: minScore must be between 0 and 1/,
+    );
+  });
+
+  // Stored on the wrong question kind, the threshold would be ignored and never gate.
+  it("rejects a threshold that does not fit the question", () => {
+    rejects(
+      () => untyped().judge!("a", noul("?"), { gate: 0.8 }),
+      /a: a noul\(\) question takes yesAbove, not gate/,
+    );
+    rejects(
+      () => untyped().judge!("a", score("?", ["low", "high"]), { yesAbove: 0.9 }),
+      /a: a score\(\) question takes gate, not yesAbove/,
     );
   });
 

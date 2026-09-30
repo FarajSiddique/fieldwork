@@ -2,21 +2,15 @@ import { choice, type ChoiceResponse, type Question, type TypeSafeClient } from 
 import type { BitextTicket } from "../bitext/sample.ts";
 import { cachedCall, type ResponseCache } from "../cache.ts";
 import { INTENTS, isIntent, rollUpToCategory, type Intent } from "../intents.ts";
+import { findOrderNumbers } from "../orderNumbers.ts";
 import { INTENT_INSTRUCTIONS, ORDER_NUMBER_TARGET } from "../wording.ts";
-import { failedPrediction, type Prediction } from "./types.ts";
+import { failedPrediction, type Prediction } from "./prediction.ts";
 
 /** AI Gateway's id for jev. The gateway lists no versioned id, so the version can't be pinned here. */
 export const JEV_MODEL = "typesafe-ai/jev";
 /** Restricting to one provider keeps every ticket on the same jev deployment. */
 export const JEV_PROVIDER = "typesafe-ai";
 export const NONE = "none";
-
-const ORDER_NUMBER_CANDIDATE = /#?\d{5,}/g;
-
-/** Regex tuned to over-find; jev chooses among the matches (TypeSafe's pre-parsed extraction pattern). */
-export function findOrderNumbers(text: string): string[] {
-  return [...new Set(text.match(ORDER_NUMBER_CANDIDATE) ?? [])];
-}
 
 export function buildJevRequest(ticket: string, model: string = JEV_MODEL) {
   const candidates = findOrderNumbers(ticket);
@@ -35,6 +29,11 @@ export function buildJevRequest(ticket: string, model: string = JEV_MODEL) {
     providerOptions: { gateway: { only: [JEV_PROVIDER] } },
   };
   return { request, candidates };
+}
+
+/** The request as the response cache keys it; `runJev` and the preflight both use it. */
+export function jevCacheRequest(ticket: string, model: string = JEV_MODEL) {
+  return { system: "jev", ...buildJevRequest(ticket, model).request };
 }
 
 interface JevCall {
@@ -118,7 +117,7 @@ export async function runJev(
   try {
     const entry = await cachedCall(
       cache,
-      { system: "jev", ...request },
+      jevCacheRequest(ticket.text, model),
       async (): Promise<JevCall> => {
         const response = await client.systemOne(request);
         return {

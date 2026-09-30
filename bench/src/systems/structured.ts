@@ -4,7 +4,7 @@ import type { BitextTicket } from "../bitext/sample.ts";
 import { cachedCall, type ResponseCache } from "../cache.ts";
 import { CATEGORY_OF, INTENT_NAMES, INTENTS } from "../intents.ts";
 import { INTENT_INSTRUCTIONS, ORDER_NUMBER_TARGET } from "../wording.ts";
-import { failedPrediction, type Prediction } from "./types.ts";
+import { failedPrediction, type Prediction } from "./prediction.ts";
 
 export const structuredSchema = z.object({
   intent: z.enum(INTENT_NAMES),
@@ -33,6 +33,16 @@ export interface StructuredSystem {
   modelId: string;
 }
 
+/** The request as the response cache keys it; `runStructured` and the preflight both use it. */
+export function structuredCacheRequest(ticket: string, modelId: string) {
+  return {
+    system: "structured",
+    modelId,
+    prompt: buildStructuredPrompt(ticket),
+    schema: z.toJSONSchema(structuredSchema),
+  };
+}
+
 interface StructuredCall {
   output: unknown;
   inputTokens: number;
@@ -45,13 +55,8 @@ export async function runStructured(
   system: StructuredSystem,
   cache: ResponseCache,
 ): Promise<Prediction> {
-  const prompt = buildStructuredPrompt(ticket.text);
-  const request = {
-    system: "structured",
-    modelId: system.modelId,
-    prompt,
-    schema: z.toJSONSchema(structuredSchema),
-  };
+  const request = structuredCacheRequest(ticket.text, system.modelId);
+  const { prompt } = request;
   try {
     const entry = await cachedCall(cache, request, async (): Promise<StructuredCall> => {
       const result = await generateText({
@@ -74,6 +79,7 @@ export async function runStructured(
       intent: output.intent,
       intentConfidence: output.intentConfidence,
       category: CATEGORY_OF[output.intent],
+      // No per-intent probabilities to sum, so the intent confidence stands in (a lower bound).
       categoryConfidence: output.intentConfidence,
       orderNumber: output.orderNumber,
       orderNumberConfidence: output.orderNumberConfidence,

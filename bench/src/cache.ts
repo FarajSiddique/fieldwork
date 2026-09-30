@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 /** JSON with object keys sorted at every level, so equal requests hash equally. */
@@ -40,7 +40,12 @@ export class ResponseCache {
 
   async set<T>(key: string, entry: CacheEntry<T>): Promise<void> {
     await mkdir(this.#dir, { recursive: true });
-    await writeFile(this.#path(key), JSON.stringify(entry, null, 2) + "\n");
+    // Write, then rename into place, so an interrupted run never leaves a half-written entry
+    // that every later run would fail to parse.
+    const path = this.#path(key);
+    const partial = `${path}.${process.pid}.partial`;
+    await writeFile(partial, JSON.stringify(entry, null, 2) + "\n");
+    await rename(partial, path);
   }
 
   #path(key: string): string {
@@ -48,7 +53,10 @@ export class ResponseCache {
   }
 }
 
-/** Serve `request` from the cache, or call `fn`, time it and cache the result. Failures are never cached. */
+/**
+ * Serve `request` from the cache, or call `fn`, time it and cache the result. A call that throws
+ * is never cached; a response that returns normally is, even if the caller later rejects it.
+ */
 export async function cachedCall<T>(
   cache: ResponseCache,
   request: unknown,
