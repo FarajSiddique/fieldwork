@@ -4,7 +4,7 @@ import { TypeSafeClient } from "@typesafe-ai/sdk";
 import type { BitextTicket } from "./bitext/sample.ts";
 import { ResponseCache } from "./cache.ts";
 import { mapLimit } from "./concurrency.ts";
-import { paths, SEED } from "./config.ts";
+import { GATEWAY_TYPESAFE_URL, paths, SEED } from "./config.ts";
 import { jevChecks, summarize, type PriceTable } from "./evaluate.ts";
 import { readJsonl, writeText } from "./io.ts";
 import { renderPilotReport } from "./report.ts";
@@ -12,8 +12,6 @@ import { JEV_MODEL, runJev } from "./systems/jev.ts";
 import { runStructured } from "./systems/structured.ts";
 import type { Prediction } from "./systems/prediction.ts";
 
-// Every model goes through Vercel AI Gateway, authenticated by AI_GATEWAY_API_KEY.
-const GATEWAY_TYPESAFE_URL = "https://ai-gateway.vercel.sh/typesafe";
 const JEV = process.env.BENCH_JEV_MODEL ?? JEV_MODEL;
 // Comma-separated AI Gateway model ids; each becomes one structured-output baseline.
 const BASELINE_MODELS = (process.env.BENCH_BASELINE_MODELS ?? "openai/gpt-5.4-mini")
