@@ -22,11 +22,21 @@ export interface CacheEntry<T> {
   ms: number;
 }
 
+/** Thrown in a dry run for a request the cache cannot serve. */
+export class CacheMiss extends Error {
+  override name = "CacheMiss";
+}
+
 export class ResponseCache {
   readonly #dir: string;
+  /** In a dry run, a miss is recorded instead of sent. */
+  readonly offline: boolean;
+  /** The requests a dry run could not serve, by cache key. */
+  readonly missed = new Map<string, unknown>();
 
-  constructor(dir: string) {
+  constructor(dir: string, options: { offline?: boolean } = {}) {
     this.#dir = dir;
+    this.offline = options.offline ?? false;
   }
 
   async get<T>(key: string): Promise<CacheEntry<T> | undefined> {
@@ -65,6 +75,12 @@ export async function cachedCall<T>(
   const key = cacheKey(request);
   const cached = await cache.get<T>(key);
   if (cached) return { ...cached, hit: true };
+
+  if (cache.offline) {
+    cache.missed.set(key, request);
+    throw new CacheMiss("not in the cache (dry run)");
+  }
+
   const started = performance.now();
   const value = await fn();
   const entry = { value, ms: Math.round(performance.now() - started) };

@@ -2,7 +2,7 @@ import { mkdtemp } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { cachedCall, cacheKey, ResponseCache, stableStringify } from "../src/cache.ts";
+import { cachedCall, CacheMiss, cacheKey, ResponseCache, stableStringify } from "../src/cache.ts";
 
 const newCache = async () => new ResponseCache(await mkdtemp(join(tmpdir(), "cache-")));
 
@@ -45,5 +45,36 @@ describe("cachedCall", () => {
 
   it("returns undefined for a missing key", async () => {
     expect(await (await newCache()).get("nope")).toBeUndefined();
+  });
+});
+
+describe("a dry run (offline cache)", () => {
+  it("records a miss and throws instead of calling", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "cache-"));
+    const offline = new ResponseCache(dir, { offline: true });
+    let called = false;
+
+    await expect(
+      cachedCall(offline, { q: 1 }, async () => {
+        called = true;
+        return 1;
+      }),
+    ).rejects.toThrow(CacheMiss);
+
+    expect(called).toBe(false);
+    expect([...offline.missed.entries()]).toEqual([[cacheKey({ q: 1 }), { q: 1 }]]);
+  });
+
+  it("still serves hits", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "cache-"));
+    await cachedCall(new ResponseCache(dir), { q: 1 }, async () => 42);
+
+    const entry = await cachedCall(
+      new ResponseCache(dir, { offline: true }),
+      { q: 1 },
+      async () => 0,
+    );
+
+    expect(entry).toMatchObject({ value: 42, hit: true });
   });
 });
