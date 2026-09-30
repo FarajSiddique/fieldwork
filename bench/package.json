@@ -6,7 +6,10 @@
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json",
     "data": "node src/prepare.ts",
-    "pilot": "node --env-file-if-exists=.env src/pilot.ts"
+    "pilot": "node --env-file-if-exists=.env src/pilot.ts",
+    "preflight": "node --env-file-if-exists=.env src/preflight-cli.ts",
+    "report": "node src/rerender.ts",
+    "cache-file": "node src/cache-file.ts"
   },
   "devDependencies": {
     "@types/node": "^24.19.0",

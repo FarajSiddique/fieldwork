@@ -33,6 +33,16 @@ export interface StructuredSystem {
   modelId: string;
 }
 
+/** The request as the response cache keys it; `runStructured` and the preflight both use it. */
+export function structuredCacheRequest(ticket: string, modelId: string) {
+  return {
+    system: "structured",
+    modelId,
+    prompt: buildStructuredPrompt(ticket),
+    schema: z.toJSONSchema(structuredSchema),
+  };
+}
+
 interface StructuredCall {
   output: unknown;
   inputTokens: number;
@@ -45,13 +55,8 @@ export async function runStructured(
   system: StructuredSystem,
   cache: ResponseCache,
 ): Promise<Prediction> {
-  const prompt = buildStructuredPrompt(ticket.text);
-  const request = {
-    system: "structured",
-    modelId: system.modelId,
-    prompt,
-    schema: z.toJSONSchema(structuredSchema),
-  };
+  const request = structuredCacheRequest(ticket.text, system.modelId);
+  const { prompt } = request;
   try {
     const entry = await cachedCall(cache, request, async (): Promise<StructuredCall> => {
       const result = await generateText({
