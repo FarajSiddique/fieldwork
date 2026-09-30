@@ -30,7 +30,11 @@ export interface ReplayOptions {
   delay: boolean;
   /** Retry rate limits and server errors on a live miss; absent means no retries. */
   backoff?: BackoffOptions;
+  /** Longest one live jev request may take before it counts as a retryable timeout. */
+  attemptTimeoutMs?: number;
 }
+
+const ATTEMPT_TIMEOUT_MS = 30_000;
 
 /** Resolve after `ms`, or reject with the signal's reason if it aborts first. */
 export function sleep(ms: number, signal?: AbortSignal | null): Promise<void> {
@@ -101,15 +105,32 @@ export function replayFetch(
     let ms = 0;
     const response = await withBackoff<Response>(
       async () => {
+        // Each attempt has its own timeout, so the caller's (the SDK's) timeout need only
+        // cover the whole backoff. An abort of the caller's signal stays final.
+        const timeout = AbortSignal.timeout(options.attemptTimeoutMs ?? ATTEMPT_TIMEOUT_MS);
+        const signal = init?.signal ? AbortSignal.any([init.signal, timeout]) : timeout;
         const started = performance.now();
-        const res = await send(input, { ...init, body: JSON.stringify(body) });
+        let res: Response;
+        try {
+          res = await send(input, { ...init, body: JSON.stringify(body), signal });
+        } catch (err) {
+          if (init?.signal?.aborted || !timeout.aborted) throw err;
+
+          return { retry: err };
+        }
         ms = Math.round(performance.now() - started);
         if (!isRetryableStatus(res.status)) return { done: res };
 
-        return { retry: res, retryAfterMs: parseRetryAfter(res.headers.get("retry-after")) };
+        // Drain the body to release the connection before waiting. It is kept, so a response
+        // returned after the last retry still carries its error body for the SDK to read.
+        const failed = new Response(await res.text(), res);
+        return { retry: failed, retryAfterMs: parseRetryAfter(res.headers.get("retry-after")) };
       },
       { ...(options.backoff ?? NO_RETRIES), signal: init?.signal },
-      (res) => res as Response,
+      (reason) => {
+        if (reason instanceof Response) return reason;
+        throw reason;
+      },
     );
     if (!response.ok) return response;
 

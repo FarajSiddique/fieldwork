@@ -178,7 +178,7 @@ export function renderBenchReport(run: BenchRun): string {
     "- The baselines escalate by the same rule as Fieldwork's schema, applied to their own answers. Their category confidence is their intent confidence, a lower bound, since they give no per-intent probabilities.",
     "- Some written tickets need a person only because the customer asks for one or says an earlier contact went unresolved (labeling guide, rule 3). The shared escalation rule does not read those signals, so these tickets are kept as a deliberate probe of that gap.",
     "- The baselines write both the reply and the escalation note in their one call; the extra output is in their cost.",
-    "- Latency is the live run's: cached calls are replayed with their original latency. Rate-limited calls are retried with exponential backoff and jitter, and each system's latency counts only the successful attempt, so waits between retries are not in it.",
+    "- Latency is the live run's: cached calls are replayed with their original latency. Rate-limited calls are retried with exponential backoff and jitter, and each system's latency counts only the successful attempt, so waits between retries are not in it. Entries cached before that change (the incomplete 2026-09-29 run) may include the AI SDK's own retry waits.",
     "",
   ].join("\n");
 }

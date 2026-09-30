@@ -73,6 +73,9 @@ const fieldwork: FieldworkFactory = (tally) => ({
     logLevel: "warn",
     // replayFetch retries with backoff; the SDK's own retries would multiply it.
     retry: { maxRetries: 0 },
+    // The SDK's default 10 s timeout would cover replayFetch's whole retry loop; each attempt
+    // has its own timeout there, so this one only needs to fit the backoff.
+    timeout: DEADLINE_MS,
     fetch: replayFetch(cache, tally, replay),
   }),
   models: {

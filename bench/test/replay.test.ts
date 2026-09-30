@@ -3,9 +3,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { APICallError, generateText } from "ai";
 import { MockLanguageModelV4 } from "ai/test";
+import { TypeSafeClient } from "@typesafe-ai/sdk";
 import { fakeTextModel } from "fieldwork/testing";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ResponseCache } from "../src/cache.ts";
+import { buildJevRequest } from "../src/systems/jev.ts";
 import {
   replayFetch,
   replayModel,
@@ -167,6 +169,69 @@ describe("replayFetch", () => {
     expect([...offline.missed.values()]).toEqual([
       expect.objectContaining({ system: "fieldwork-jev", model: "typesafe-ai/jev" }),
     ]);
+  });
+});
+
+describe("replayFetch through a real TypeSafeClient", () => {
+  // The SDK's per-request timeout wraps the whole call, including replayFetch's backoff waits.
+  const call = (timeout: number, send: Fetch, replay = {}) => {
+    const backoff = { retries: 3, baseMs: 60, maxMs: 60, random: () => 1 };
+    const client = new TypeSafeClient({
+      apiKey: "test",
+      retry: { maxRetries: 0 },
+      logLevel: "off",
+      timeout,
+      fetch: replayFetch(cache, tally, { delay: false, fetch: send, backoff, ...replay }),
+    });
+    return client.systemOne(buildJevRequest("where is #4471902").request);
+  };
+  const flakyGateway = () =>
+    vi
+      .fn<Fetch>()
+      .mockImplementationOnce(async () => new Response("{}", { status: 429 }))
+      .mockImplementationOnce(async () => new Response("{}", { status: 429 }))
+      .mockImplementation(async () => ok());
+
+  it("rides out waits longer than a small SDK timeout when the client's timeout covers them", async () => {
+    const send = flakyGateway();
+
+    await expect(call(5000, send)).resolves.toBeDefined();
+
+    expect(send).toHaveBeenCalledTimes(3);
+  });
+
+  it("would time out inside the SDK's window if the client's timeout were small", async () => {
+    await expect(call(100, flakyGateway())).rejects.toThrow(/timed out/i);
+  });
+
+  it("retries an attempt that outlives its own timeout", async () => {
+    const hang: Fetch = (_input, init) =>
+      new Promise((_resolve, reject) => {
+        init!.signal!.addEventListener("abort", () => reject(init!.signal!.reason));
+      });
+    const send = vi
+      .fn<Fetch>()
+      .mockImplementationOnce(hang)
+      .mockImplementation(async () => ok());
+
+    await expect(call(5000, send, { attemptTimeoutMs: 30 })).resolves.toBeDefined();
+
+    expect(send).toHaveBeenCalledTimes(2);
+  });
+
+  it("does not retry when the caller aborts", async () => {
+    const send = flakyGateway();
+    const controller = new AbortController();
+    controller.abort(new Error("deadline"));
+
+    const f = replayFetch(cache, tally, {
+      delay: false,
+      fetch: send,
+      backoff: { retries: 3, baseMs: 1, maxMs: 1 },
+    });
+
+    await expect(f(SYSTEM_ONE, { ...post(), signal: controller.signal })).rejects.toThrow();
+    expect(send.mock.calls.length).toBeLessThanOrEqual(1);
   });
 });
 
