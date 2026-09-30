@@ -137,3 +137,58 @@ describe("runTriageStructured", () => {
     expect(again.cached).toBe(true);
   });
 });
+
+describe("runTriageStructured with backoff", () => {
+  const backoff = { retries: 2, baseMs: 1, maxMs: 1, sleep: async () => {} };
+  const flakyModel = (failures: Error[]) => {
+    const queue = [...failures];
+    return new MockLanguageModelV4({
+      modelId: "mock-frontier",
+      doGenerate: async () => {
+        const err = queue.shift();
+        if (err) throw err;
+        return {
+          content: [{ type: "text", text: JSON.stringify(simple) }],
+          finishReason: { unified: "stop", raw: "stop" },
+          usage,
+          warnings: [],
+        };
+      },
+    });
+  };
+  const limited = () => Object.assign(new Error("HTTP 429"), { statusCode: 429 });
+  const runWith = (model: MockLanguageModelV4, options?: typeof backoff) =>
+    runTriageStructured(
+      ticket,
+      { name: "frontier", model, modelId: "mock-frontier" },
+      cache,
+      prices,
+      options,
+    );
+
+  it("retries a rate limit and caches the success once", async () => {
+    const model = flakyModel([limited(), limited()]);
+
+    const first = await runWith(model, backoff);
+    const second = await runWith(model, backoff);
+
+    expect(first.status).toBe("ok");
+    expect(first.cached).toBe(false);
+    expect(second.cached).toBe(true);
+    expect(model.doGenerateCalls).toHaveLength(3);
+  });
+
+  it("fails without retrying when no backoff is given", async () => {
+    const model = flakyModel([limited()]);
+
+    expect((await runWith(model)).status).toBe("failed");
+    expect(model.doGenerateCalls).toHaveLength(1);
+  });
+
+  it("does not retry other errors", async () => {
+    const model = flakyModel([new Error("bad request")]);
+
+    expect((await runWith(model, backoff)).status).toBe("failed");
+    expect(model.doGenerateCalls).toHaveLength(1);
+  });
+});

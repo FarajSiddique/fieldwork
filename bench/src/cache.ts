@@ -63,14 +63,26 @@ export class ResponseCache {
   }
 }
 
+/** A result its caller timed, so a retried call caches only the successful attempt's latency. */
+export class Timed<T> {
+  readonly value: T;
+  readonly ms: number;
+
+  constructor(value: T, ms: number) {
+    this.value = value;
+    this.ms = ms;
+  }
+}
+
 /**
  * Serve `request` from the cache, or call `fn`, time it and cache the result. A call that throws
  * is never cached; a response that returns normally is, even if the caller later rejects it.
+ * An `fn` that returns `Timed` supplies its own latency.
  */
 export async function cachedCall<T>(
   cache: ResponseCache,
   request: unknown,
-  fn: () => Promise<T>,
+  fn: () => Promise<T | Timed<T>>,
 ): Promise<CacheEntry<T> & { hit: boolean }> {
   const key = cacheKey(request);
   const cached = await cache.get<T>(key);
@@ -82,8 +94,11 @@ export async function cachedCall<T>(
   }
 
   const started = performance.now();
-  const value = await fn();
-  const entry = { value, ms: Math.round(performance.now() - started) };
+  const result = await fn();
+  const entry =
+    result instanceof Timed
+      ? { value: result.value, ms: result.ms }
+      : { value: result, ms: Math.round(performance.now() - started) };
   await cache.set(key, entry);
   return { ...entry, hit: false };
 }

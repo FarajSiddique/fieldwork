@@ -1,5 +1,6 @@
 import { generateText, Output } from "ai";
 import { z } from "zod";
+import { NO_RETRIES, retryTimed, type BackoffOptions } from "../backoff.ts";
 import { cachedCall, type ResponseCache } from "../cache.ts";
 import { costUsd, type PriceTable } from "../evaluate.ts";
 import { CATEGORY_OF, INTENT_NAMES, INTENTS } from "../intents.ts";
@@ -79,22 +80,27 @@ export async function runTriageStructured(
   system: StructuredSystem,
   cache: ResponseCache,
   prices: PriceTable,
+  backoff: BackoffOptions = NO_RETRIES,
 ): Promise<TriagePrediction> {
   const request = triageCacheRequest(ticket.text, system.modelId);
 
   try {
-    const entry = await cachedCall(cache, request, async (): Promise<StructuredCall> => {
-      const result = await generateText({
-        model: system.model,
-        prompt: request.prompt,
-        output: Output.object({ schema: triageSchema }),
-      });
-      return {
-        output: result.output,
-        inputTokens: result.usage.inputTokens ?? 0,
-        outputTokens: result.usage.outputTokens ?? 0,
-      };
-    });
+    const entry = await cachedCall<StructuredCall>(cache, request, () =>
+      retryTimed(backoff, async (): Promise<StructuredCall> => {
+        const result = await generateText({
+          model: system.model,
+          prompt: request.prompt,
+          output: Output.object({ schema: triageSchema }),
+          // The backoff retries; the AI SDK's own retries would multiply it.
+          maxRetries: 0,
+        });
+        return {
+          output: result.output,
+          inputTokens: result.usage.inputTokens ?? 0,
+          outputTokens: result.usage.outputTokens ?? 0,
+        };
+      }),
+    );
     const answer = triageSchema.parse(entry.value.output);
 
     const base: Prediction = {

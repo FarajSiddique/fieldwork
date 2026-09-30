@@ -1,4 +1,5 @@
 import type { BitextTicket } from "./bitext/sample.ts";
+import type { BackoffOptions } from "./backoff.ts";
 import type { ResponseCache } from "./cache.ts";
 import { mapLimit } from "./concurrency.ts";
 import type { BenchModels, Split } from "./config.ts";
@@ -38,6 +39,8 @@ export interface BenchContext {
   cache: ResponseCache;
   prices: PriceTable;
   concurrency: number;
+  /** Retries for the baselines and the judge; absent means none. */
+  backoff?: BackoffOptions;
   fieldwork: FieldworkFactory;
   frontier: StructuredSystem;
   cheap: StructuredSystem;
@@ -63,7 +66,7 @@ export async function runBench(
   ];
   for (const baseline of [ctx.frontier, ctx.cheap]) {
     const predictions = await mapLimit(tickets, ctx.concurrency, (t) =>
-      runTriageStructured(t, baseline, ctx.cache, ctx.prices),
+      runTriageStructured(t, baseline, ctx.cache, ctx.prices, ctx.backoff),
     );
     systems.push({ name: baseline.name, predictions });
   }
@@ -87,6 +90,7 @@ export async function runBench(
         cache: ctx.cache,
         seed: ctx.seed,
         concurrency: ctx.concurrency,
+        backoff: ctx.backoff,
       },
     );
     replies.push(result.comparison);

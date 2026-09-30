@@ -1,7 +1,7 @@
 import { mkdtemp } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { generateText } from "ai";
+import { APICallError, generateText } from "ai";
 import { MockLanguageModelV4 } from "ai/test";
 import { fakeTextModel } from "fieldwork/testing";
 import { beforeEach, describe, expect, it, vi } from "vitest";
@@ -66,6 +66,69 @@ describe("replayFetch", () => {
     expect((await f(SYSTEM_ONE, post())).status).toBe(429);
     expect((await f(SYSTEM_ONE, post())).status).toBe(200);
     expect(send).toHaveBeenCalledTimes(2);
+  });
+
+  it("retries 429s with backoff, honours Retry-After, and caches the success once", async () => {
+    const send = vi
+      .fn<Fetch>()
+      .mockResolvedValueOnce(new Response("{}", { status: 429, headers: { "retry-after": "2" } }))
+      .mockResolvedValueOnce(new Response("{}", { status: 503 }))
+      .mockResolvedValueOnce(ok());
+    const waits: number[] = [];
+    const backoff = {
+      retries: 4,
+      baseMs: 100,
+      maxMs: 1000,
+      random: () => 0.5,
+      sleep: async (ms: number) => void waits.push(ms),
+    };
+    const f = replayFetch(cache, tally, { delay: false, fetch: send, backoff });
+
+    expect((await f(SYSTEM_ONE, post())).status).toBe(200);
+    expect((await f(SYSTEM_ONE, post())).status).toBe(200);
+
+    expect(send).toHaveBeenCalledTimes(3);
+    expect(waits).toEqual([2000, 100]);
+    expect(tally).toEqual({ replayed: 1, live: 1 });
+  });
+
+  it("times only the successful attempt", async () => {
+    const send = vi
+      .fn<Fetch>()
+      .mockImplementationOnce(async () => {
+        await sleep(150);
+        return new Response("{}", { status: 429 });
+      })
+      .mockResolvedValueOnce(ok());
+    const backoff = { retries: 2, baseMs: 1, maxMs: 1, sleep: async () => {} };
+
+    await replayFetch(cache, tally, { delay: false, fetch: send, backoff })(SYSTEM_ONE, post());
+    const replay = replayFetch(cache, tally, { delay: true, fetch: vi.fn<Fetch>() });
+    const started = performance.now();
+    await replay(SYSTEM_ONE, post());
+
+    expect(performance.now() - started).toBeLessThan(100);
+  });
+
+  it("returns the last failure uncached after the retries run out", async () => {
+    const send = vi.fn<Fetch>(async () => new Response("{}", { status: 429 }));
+    const backoff = { retries: 2, baseMs: 1, maxMs: 1, sleep: async () => {} };
+    const f = replayFetch(cache, tally, { delay: false, fetch: send, backoff });
+
+    expect((await f(SYSTEM_ONE, post())).status).toBe(429);
+    expect((await f(SYSTEM_ONE, post())).status).toBe(429);
+
+    expect(send).toHaveBeenCalledTimes(6);
+    expect(tally).toEqual({ replayed: 0, live: 2 });
+  });
+
+  it("does not retry a 400", async () => {
+    const send = vi.fn<Fetch>(async () => new Response("{}", { status: 400 }));
+    const backoff = { retries: 2, baseMs: 1, maxMs: 1, sleep: async () => {} };
+
+    await replayFetch(cache, tally, { delay: false, fetch: send, backoff })(SYSTEM_ONE, post());
+
+    expect(send).toHaveBeenCalledTimes(1);
   });
 
   it("waits the original latency on a hit", async () => {
@@ -190,6 +253,81 @@ describe("replayModel", () => {
     ).rejects.toThrow();
 
     expect(performance.now() - started).toBeLessThan(200);
+  });
+
+  const rateLimit = () =>
+    new APICallError({
+      message: "No access to this model at this time.",
+      url: "u",
+      requestBodyValues: {},
+      statusCode: 429,
+      isRetryable: true,
+      responseHeaders: { "retry-after": "1" },
+    });
+  const flaky = (failures: Error[]) => {
+    const queue = [...failures];
+    return new MockLanguageModelV4({
+      modelId: "flaky",
+      doGenerate: async () => {
+        const err = queue.shift();
+        if (err) throw err;
+        return {
+          content: [{ type: "text", text: "It has shipped." }],
+          finishReason: { unified: "stop", raw: "stop" },
+          usage: {
+            inputTokens: { total: 5, noCache: 5, cacheRead: 0, cacheWrite: 0 },
+            outputTokens: { total: 15, text: 15, reasoning: 0 },
+          },
+          warnings: [],
+        };
+      },
+    });
+  };
+  const generate = (model: Model) =>
+    generateText({ model, prompt: "Where is my order?", maxRetries: 0 });
+
+  it("retries a retryable error with backoff, then caches the success once", async () => {
+    const inner = flaky([rateLimit(), rateLimit()]);
+    const waits: number[] = [];
+    const backoff = {
+      retries: 3,
+      baseMs: 100,
+      maxMs: 1000,
+      random: () => 0,
+      sleep: async (ms: number) => void waits.push(ms),
+    };
+    const model = replayModel(inner, cache, tally, { delay: false, backoff });
+
+    const first = await generate(model);
+    const second = await generate(model);
+
+    expect(first.text).toBe("It has shipped.");
+    expect(second.text).toBe(first.text);
+    expect(inner.doGenerateCalls).toHaveLength(3);
+    expect(waits).toEqual([1000, 1000]);
+    expect(tally).toEqual({ replayed: 1, live: 1 });
+  });
+
+  it("does not retry a non-retryable error", async () => {
+    const inner = flaky([new Error("schema mismatch")]);
+    const backoff = { retries: 3, baseMs: 1, maxMs: 1, sleep: async () => {} };
+
+    await expect(
+      generate(replayModel(inner, cache, tally, { delay: false, backoff })),
+    ).rejects.toThrow("schema mismatch");
+
+    expect(inner.doGenerateCalls).toHaveLength(1);
+  });
+
+  it("throws the last retryable error once the retries run out", async () => {
+    const inner = flaky([rateLimit(), rateLimit(), rateLimit()]);
+    const backoff = { retries: 1, baseMs: 1, maxMs: 1, sleep: async () => {} };
+
+    await expect(
+      generate(replayModel(inner, cache, tally, { delay: false, backoff })),
+    ).rejects.toThrow("No access to this model");
+
+    expect(inner.doGenerateCalls).toHaveLength(2);
   });
 
   it("in a dry run, records a miss and throws without generating", async () => {

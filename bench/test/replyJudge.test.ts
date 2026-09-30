@@ -134,3 +134,38 @@ describe("renderSpotCheck", () => {
     expect(renderSpotCheck(written, predictions, 7, 30).match(/^## \d+$/gm)).toHaveLength(5);
   });
 });
+
+describe("compareReplies with backoff", () => {
+  it("retries a rate-limited judge call and caches the verdict once", async () => {
+    let failures = 2;
+    const model = new MockLanguageModelV4({
+      modelId: "mock-judge",
+      doGenerate: async () => {
+        if (failures-- > 0) throw Object.assign(new Error("HTTP 429"), { statusCode: 429 });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ better: "tie" }) }],
+          finishReason: { unified: "stop", raw: "stop" },
+          usage,
+          warnings: [],
+        };
+      },
+    });
+    const backoff = { retries: 3, baseMs: 1, maxMs: 1, sleep: async () => {} };
+    const options = {
+      baseline: "frontier",
+      judge: { model, modelId: "mock-judge" },
+      cache,
+      seed: 7,
+      concurrency: 1,
+      backoff,
+    };
+    const one = tickets.slice(0, 1);
+
+    const first = await compareReplies(one, fieldwork, frontier, options);
+    const again = await compareReplies(one, fieldwork, frontier, options);
+
+    expect(first.verdicts[0]).toMatchObject({ winner: "tie", error: null });
+    expect(again.verdicts[0]).toMatchObject({ winner: "tie" });
+    expect(model.doGenerateCalls).toHaveLength(3);
+  });
+});

@@ -1,4 +1,12 @@
 import { wrapLanguageModel, type LanguageModel, type LanguageModelMiddleware } from "ai";
+import {
+  isRetryableStatus,
+  NO_RETRIES,
+  parseRetryAfter,
+  retryTimed,
+  withBackoff,
+  type BackoffOptions,
+} from "./backoff.ts";
 import { cacheKey, CacheMiss, type ResponseCache } from "./cache.ts";
 import { JEV_PROVIDER } from "./systems/jev.ts";
 
@@ -20,6 +28,8 @@ export interface ReplayOptions {
    * deadline behave as the live run's did. A dry run turns it off.
    */
   delay: boolean;
+  /** Retry rate limits and server errors on a live miss; absent means no retries. */
+  backoff?: BackoffOptions;
 }
 
 /** Resolve after `ms`, or reject with the signal's reason if it aborts first. */
@@ -53,8 +63,8 @@ const respond = (value: CachedHttp) =>
 /**
  * A `fetch` for `TypeSafeClient` that serves systemOne requests from the response cache. It adds
  * the pilot's routing restriction, so every call reaches TypeSafe's own deployment. Only 2xx
- * responses are cached: a 429 or 5xx goes back to the SDK, which retries it, and the next run
- * sends it again.
+ * responses are cached. A 408, 429 or 5xx is retried with backoff; if it still fails, it goes
+ * back uncached and the next run sends it again.
  */
 export function replayFetch(
   cache: ResponseCache,
@@ -87,12 +97,24 @@ export function replayFetch(
     }
 
     tally.live++;
-    const started = performance.now();
-    const response = await send(input, { ...init, body: JSON.stringify(body) });
+    // Only the successful attempt is timed, so backoff waits stay out of the latency.
+    let ms = 0;
+    const response = await withBackoff<Response>(
+      async () => {
+        const started = performance.now();
+        const res = await send(input, { ...init, body: JSON.stringify(body) });
+        ms = Math.round(performance.now() - started);
+        if (!isRetryableStatus(res.status)) return { done: res };
+
+        return { retry: res, retryAfterMs: parseRetryAfter(res.headers.get("retry-after")) };
+      },
+      { ...(options.backoff ?? NO_RETRIES), signal: init?.signal },
+      (res) => res as Response,
+    );
     if (!response.ok) return response;
 
     const value = { status: response.status, body: await response.text() };
-    await cache.set(key, { value, ms: Math.round(performance.now() - started) });
+    await cache.set(key, { value, ms });
     return respond(value);
   };
 }
@@ -133,14 +155,16 @@ export function replayModel(
       }
 
       tally.live++;
-      const started = performance.now();
-      const result = await doGenerate();
+      const { value: result, ms } = await retryTimed(
+        { ...(options.backoff ?? NO_RETRIES), signal: params.abortSignal },
+        doGenerate,
+      );
       const value: CachedGenerate = {
         content: result.content,
         finishReason: result.finishReason,
         usage: result.usage,
       };
-      await cache.set(key, { value, ms: Math.round(performance.now() - started) });
+      await cache.set(key, { value, ms });
       return result;
     },
   };

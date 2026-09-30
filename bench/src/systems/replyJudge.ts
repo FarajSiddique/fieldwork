@@ -1,5 +1,6 @@
 import { generateText, Output, type LanguageModel } from "ai";
 import { z } from "zod";
+import { NO_RETRIES, retryTimed, type BackoffOptions } from "../backoff.ts";
 import { cacheKey, cachedCall, type ResponseCache } from "../cache.ts";
 import { mapLimit } from "../concurrency.ts";
 import { interval, type Interval } from "../evaluate.ts";
@@ -74,6 +75,8 @@ export async function compareReplies(
     cache: ResponseCache;
     seed: number;
     concurrency: number;
+    /** Retries for a rate-limited judge call; absent means none. */
+    backoff?: BackoffOptions;
   },
 ): Promise<{ comparison: ReplyComparison; verdicts: Verdict[] }> {
   const ours = new Map(fieldwork.map((p) => [p.ticketId, p.reply]));
@@ -93,14 +96,18 @@ export async function compareReplies(
     };
 
     try {
-      const entry = await cachedCall(options.cache, request, async () => {
-        const result = await generateText({
-          model: options.judge.model,
-          prompt: request.prompt,
-          output: Output.object({ schema: judgeSchema }),
-        });
-        return result.output;
-      });
+      const entry = await cachedCall<unknown>(options.cache, request, () =>
+        retryTimed(options.backoff ?? NO_RETRIES, async () => {
+          const result = await generateText({
+            model: options.judge.model,
+            prompt: request.prompt,
+            output: Output.object({ schema: judgeSchema }),
+            // The backoff retries; the AI SDK's own retries would multiply it.
+            maxRetries: 0,
+          });
+          return result.output;
+        }),
+      );
       const { better } = judgeSchema.parse(entry.value);
       const winner: Winner =
         better === "tie" ? "tie" : (better === "first") === first ? "fieldwork" : "baseline";

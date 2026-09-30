@@ -5,6 +5,7 @@ import { gateway } from "ai";
 import type { Prices } from "fieldwork";
 import type { BitextTicket } from "./bitext/sample.ts";
 import { runBench } from "./benchRun.ts";
+import { DEFAULT_BACKOFF, retriesFromEnv, type BackoffOptions } from "./backoff.ts";
 import { ResponseCache } from "./cache.ts";
 import {
   benchModels,
@@ -37,8 +38,17 @@ try {
 
 const models = benchModels();
 const CONCURRENCY = Number(process.env.BENCH_CONCURRENCY ?? 8);
-// The spec's example uses 10 s; notes come from the mid model through a gateway, so allow more.
-const DEADLINE_MS = 30_000;
+// The spec's example uses 10 s; notes come from the mid model through a gateway, and a rate-limited
+// call may wait out several backoff delays (up to 30 s each), so allow much more.
+const DEADLINE_MS = 180_000;
+
+let backoff: BackoffOptions;
+try {
+  backoff = { ...DEFAULT_BACKOFF, retries: retriesFromEnv(process.env.BENCH_RETRIES) };
+} catch (err) {
+  console.error((err as Error).message);
+  process.exit(2);
+}
 
 const prices = JSON.parse(await readFile(paths.prices, "utf8")) as PriceTable;
 const unpriced = missingPrices(models, prices);
@@ -54,13 +64,15 @@ const written = labeledSplit(await loadWrittenSet(paths.written), split);
 // "cache-only" lets a fully cached rerun work without a key, as in the pilot.
 const apiKey = process.env.AI_GATEWAY_API_KEY ?? "cache-only";
 const fieldworkPrices: Prices = { jev: prices[models.jev], text: prices };
-const replay = { delay: !dryRun };
+const replay = { delay: !dryRun, backoff };
 const fieldwork: FieldworkFactory = (tally) => ({
   typesafe: new TypeSafeClient({
     apiKey,
     baseURL: GATEWAY_TYPESAFE_URL,
     defaultModel: models.jev,
     logLevel: "warn",
+    // replayFetch retries with backoff; the SDK's own retries would multiply it.
+    retry: { maxRetries: 0 },
     fetch: replayFetch(cache, tally, replay),
   }),
   models: {
@@ -79,6 +91,7 @@ const run = await runBench(bitext, written, {
   cache,
   prices,
   concurrency: CONCURRENCY,
+  backoff,
   fieldwork,
   frontier: { name: "frontier", model: models.frontier, modelId: models.frontier },
   cheap: { name: "cheap", model: models.cheap, modelId: models.cheap },
