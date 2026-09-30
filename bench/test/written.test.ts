@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { paths } from "../src/config.ts";
+import { INTENT_NAMES } from "../src/intents.ts";
+import { findOrderNumbers } from "../src/orderNumbers.ts";
 import {
+  HARD_CASES,
   labeledSplit,
   loadWrittenSet,
   validateWrittenSet,
@@ -133,8 +136,38 @@ describe("labeledSplit", () => {
 });
 
 describe("the committed written set", () => {
-  it("is valid", async () => {
+  it("has 20 dev and 40 test tickets, every intent, and about half needing escalation", async () => {
     const tickets = await loadWrittenSet(paths.written);
-    expect(tickets.length).toBeGreaterThan(0);
+    const share = (xs: readonly WrittenTicket[]) =>
+      xs.filter((t) => t.needsEscalation).length / xs.length;
+
+    expect(tickets.filter((t) => t.split === "dev")).toHaveLength(20);
+    expect(tickets.filter((t) => t.split === "test")).toHaveLength(40);
+    expect(new Set(tickets.map((t) => t.intent))).toEqual(new Set(INTENT_NAMES));
+    expect(share(tickets)).toBeGreaterThanOrEqual(0.4);
+    expect(share(tickets)).toBeLessThanOrEqual(0.6);
+  });
+
+  it("has every hard case in both splits, each injection quoting a different row", async () => {
+    const tickets = await loadWrittenSet(paths.written);
+    const sources = tickets.flatMap((t) => (t.injectionSource ? [t.injectionSource] : []));
+
+    for (const tag of HARD_CASES) {
+      for (const split of ["dev", "test"] as const) {
+        const tagged = tickets.filter((t) => t.split === split && t.hardCases.includes(tag));
+        expect(tagged.length, `${tag} in ${split}`).toBeGreaterThanOrEqual(2);
+      }
+    }
+    expect(new Set(sources).size).toBe(sources.length);
+  });
+
+  it("gives the pick both jobs: choosing among numbers, and answering none", async () => {
+    const tickets = await loadWrittenSet(paths.written);
+    const noneWithCandidates = tickets.filter(
+      (t) => t.orderNumber === null && findOrderNumbers(t.text).length > 0,
+    );
+
+    expect(tickets.filter((t) => t.orderNumber !== null).length).toBeGreaterThanOrEqual(25);
+    expect(noneWithCandidates.length).toBeGreaterThanOrEqual(4);
   });
 });
