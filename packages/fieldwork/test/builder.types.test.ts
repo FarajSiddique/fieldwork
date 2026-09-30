@@ -3,6 +3,7 @@
 import { choice, noul, score } from "@typesafe-ai/sdk";
 import { describe, expect, expectTypeOf, it } from "vitest";
 import { fieldwork, type ResultsOf } from "../src/builder.ts";
+import type { Trace } from "../src/trace.ts";
 import type { FieldView, NoulValue } from "../src/types.ts";
 
 const INTENTS = { track_order: "Where an order is", get_refund: "Wants money back" } as const;
@@ -159,6 +160,19 @@ describe("builder types", () => {
     fieldwork<{ ticket: string }>()
       // @ts-expect-error: a widened string name
       .tool(wide, { call: () => 1 });
+  });
+
+  it("rejects a name used by an input", () => {
+    fieldwork<{ ticket: string }>()
+      // @ts-expect-error: `ticket` is an input; inputs and fields share jev state
+      .tool("ticket", { call: () => 1 });
+  });
+
+  it("types run's inputs, results and trace from the schema", () => {
+    type Run = Awaited<ReturnType<typeof triage.run>>;
+    expectTypeOf<Run["fields"]>().toEqualTypeOf<ResultsOf<typeof triage>>();
+    expectTypeOf<Run["trace"]>().toEqualTypeOf<Trace>();
+    expectTypeOf(triage.run).parameter(0).toEqualTypeOf<{ ticket: string }>();
   });
 
   it("takes gate for choice and score, yesAbove for noul", () => {
