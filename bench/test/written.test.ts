@@ -170,4 +170,11 @@ describe("the committed written set", () => {
     expect(tickets.filter((t) => t.orderNumber !== null).length).toBeGreaterThanOrEqual(25);
     expect(noneWithCandidates.length).toBeGreaterThanOrEqual(4);
   });
+
+  it("is fully labeled in both splits", async () => {
+    const tickets = await loadWrittenSet(paths.written);
+
+    expect(labeledSplit(tickets, "dev")).toHaveLength(20);
+    expect(labeledSplit(tickets, "test")).toHaveLength(40);
+  });
 });
