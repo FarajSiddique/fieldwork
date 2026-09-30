@@ -155,6 +155,18 @@ describe("fieldwork builder", () => {
     rejects(() => untyped().pick!("a", { instructions: "?" }), /a: candidates must be a function/);
   });
 
+  it("rejects minScore on a text field that is not graded", () => {
+    rejects(
+      () =>
+        fieldwork<{ ticket: string }>().text("a", {
+          instructions: "Write",
+          grade: false,
+          minScore: 0.5,
+        }),
+      /a: minScore needs grading, but grade is false/,
+    );
+  });
+
   it("rejects an after that is not a list of names", () => {
     rejects(
       () => untyped().tool!("a", { after: "intent", call: () => 1 }),

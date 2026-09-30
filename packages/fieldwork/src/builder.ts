@@ -1,5 +1,6 @@
 import type { Question } from "@typesafe-ai/sdk";
 import { DefinitionError } from "./errors.ts";
+import { run as runFields, type RunOptions, type RunResult } from "./run.ts";
 import type {
   CommonSpec,
   FieldSpec,
@@ -21,13 +22,14 @@ import type {
 type IsUnion<T, U = T> = T extends unknown ? ([U] extends [T] ? false : true) : never;
 
 /**
- * A single literal name not used by an earlier field. A widened `string` or a union is rejected:
- * either would type fields that do not exist at runtime.
+ * A single literal name used by neither an earlier field nor an input. A widened `string` or a
+ * union is rejected: either would type fields that do not exist at runtime. Inputs and fields
+ * share one namespace in jev state and text prompts.
  */
-type NewName<N extends string, F> = string extends N
+type NewName<N extends string, F, I> = string extends N
   ? never
   : IsUnion<N> extends false
-    ? N extends keyof F
+    ? N extends keyof F | keyof I
       ? never
       : N
     : never;
@@ -97,7 +99,7 @@ export class Builder<I extends object, F extends object = Empty> {
 
   /** A jev judgment: a TypeSafe `choice()`, `score()` or `noul()` question, passed through. */
   judge<const N extends string, const Q extends Question, const A extends keyof F & string = never>(
-    name: NewName<N, F>,
+    name: NewName<N, F, I>,
     question: Q,
     options: JudgeOptions<I, F, A, Q> = {} as JudgeOptions<I, F, A, Q>,
   ): Builder<I, F & { [K in N]: JudgeValue<Q> }> {
@@ -131,7 +133,7 @@ export class Builder<I extends object, F extends object = Empty> {
 
   /** A jev selection among candidate strings found by code, plus a `none` option. */
   pick<const N extends string, const A extends keyof F & string = never>(
-    name: NewName<N, F>,
+    name: NewName<N, F, I>,
     options: PickOptions<I, F, A>,
   ): Builder<I, F & { [K in N]: PickValue }> {
     const common = commonSpec(name, options);
@@ -148,7 +150,7 @@ export class Builder<I extends object, F extends object = Empty> {
 
   /** The application's own function, called with the `after` fields and the inputs. */
   tool<const N extends string, T, const A extends keyof F & string = never>(
-    name: NewName<N, F>,
+    name: NewName<N, F, I>,
     options: ToolOptions<I, F, A, T>,
   ): Builder<I, F & { [K in N]: ToolValue<Awaited<T>> }> {
     const common = commonSpec(name, options);
@@ -158,11 +160,14 @@ export class Builder<I extends object, F extends object = Empty> {
 
   /** Text from an AI SDK model, chosen by `reasoning` tier or passed as `model`. */
   text<const N extends string, const A extends keyof F & string = never>(
-    name: NewName<N, F>,
+    name: NewName<N, F, I>,
     options: TextOptions<I, F, A>,
   ): Builder<I, F & { [K in N]: TextValue }> {
     const common = commonSpec(name, options);
     checkThreshold(name, "minScore", options.minScore);
+    if (options.grade === false && options.minScore !== undefined) {
+      throw new DefinitionError(`${name}: minScore needs grading, but grade is false`);
+    }
     return this.#add({
       kind: "text",
       ...common,
@@ -173,6 +178,11 @@ export class Builder<I extends object, F extends object = Empty> {
       grade: options.grade ?? true,
       minScore: options.minScore,
     });
+  }
+
+  /** Fill every field for one set of inputs. Field failures never reject; see `RunResult`. */
+  run(input: I, options: RunOptions): Promise<RunResult<F>> {
+    return runFields(this.fields, input, options) as Promise<RunResult<F>>;
   }
 }
 
