@@ -18,6 +18,10 @@ The intent descriptions and order-number question were fixed (commit 74d27ea) an
 
 The four confidence-1.00 errors on these tickets are gone; every new-wording error has confidence 0.91 or lower. The subset is small and not random, so this is a signal rather than the gate. The project owner decided to proceed to M1 provisionally. The full 270-ticket rerun, with the same gate, is still owed once the gateway issue clears, and parts of M1 that depend on jev's confidence stay provisional until then.
 
+### Update 2026-09-29: full rerun still blocked
+
+The full dev rerun was tried once more. Preflight counted 203 live jev calls (67 cached, estimated $0.0079); the run made them and AI Gateway refused 202 of the 270 jev calls with `RateLimitError: 429 No access to this model at this time` (one call succeeded and was cached). The Haiku 4.5 baseline was fully cached and had no failures. That is 202 of 540 predictions failed, against a limit of 5, so the run is incomplete and its report is not a result: failures score as wrong with confidence 0, which is why the discarded report showed jev at 23.3% intent accuracy. `pilot.md` and `pilot.json` were restored to the previous committed run. No calls were retried after this run; the failure is account-side, and the rerun stays owed. The provisional GO above is not superseded, and the confidence gate (jev intent AUROC ≥ 0.70 with the interval's lower bound above 0.5) has not been applied to the full split.
+
 ## Criteria
 
 | Criterion | Threshold | Result | Met |
