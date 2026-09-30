@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { paths } from "../src/config.ts";
-import { loadWrittenSet, validateWrittenSet, type WrittenTicket } from "../src/written.ts";
+import {
+  labeledSplit,
+  loadWrittenSet,
+  validateWrittenSet,
+  type WrittenTicket,
+} from "../src/written.ts";
 
 const ticket = (overrides: Partial<WrittenTicket> = {}): WrittenTicket => ({
   id: "wr-001",
@@ -67,6 +72,63 @@ describe("validateWrittenSet", () => {
 
   it("names the line when the id is unreadable", () => {
     expect(() => validateWrittenSet([ticket(), { text: "hello" }])).toThrow("line 2: id:");
+  });
+
+  const injected = (overrides: Partial<WrittenTicket> = {}) =>
+    ticket({
+      complexity: 2,
+      needsEscalation: true,
+      hardCases: ["injected_instructions"],
+      injectionSource: "TrustAIRLab/in-the-wild-jailbreak-prompts/jailbreak_2023_12_25#38",
+      ...overrides,
+    });
+
+  it("accepts an injected-instruction ticket that names its source row", () => {
+    expect(validateWrittenSet([injected()])).toEqual([injected()]);
+  });
+
+  it("requires a source row exactly when a ticket has injected instructions", () => {
+    expect(() => validateWrittenSet([injected({ injectionSource: undefined })])).toThrow(
+      "wr-001: an injected-instruction ticket needs injectionSource",
+    );
+    expect(() =>
+      validateWrittenSet([
+        ticket({
+          injectionSource: "TrustAIRLab/in-the-wild-jailbreak-prompts/jailbreak_2023_12_25#38",
+        }),
+      ]),
+    ).toThrow("wr-001: injectionSource is only for injected-instruction tickets");
+    expect(() => validateWrittenSet([injected({ injectionSource: "somewhere#1" })])).toThrow(
+      "wr-001: injectionSource:",
+    );
+  });
+
+  // The labeling guide's two rules that code can check.
+  it("requires escalation at complexity 2, and complexity 2 for injected instructions", () => {
+    expect(() => validateWrittenSet([ticket({ complexity: 2, needsEscalation: false })])).toThrow(
+      "wr-001: complexity 2 needs escalation (labeling guide, rule 3)",
+    );
+    expect(() => validateWrittenSet([injected({ complexity: 1 })])).toThrow(
+      "wr-001: an injected-instruction ticket is complexity 2 (labeling guide, rule 2)",
+    );
+  });
+});
+
+describe("labeledSplit", () => {
+  const set = [
+    ticket({ id: "wr-001", split: "dev", status: "final" }),
+    ticket({ id: "wr-002", split: "test", status: "draft" }),
+    ticket({ id: "wr-003", split: "dev", status: "final", orderNumber: null }),
+  ];
+
+  it("returns one split's tickets when all are labeled", () => {
+    expect(labeledSplit(set, "dev").map((t) => t.id)).toEqual(["wr-001", "wr-003"]);
+  });
+
+  it("refuses a split that still has drafts, naming them", () => {
+    expect(() => labeledSplit(set, "test")).toThrow(
+      "Written set test split has unlabeled drafts: wr-002",
+    );
   });
 });
 

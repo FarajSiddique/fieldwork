@@ -6,10 +6,12 @@ import { findOrderNumbers } from "./orderNumbers.ts";
 /** The jev weak spots the written set tags, from TypeSafe's jev notes. */
 export const HARD_CASES = ["mixed_intents", "relative_dates", "injected_instructions"] as const;
 
+export type HardCase = (typeof HARD_CASES)[number];
+
 export const writtenTicketSchema = z.strictObject({
   id: z.string().regex(/^wr-\d{3}$/),
   split: z.enum(["dev", "test"]),
-  /** `draft` until labeled against the labeling guide (week 4). */
+  /** `draft` until the owner has checked its labels against bench/data/LABELING.md. */
   status: z.enum(["draft", "final"]),
   synthetic: z.literal(true),
   text: z.string().trim().min(1),
@@ -21,6 +23,11 @@ export const writtenTicketSchema = z.strictObject({
   /** Exactly as written in the ticket, or `null` when the ticket has none. */
   orderNumber: z.string().nullable(),
   hardCases: z.array(z.enum(HARD_CASES)),
+  /** For injected instructions: the quoted row, as `<dataset>/<config>#<row>` (see NOTICE.md). */
+  injectionSource: z
+    .string()
+    .regex(/^TrustAIRLab\/in-the-wild-jailbreak-prompts\/[a-z0-9_]+#\d+$/)
+    .optional(),
 });
 
 export type WrittenTicket = z.infer<typeof writtenTicketSchema>;
@@ -56,6 +63,24 @@ export function validateWrittenSet(records: readonly unknown[]): WrittenTicket[]
         `${t.id}: a ticket with an order number needs another candidate number (5+ digits) as a distractor`,
       );
     }
+
+    const isInjected = t.hardCases.includes("injected_instructions");
+    if (isInjected && t.injectionSource === undefined) {
+      problems.push(`${t.id}: an injected-instruction ticket needs injectionSource`);
+    } else if (!isInjected && t.injectionSource !== undefined) {
+      problems.push(`${t.id}: injectionSource is only for injected-instruction tickets`);
+    }
+
+    // The labeling guide's rules that code can check (bench/data/LABELING.md).
+    if (isInjected && t.complexity !== 2) {
+      problems.push(
+        `${t.id}: an injected-instruction ticket is complexity 2 (labeling guide, rule 2)`,
+      );
+    }
+    if (t.complexity === 2 && !t.needsEscalation) {
+      problems.push(`${t.id}: complexity 2 needs escalation (labeling guide, rule 3)`);
+    }
+
     tickets.push(t);
   });
   if (problems.length > 0) throw new Error(`Invalid written set:\n${problems.join("\n")}`);
@@ -64,4 +89,20 @@ export function validateWrittenSet(records: readonly unknown[]): WrittenTicket[]
 
 export async function loadWrittenSet(path: string): Promise<WrittenTicket[]> {
   return validateWrittenSet(await readJsonl<unknown>(path));
+}
+
+/**
+ * One split's tickets, all labeled. A draft's labels have not been checked against the guide,
+ * so a split that still has one cannot be benchmarked.
+ */
+export function labeledSplit(
+  tickets: readonly WrittenTicket[],
+  split: "dev" | "test",
+): WrittenTicket[] {
+  const chosen = tickets.filter((t) => t.split === split);
+  const drafts = chosen.filter((t) => t.status === "draft").map((t) => t.id);
+  if (drafts.length > 0) {
+    throw new Error(`Written set ${split} split has unlabeled drafts: ${drafts.join(", ")}`);
+  }
+  return chosen;
 }
