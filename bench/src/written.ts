@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { INTENT_NAMES } from "./intents.ts";
 import { readJsonl } from "./io.ts";
-import { findOrderNumbers } from "./systems/jev.ts";
+import { findOrderNumbers } from "./orderNumbers.ts";
 
 /** The jev weak spots the written set tags, from TypeSafe's jev notes. */
 export const HARD_CASES = ["mixed_intents", "relative_dates", "injected_instructions"] as const;

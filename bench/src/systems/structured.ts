@@ -4,7 +4,7 @@ import type { BitextTicket } from "../bitext/sample.ts";
 import { cachedCall, type ResponseCache } from "../cache.ts";
 import { CATEGORY_OF, INTENT_NAMES, INTENTS } from "../intents.ts";
 import { INTENT_INSTRUCTIONS, ORDER_NUMBER_TARGET } from "../wording.ts";
-import { failedPrediction, type Prediction } from "./types.ts";
+import { failedPrediction, type Prediction } from "./prediction.ts";
 
 export const structuredSchema = z.object({
   intent: z.enum(INTENT_NAMES),
@@ -74,6 +74,7 @@ export async function runStructured(
       intent: output.intent,
       intentConfidence: output.intentConfidence,
       category: CATEGORY_OF[output.intent],
+      // No per-intent probabilities to sum, so the intent confidence stands in (a lower bound).
       categoryConfidence: output.intentConfidence,
       orderNumber: output.orderNumber,
       orderNumberConfidence: output.orderNumberConfidence,
