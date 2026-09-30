@@ -9,7 +9,8 @@ const num = (x: number) => (Number.isFinite(x) ? x.toFixed(3) : "n/a");
 const ms = (x: number) => (Number.isFinite(x) ? String(x) : "n/a");
 const withCi = (i: Interval, f: (x: number) => string) =>
   `${f(i.value)} (${f(i.ci[0])}–${f(i.ci[1])})`;
-const usd = (x: number | null) => (x === null ? "n/a (price missing)" : `$${x.toFixed(6)}`);
+const usd = (x: number | null) =>
+  x === null ? "n/a (price missing)" : Number.isFinite(x) ? `$${x.toFixed(6)}` : "n/a";
 const pass = (ok: boolean) => (ok ? "pass" : "FAIL");
 
 /** The Bitext metrics, one column per system; shared by the pilot and the benchmark. */

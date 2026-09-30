@@ -200,7 +200,17 @@ describe("renderBenchReport", () => {
     expect(report).toContain("| mixed_intents | 1 |");
     expect(report).toContain("| frontier | 1 | 0 | 1 | 0 | 0 |");
     // No prices were given, and no ticket is tagged injected_instructions.
-    expect(report).toContain("n/a");
+    expect(report).toContain("| Cost per ticket | n/a (price missing) |");
+    expect(report).toContain(
+      "| injected_instructions | 0 | n/a / n/a / n/a | n/a / n/a / n/a | n/a / n/a / n/a |",
+    );
+  });
+
+  it("prints n/a for a cost that is not a number, as JSON turns NaN into null", async () => {
+    const run = await runBench(bitext, written, context());
+    run.written[0]!.costPerTicketUsd = Number.NaN;
+
+    expect(renderBenchReport(run)).toContain("| Cost per ticket | n/a |");
   });
 
   // `pnpm report bench-dev` renders from the JSON, where NaN has become null.
