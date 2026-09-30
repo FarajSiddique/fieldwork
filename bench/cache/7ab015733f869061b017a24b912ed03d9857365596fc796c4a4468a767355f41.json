@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.95,
+      "complexity": 2,
+      "complexityConfidence": 0.88,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.92,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.85,
+      "reply": "I'm so sorry you were charged twice—that's frustrating! I'm escalating this to our team right away to investigate the duplicate charge on your card and get this resolved quickly.",
+      "escalationNote": "Customer double-charged $142.50 twice for single order; urgent—rent payment due Friday; card ending 4421; needs immediate refund investigation."
+    },
+    "inputTokens": 1415,
+    "outputTokens": 140
+  },
+  "ms": 2106
+}

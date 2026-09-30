@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.72,
+      "complexity": 1,
+      "complexityConfidence": 0.65,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "571244",
+      "orderNumberConfidence": 0.98,
+      "reply": "I'd be happy to help you correct your purchase! Could you please tell me what needs to be adjusted? Whether it's item details, quantities, or anything else, I'm here to assist.",
+      "escalationNote": "Customer wants to correct/modify purchase #571244; awaiting details on what needs to be changed."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 148
+  },
+  "ms": 2010
+}

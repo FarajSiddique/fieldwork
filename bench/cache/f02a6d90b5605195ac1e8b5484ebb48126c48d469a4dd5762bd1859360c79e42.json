@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.88,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! Could you tell me which products you're interested in? I can guide you through selecting items, check availability, and help you complete your purchase.",
+      "escalationNote": "Customer wants to place a new order but hasn't specified which products yet."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 120
+  },
+  "ms": 2318
+}

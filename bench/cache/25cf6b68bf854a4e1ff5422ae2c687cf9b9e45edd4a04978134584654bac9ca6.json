@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_options",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! I'd be happy to help you explore our shipping methods. We offer several delivery options to suit your needs. Could you let me know your location so I can share the available methods for you?",
+      "escalationNote": "Customer asking about available shipping methods and delivery options."
+    },
+    "inputTokens": 1379,
+    "outputTokens": 120
+  },
+  "ms": 2075
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "#356847",
+      "orderNumberConfidence": 0.95,
+      "reply": "Of course! I'd be happy to help you modify your order. Could you please let me know which products you'd like to change and what you'd like to replace them with? I'll make sure we get this sorted for you.",
+      "escalationNote": "Customer wants to modify products in order #356847; needs to provide specific product changes."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 137
+  },
+  "ms": 1776
+}

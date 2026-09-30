@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're experiencing payment troubles. I'm here to help! Could you tell me more about what's happening? For example, what error message did you see, or what went wrong when you tried to pay?",
+      "escalationNote": "Customer reporting payment issues during checkout; needs troubleshooting and may require payment method investigation."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 133
+  },
+  "ms": 1953
+}

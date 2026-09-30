@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Customer is asking which situations qualify for a refund (no order, category, or prior-contact details provided), so they likely need a summary of the refund policy and eligibility criteria."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 136,
+        "noCache": 136,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 57,
+        "text": 57,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 136,
+        "output_tokens": 57,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 1196
+}

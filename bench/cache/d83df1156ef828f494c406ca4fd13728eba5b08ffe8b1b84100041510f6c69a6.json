@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "#471082",
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you edit order #471082. Could you tell me which details you'd like to change? I'll look into what's possible and get you sorted quickly.",
+      "escalationNote": "Customer unable to edit order #471082 through system; needs manual intervention to modify order details."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 129
+  },
+  "ms": 2040
+}

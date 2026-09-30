@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Thanks for returning your headphones! I understand you'd like to know about your refund status. Let me look into this for you. Refunds typically process after we receive and inspect returned items. I'll help track this down.",
+      "escalationNote": "Customer returned headphones with confirmed return, inquiring about refund status - needs refund tracking investigation."
+    },
+    "inputTokens": 1446,
+    "outputTokens": 139
+  },
+  "ms": 2176
+}

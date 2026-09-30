@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_payment_methods",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! We accept all major credit cards, debit cards, digital wallets, and bank transfers. For a complete list of payment methods available in your region, please visit our website or let me know if you need more details!",
+      "escalationNote": "Customer inquiring about accepted payment methods."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 126
+  },
+  "ms": 1720
+}

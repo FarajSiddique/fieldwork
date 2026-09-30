@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_invoice",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you view your bill. To locate it, I'll need your account email or customer ID associated with Tom Becker's account. Could you provide that information?",
+      "escalationNote": "Customer requests to view invoice/bill under account name Tom Becker; needs account identifier to retrieve billing document."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 133
+  },
+  "ms": 1873
+}

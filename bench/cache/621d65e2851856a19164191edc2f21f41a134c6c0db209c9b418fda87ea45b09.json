@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "set_up_shipping_address",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for reaching out! I'd love to help you set up your secondary shipping address. Could you share what specific issue you're running into? That way I can guide you through it quickly.",
+      "escalationNote": "Customer having trouble setting up a secondary shipping address; needs technical assistance or step-by-step guidance."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 133
+  },
+  "ms": 1655
+}

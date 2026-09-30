@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.75,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you get an invoice for Maria Lopez's order. Could you please share the order number so I can locate it quickly for you?",
+      "escalationNote": "Customer requesting invoice for Maria Lopez but no order number provided; needs order details to retrieve bill."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 122
+  },
+  "ms": 1696
+}

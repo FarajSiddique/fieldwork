@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "create_account",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Great! I'd be happy to help set up a business account for your wife. I'll guide you through the registration process. Could you provide her email address and any other details needed to get started?",
+      "escalationNote": "Customer wants to create a new business account for their wife; straightforward account creation request."
+    },
+    "inputTokens": 1379,
+    "outputTokens": 128
+  },
+  "ms": 1909
+}

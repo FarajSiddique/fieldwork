@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delete_account",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you close your business account. The process typically involves a few steps. Let me connect you with someone who can guide you through it and ensure everything is handled properly.",
+      "escalationNote": "Customer wants to delete/close their business account but unsure of the procedure; needs guidance through account closure process."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 131
+  },
+  "ms": 1751
+}

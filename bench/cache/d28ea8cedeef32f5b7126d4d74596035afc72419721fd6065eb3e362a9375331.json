@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi there! Thanks for your interest in our products. I'd love to help you get started! Could you tell me which items you're interested in, and I'll guide you through the ordering process.",
+      "escalationNote": "Customer wants help placing a new order but hasn't specified which items yet."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 125
+  },
+  "ms": 1926
+}

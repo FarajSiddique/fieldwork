@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "582041",
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! Thanks for reaching out. I see order #582041 shipped on March 3rd. The tracking system may be delayed—let me investigate where your desk actually is right now and get you an update.",
+      "escalationNote": "Order #582041 standing desk shipped March 3rd but tracking hasn't updated in 9 days; customer needs status check."
+    },
+    "inputTokens": 1419,
+    "outputTokens": 142
+  },
+  "ms": 1875
+}

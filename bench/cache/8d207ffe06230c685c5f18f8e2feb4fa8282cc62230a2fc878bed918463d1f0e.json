@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "edit_account",
+      "intentConfidence": 0.45,
+      "complexity": 1,
+      "complexityConfidence": 0.65,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you edit your address! You can update it in your account settings. If you need specific guidance, I'm here to walk you through the steps.",
+      "escalationNote": "Customer needs help editing their account address but unclear whether they mean shipping address or account profile address."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 124
+  },
+  "ms": 1839
+}

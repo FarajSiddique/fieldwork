@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! To discuss a refund, I'll need more details about your situation. Could you share your order number and explain what happened? That way, I can guide you through our refund process.",
+      "escalationNote": "Customer asking about refund process/eligibility but hasn't provided order number or specific issue details yet."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 139
+  },
+  "ms": 1844
+}

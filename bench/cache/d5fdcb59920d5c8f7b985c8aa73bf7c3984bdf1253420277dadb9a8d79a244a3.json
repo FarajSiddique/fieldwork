@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "#958466",
+      "orderNumberConfidence": 0.98,
+      "reply": "I'd be happy to help you cancel order #958466! I'll guide you through the process step by step. Can you tell me if there's a specific reason for the cancellation? This helps us assist you better.",
+      "escalationNote": "Customer wants to cancel order #958466 but unsure how to proceed; needs cancellation assistance."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 138
+  },
+  "ms": 4467
+}

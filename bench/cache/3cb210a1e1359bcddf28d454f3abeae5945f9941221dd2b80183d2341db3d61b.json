@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.88,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you understand our early exit penalty. This typically depends on your specific agreement and circumstances. Could you share a bit more about your situation so I can provide accurate details?",
+      "escalationNote": "Customer inquiring about early exit penalty/cancellation fee terms and conditions."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 128
+  },
+  "ms": 1729
+}

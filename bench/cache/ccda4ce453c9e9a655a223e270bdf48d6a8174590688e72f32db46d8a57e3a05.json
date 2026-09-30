@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#349818",
+      "orderNumberConfidence": 0.98,
+      "reply": "I'd be happy to help you remove an item from your order! Could you let me know which item you'd like to remove? I'll take care of this for you right away.",
+      "escalationNote": "Customer wants to remove an item from order #349818."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 121
+  },
+  "ms": 1618
+}

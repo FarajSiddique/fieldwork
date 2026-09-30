@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "recover_password",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you reset your password! You can typically do this by clicking the 'Forgot Password' link on the login page. We'll send you a secure link to create a new password. Let me know if you need any guidance!",
+      "escalationNote": "Customer wants to reset their account password - standard self-service recovery request."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 137
+  },
+  "ms": 1835
+}

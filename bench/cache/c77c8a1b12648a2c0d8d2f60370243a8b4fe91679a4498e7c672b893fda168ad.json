@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "review",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thank you for wanting to share your feedback! We'd love to hear about your experience. Please let us know what you'd like to review, and we'll guide you through the process.",
+      "escalationNote": "Customer wants to leave a review about a service; direct to review submission platform or provide review link."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 141
+  },
+  "ms": 1851
+}

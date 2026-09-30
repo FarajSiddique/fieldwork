@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! To check your delivery timeframe, I'll need your order number. Once you share that, I can look up the estimated arrival date for you right away.",
+      "escalationNote": "Customer unsure how to check shipment arrival date; needs guidance on tracking or order lookup process."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 128
+  },
+  "ms": 2525
+}

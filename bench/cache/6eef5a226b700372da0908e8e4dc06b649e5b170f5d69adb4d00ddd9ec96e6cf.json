@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Great question! Delivery times depend on your location and shipping method. If you have an order number, I can check the specific timeline for you. Otherwise, our standard delivery typically takes 5-7 business days. How can I help?",
+      "escalationNote": "Customer asking about delivery timeframe; no order number provided, needs general information or specific order lookup."
+    },
+    "inputTokens": 1389,
+    "outputTokens": 139
+  },
+  "ms": 2124
+}

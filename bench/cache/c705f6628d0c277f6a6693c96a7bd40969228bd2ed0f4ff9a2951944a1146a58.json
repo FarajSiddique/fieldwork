@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.65,
+      "complexity": 0,
+      "complexityConfidence": 0.6,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for reaching out! I'd love to help you shop. Could you clarify what you mean? Are you looking to purchase multiple items in one order, or do you need help navigating our store? I'm here to assist!",
+      "escalationNote": "Customer unclear on how to shop for multiple articles; may need guidance on ordering process or store navigation."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 137
+  },
+  "ms": 2495
+}

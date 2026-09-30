@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Customer is asking what shipping options are available; no category, complexity, repeat status, or order info provided, so this looks like a general pre-sale/informational inquiry."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 132,
+        "noCache": 132,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 54,
+        "text": 54,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 132,
+        "output_tokens": 54,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 1118
+}

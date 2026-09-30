@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you check your delivery timeframe! To look up when you can expect your purchase, I'll need your order number. Could you please share that with me?",
+      "escalationNote": "Customer asking about delivery timeframe for their purchase but did not provide order number."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 140
+  },
+  "ms": 1636
+}

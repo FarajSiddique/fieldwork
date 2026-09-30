@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "newsletter_subscription",
+      "intentConfidence": 0.98,
+      "complexity": 0,
+      "complexityConfidence": 0.99,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Of course! I'd be happy to help you unsubscribe from our corporate newsletter. I can process that for you right away or direct you to your account settings where you can manage your preferences. What works best for you?",
+      "escalationNote": "Customer requesting to unsubscribe from corporate newsletter."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 144
+  },
+  "ms": 1636
+}

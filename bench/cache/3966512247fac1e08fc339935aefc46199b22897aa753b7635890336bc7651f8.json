@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "newsletter_subscription",
+      "intentConfidence": 0.45,
+      "complexity": 2,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "I'm sorry to hear about your lamp and the delivery experience. I'll remove you from our newsletter right away. Please let me know your order number so we can document this incident properly and look into what happened.",
+      "escalationNote": "Customer wants newsletter unsubscribe but primary issue: delivery driver threw parcel over gate, breaking lamp inside; customer wants incident recorded."
+    },
+    "inputTokens": 1416,
+    "outputTokens": 140
+  },
+  "ms": 1908
+}

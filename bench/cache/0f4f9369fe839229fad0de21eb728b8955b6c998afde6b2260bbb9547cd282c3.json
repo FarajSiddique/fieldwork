@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.92,
+      "complexity": 2,
+      "complexityConfidence": 0.9,
+      "isRepeat": true,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "771930",
+      "orderNumberConfidence": 0.99,
+      "reply": "I'm truly sorry you've had this frustrating experience with two damaged blenders. I completely understand wanting a refund instead. I'm escalating this to our team right away to process your $89.99 refund immediately.",
+      "escalationNote": "Third contact: Order #771930 blender arrived cracked, replacement (return #30266) also cracked, customer requesting $89.99 refund instead of replacement."
+    },
+    "inputTokens": 1426,
+    "outputTokens": 157
+  },
+  "ms": 1971
+}

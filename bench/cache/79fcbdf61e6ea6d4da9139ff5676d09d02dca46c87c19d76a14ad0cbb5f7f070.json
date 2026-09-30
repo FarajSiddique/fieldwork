@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Customer requests help filing a consumer complaint (reclamation); no category, complexity, repeat status, or order details provided, so confirm the product/order and the issue with the customer first."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 134,
+        "noCache": 134,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 59,
+        "text": 59,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 134,
+        "output_tokens": 59,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 1338
+}

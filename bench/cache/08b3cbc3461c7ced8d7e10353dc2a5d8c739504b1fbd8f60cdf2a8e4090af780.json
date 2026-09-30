@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.98,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry you've had a negative experience. I'd be happy to help you file a formal complaint. Could you please share details about what happened? I'll make sure your concerns reach the right team.",
+      "escalationNote": "Customer wants to file a formal complaint against the organization; needs details about the issue to proceed."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 128
+  },
+  "ms": 1762
+}

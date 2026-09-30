@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.75,
+      "complexity": 1,
+      "complexityConfidence": 0.65,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi! I understand you need your bills. I'd be happy to help you retrieve your invoices. Could you provide your account email or customer number so I can locate them quickly?",
+      "escalationNote": "Customer Sofia Rossi requesting invoice/bill retrieval; frustrated tone; needs account verification to proceed."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 127
+  },
+  "ms": 2125
+}

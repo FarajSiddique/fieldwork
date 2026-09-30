@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.65,
+      "complexity": 0,
+      "complexityConfidence": 0.7,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'm here to help with your payment issue. Could you tell me more about what happened? For example, did you get an error message, was you charged twice, or is something else wrong? I'll guide you through it.",
+      "escalationNote": "Customer unsure how to report a payment issue; needs guidance on reporting process."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 134
+  },
+  "ms": 1951
+}

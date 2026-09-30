@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delete_account",
+      "intentConfidence": 0.75,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry you're having trouble with your Premium account removal. I'd be happy to help you sort this out. Could you tell me more about the specific issue you're experiencing?",
+      "escalationNote": "Customer reports a problem with removing their Premium account; needs details on the specific issue encountered."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 124
+  },
+  "ms": 1652
+}

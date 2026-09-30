@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "User is asking how to quickly view bill #37777 and needs guidance on where or how to look it up (no category, complexity, repeat status, or order details provided)."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 137,
+        "noCache": 137,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 51,
+        "text": 51,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 137,
+        "output_tokens": 51,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 2651
+}

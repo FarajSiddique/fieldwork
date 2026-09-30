@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "edit_account",
+      "intentConfidence": 0.45,
+      "complexity": 0,
+      "complexityConfidence": 0.35,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! Could you tell me more about what you're looking to do with your standard account? Are you trying to update your profile, change settings, or something else?",
+      "escalationNote": "Customer asking for guidance on using their standard account; unclear what specific feature or setting they need help with."
+    },
+    "inputTokens": 1379,
+    "outputTokens": 129
+  },
+  "ms": 1822
+}

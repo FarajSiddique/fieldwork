@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! To check your delivery date, you'll need your order number. Once you provide it, I can look up the estimated arrival time for you. Do you have that handy?",
+      "escalationNote": "Customer asking about delivery timeframe but hasn't provided order number; needs order details to proceed."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 126
+  },
+  "ms": 1836
+}

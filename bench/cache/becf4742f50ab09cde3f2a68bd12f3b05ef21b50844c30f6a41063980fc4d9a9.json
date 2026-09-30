@@ -1,0 +1,52 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "CAQSvggKEAgSGAI4AUIIdGhpbmtpbmcSDCCAaMraeHwgtf7MNxoMoipys6tGtbziiV5jIjAcvBF+4RadP7Xx6JX1anHJen32Asz/zXzbl3PQgkXl/jYuodvCPBzwb7G460uBUF0q2wdBhjo33hyVGKGUHTnBUhP3xbR8lG5TNKwpB1n6gLySHVl6FrpsdUr/LwHh5otTkbSlPLMHTXUwiF+TxSzAEnyTy5zuFFx7eJna94+ZdQJNPaXKl8i0YhR+KULeDkAH/1l1e+cOC/apPdKnKIJ9M+xzZziVlvh2u/RzSHT685hICs8dGDyJ7N3qvHJ17nJGb18U43pCTAJpvyxM1xHbIpvsG/w1brpQqDJC0jBI3GP4YURsTcZ6pxMG3AmDZioizpJ9//rnx3UOWMbNWgnksUabE4Bo9o0pQ6rHL+dG3YpR8NEbezxl9PZSoNBqlbwZY18kxyFlrnLAWzx5v3fvJF9FtHl76XuTzygkGscVxLmc+bkZULF04dq7zbOmgGvn6Cvlyjxi0aKxaIatIOtX+JIViBzgdBN1j2is7/1DW3GGc5ISL8/badKLW6+DTGGXSC0pJl3fUyEIlsfWobA0BayF/q4azD2JqXDaSDYhshbOwiYsigdBqJ+oE3AjZi3+Iu7+i54tQUUSu2NntanDWK6w1Aa0DgwSWBwbZoKlYNDct+IQqASgY9VuPkJU3eM/YoJCMHrYBtNQg10nPovJMegO59gJWS3oYm2gdYbfGJNAFQuRUCkbm2vILP3C9R9lgEsmbbDG1b+wDf2b5qayXAOIc9+yhqF/i34MMyk5r7zKWLgTx5A7EgX8V2+IhS5Aopl9KAdL6IilH0voQTFnyeevOgKBLOLjHbmh7yAlkCNjG3kXOKRtmKbYyQllqOHcHxtDA89QqAXNzi8XFxl8LAfvAgBhh5OoeWnKjrZn6XeZ5lneRTksVf6bd6t5k9FvLhk7YlQLQT2j4U6HAaD4nhovkW1492rwkrAsqINVFEml9SPA4jUinbQixlRD6Y/S5HJj9zoc9CbR7bX/Uj2lDl+ISPnMAKb2VPUgYRvaLtk4ksj7OzrRBSZJ7p3cKS9tgP6hkNdChLfS4FKmIR1RvdGKwL5IXn4JQRywGf0wTINH0WZgSN9oOrHB6pmvLcf+bvKDnVYN5UR6qoIn23eA1EevbWNjeW3N16ilC577w6GB++LezEmghbWhaG59ykoxQi+0xfwkGmiRPd9ETspgtXK8p7aDtA0rwMFlDCCXMUJIg8WAgMKz6ZefpHVqYnpxPkLmyr53DjUpMI1BVVUTfAZvKJK0Y8Oul1mJG6zJG4oe181Thh7fVQlZwDD+TUvdSTUjq5Fl60Z+jWR7lgp31fSztahb9LCqeTGtpbYFkWBEh8Mhh8x7mGpoOi0UqcdFiyBdHanedTmYBmCafLQf5jVd+5ozLQyn4jzKakEYAQ=="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "Support is trying to update an \"mh\" address (abbreviation unclear), and the category, complexity, repeat status, and order details are all missing, so the on-call agent should confirm the specifics with support first."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 128,
+        "noCache": 128,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 225,
+        "text": 65,
+        "reasoning": 160
+      },
+      "raw": {
+        "input_tokens": 128,
+        "output_tokens": 225,
+        "output_tokens_details": {
+          "thinking_tokens": 160
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 2468
+}

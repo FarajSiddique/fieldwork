@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Customer asks whether they can set up their delivery address; no category, complexity, repeat status, or order info provided, so it's likely a general account/address setup how-to question."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 133,
+        "noCache": 133,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 54,
+        "text": 54,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 133,
+        "output_tokens": 54,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 5637
+}

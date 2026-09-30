@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_customer_service",
+      "intentConfidence": 0.65,
+      "complexity": 0,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! We're here to help. For registration issues, please contact our customer service team via email or the help center—they'll troubleshoot right away. You can also try resetting your password if you're locked out.",
+      "escalationNote": "Customer asking where to report a registration problem; likely needs technical support or account access assistance."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 136
+  },
+  "ms": 2034
+}

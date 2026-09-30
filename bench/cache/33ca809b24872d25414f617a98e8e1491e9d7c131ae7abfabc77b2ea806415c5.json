@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.92,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "386429",
+      "orderNumberConfidence": 0.98,
+      "reply": "Hi! I'd be happy to help you track order #386429. You can check your ETA through your account dashboard or by visiting our tracking page with your order number. You'll see real-time updates about your delivery!",
+      "escalationNote": "Customer wants to check ETA for order #386429 - needs tracking information provided or account/tracking tool assistance."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 141
+  },
+  "ms": 2001
+}

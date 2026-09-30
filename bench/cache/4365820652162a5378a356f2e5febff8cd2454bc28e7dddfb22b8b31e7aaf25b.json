@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.75,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "206628",
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you add items to your order. Could you tell me which items you'd like to add? I'll assist you right away!",
+      "escalationNote": "Customer wants to add items to existing order #206628."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 116
+  },
+  "ms": 1731
+}

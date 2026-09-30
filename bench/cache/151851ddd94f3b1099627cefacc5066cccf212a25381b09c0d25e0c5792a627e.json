@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "set_up_shipping_address",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry you're experiencing issues with your delivery address. I'd love to help troubleshoot this. Could you share what error message you're seeing? That'll help me guide you through the next steps.",
+      "escalationNote": "Customer encountering errors while attempting to set up or change delivery address; technical issue requires investigation."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 135
+  },
+  "ms": 1845
+}

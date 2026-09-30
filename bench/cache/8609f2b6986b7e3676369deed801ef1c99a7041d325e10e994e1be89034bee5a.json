@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you understand our cancellation fees. Could you let me know which order you're asking about? Once I have that, I can share the specific details with you right away.",
+      "escalationNote": "Customer wants to know about cancellation penalty/fee but hasn't provided an order number yet."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 134
+  },
+  "ms": 1682
+}

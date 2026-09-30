@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you check your compensation status! To look up the details, I'll need your order number or account information. Could you provide those so I can find your compensation record?",
+      "escalationNote": "Customer requesting status update on compensation claim - may need to access refund or claim tracking system."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 129
+  },
+  "ms": 1707
+}

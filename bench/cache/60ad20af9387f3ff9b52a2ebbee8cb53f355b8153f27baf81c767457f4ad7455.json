@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Customer says they don't know how to get reimbursed and needs guidance on the process; no category, complexity, repeat status, or order details were provided, so the type of reimbursement (e.g., order refund vs. expense) needs to be clarified first."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 134,
+        "noCache": 134,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 79,
+        "text": 79,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 134,
+        "output_tokens": 79,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 1499
+}

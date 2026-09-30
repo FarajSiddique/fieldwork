@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.92,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Happy to help! Invoice #85632 should be available in your account dashboard under the billing section. If you're having trouble locating it, let me know and I'll assist you right away.",
+      "escalationNote": "Customer needs help accessing invoice #85632 from their account."
+    },
+    "inputTokens": 1388,
+    "outputTokens": 123
+  },
+  "ms": 1748
+}

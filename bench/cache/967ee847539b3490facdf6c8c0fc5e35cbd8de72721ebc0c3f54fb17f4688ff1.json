@@ -1,0 +1,38 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Hi there! Thanks for reaching out. I can see order #958466 has already shipped, which does limit some options. The best way forward is to either refuse the delivery when it arrives or initiate a return once you receive it. I'm happy to walk you through either option. Just let me know what works best for you!"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 220,
+        "noCache": 220,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 72
+      },
+      "raw": {
+        "input_tokens": 220,
+        "output_tokens": 72,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    }
+  },
+  "ms": 1931
+}

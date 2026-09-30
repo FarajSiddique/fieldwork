@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi! I'd be happy to help you locate invoice #37777. You can typically find it in your account dashboard under 'Billing' or 'Invoices,' or check your email for the invoice confirmation. Let me know if you need further assistance!",
+      "escalationNote": "Customer looking for invoice #37777 - needs help accessing or locating their billing document."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 143
+  },
+  "ms": 1819
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.75,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd love to help you find what you're looking for. Could you tell me which products interest you or what you need? I'm here to guide you through the shopping process!",
+      "escalationNote": "Customer wants help shopping for products; needs assistance to place an order."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 122
+  },
+  "ms": 2047
+}

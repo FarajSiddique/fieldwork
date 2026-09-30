@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.99,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#307441",
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! You can track your order #307441 on our website using the tracking link sent to your email, or log into your account to see the estimated delivery time. Let me know if you need help finding it!",
+      "escalationNote": "Customer asking for ETA on order #307441 - needs tracking information provided."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 149
+  },
+  "ms": 1911
+}

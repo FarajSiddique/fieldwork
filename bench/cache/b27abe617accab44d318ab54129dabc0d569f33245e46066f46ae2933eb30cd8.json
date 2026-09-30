@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.99,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "I'd be happy to help! You can find our refund policy on our website under the Support or Help section. If you're looking for specific details about a recent order, I can help you with that too.",
+      "escalationNote": "Customer frustrated, requesting to review refund policy."
+    },
+    "inputTokens": 1390,
+    "outputTokens": 126
+  },
+  "ms": 2015
+}

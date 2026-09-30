@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "set_up_shipping_address",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you set up your delivery address. Could you let me know if you're adding it during checkout, to your account settings, or for a specific order? That way I can guide you through the exact steps.",
+      "escalationNote": "Customer needs guidance on how to submit/enter a delivery address in the system."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 139
+  },
+  "ms": 2038
+}

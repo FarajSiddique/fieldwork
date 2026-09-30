@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "create_account",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd love to help you open a pro account. I'll guide you through the setup process step by step. What questions do you have, or would you like me to start with the registration details?",
+      "escalationNote": "Customer requesting assistance to create a new pro account; needs guidance through account setup process."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 129
+  },
+  "ms": 1790
+}

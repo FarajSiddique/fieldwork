@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_shipping_address",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "724466",
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! I'll help you update the delivery address for order #724466 to 5 Market Street. We accept multiple payment methods including PayPal—great choice for next time! Let me process this for you right away.",
+      "escalationNote": "Customer wants to change shipping address on order #724466 to 5 Market Street (office); also inquired about PayPal payment option; loyalty ID 3390124."
+    },
+    "inputTokens": 1426,
+    "outputTokens": 158
+  },
+  "ms": 1834
+}

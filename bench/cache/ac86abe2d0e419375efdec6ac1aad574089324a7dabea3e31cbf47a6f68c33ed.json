@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd love to help you shop! Could you tell me which products you're interested in, or would you like recommendations? I'm here to make your ordering experience smooth and easy.",
+      "escalationNote": "Customer wants to place an order for multiple products; needs assistance with product selection or checkout process."
+    },
+    "inputTokens": 1376,
+    "outputTokens": 125
+  },
+  "ms": 2496
+}

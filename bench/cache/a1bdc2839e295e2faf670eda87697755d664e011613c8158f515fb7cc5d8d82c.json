@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "377120",
+      "orderNumberConfidence": 0.98,
+      "reply": "I understand your frustration—six weeks is definitely longer than expected. Let me investigate why your refund hasn't appeared on your card yet. I'll check the status with our payment processor and get back to you promptly.",
+      "escalationNote": "Customer waiting 6 weeks for refund on order #377120 (invoice #61045); credit shows but funds not received; exceeds stated 10-day policy."
+    },
+    "inputTokens": 1413,
+    "outputTokens": 171
+  },
+  "ms": 2036
+}

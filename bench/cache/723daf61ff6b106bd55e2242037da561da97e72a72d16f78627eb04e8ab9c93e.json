@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.75,
+      "complexity": 2,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thank you for reaching out! We'd like to help resolve your concern. Could you please provide more details about what happened and your order number? This will help us better understand your situation.",
+      "escalationNote": "Customer requesting monetary compensation; needs details about the issue and order number to proceed with investigation."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 123
+  },
+  "ms": 2059
+}

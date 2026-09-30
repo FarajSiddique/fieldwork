@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I'd be happy to help you check on your refund status. To look up the details, could you please share your order number or email address associated with your account? I'll get you an update right away.",
+      "escalationNote": "Customer inquiring about the current status of their refund/restitution; needs order information to proceed with lookup."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 143
+  },
+  "ms": 1907
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi there! I'd be happy to help you get invoice #37777. You can download it from your account dashboard under 'Invoices' or 'Billing.' If you need assistance accessing it, just let me know!",
+      "escalationNote": "Customer requesting invoice #37777 - standard invoice retrieval request."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 132
+  },
+  "ms": 1756
+}

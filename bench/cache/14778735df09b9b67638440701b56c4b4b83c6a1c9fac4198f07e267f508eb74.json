@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delete_account",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you remove your premium account. I'll guide you through the process. Could you confirm your account email or username so I can assist you properly?",
+      "escalationNote": "Customer wants to delete their premium account."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 112
+  },
+  "ms": 1412
+}

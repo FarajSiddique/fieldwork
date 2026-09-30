@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "review",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Of course! We'd love to hear your feedback. To leave a review, you'll typically need to visit the product page and look for the review section. If you need specific guidance, I'm happy to walk you through it!",
+      "escalationNote": "Customer wants help leaving a product review; needs guidance on review submission process."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 145
+  },
+  "ms": 1850
+}

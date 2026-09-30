@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "create_account",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.75,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd love to help you set up a business account! I'll need some information from you to get started. Could you share your business details and what you're looking to do with us?",
+      "escalationNote": "Customer requesting assistance opening a business account; requires account setup process and possibly verification of business information."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 127
+  },
+  "ms": 1961
+}

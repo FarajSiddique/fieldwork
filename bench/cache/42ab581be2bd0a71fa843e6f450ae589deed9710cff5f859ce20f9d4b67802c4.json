@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#458873",
+      "orderNumberConfidence": 0.98,
+      "reply": "I'd be happy to help you download your invoice! You can typically find it in your account under purchase history, or I can assist you in retrieving it. Thanks for providing those details—they'll help us locate it quickly.",
+      "escalationNote": "Customer needs invoice #90331 for order #458873 for expense report purposes."
+    },
+    "inputTokens": 1410,
+    "outputTokens": 136
+  },
+  "ms": 1827
+}

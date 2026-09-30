@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "registration_problems",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're having trouble signing up! I'd love to help you get your account set up smoothly. Could you share what specific error or issue you're encountering? That way I can assist you more quickly.",
+      "escalationNote": "Customer unable to complete signup process; needs technical assistance with account creation."
+    },
+    "inputTokens": 1388,
+    "outputTokens": 129
+  },
+  "ms": 1910
+}

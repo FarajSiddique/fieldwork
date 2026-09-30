@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.75,
+      "complexity": 1,
+      "complexityConfidence": 0.7,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.6,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thank you for reaching out. I'd like to help with your compensation request. Could you please provide more details about what happened and any relevant order numbers? This will help us investigate your case properly.",
+      "escalationNote": "Customer seeking monetary compensation but hasn't provided order details or reason for request."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 125
+  },
+  "ms": 1710
+}

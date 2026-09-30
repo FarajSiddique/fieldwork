@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_options",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm happy to help! To show you the available shipment options, could you please provide your delivery address or let me know where you'd like your order shipped? That way I can give you the most accurate options for your location.",
+      "escalationNote": "Customer asking about available shipping/delivery options for their area."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 129
+  },
+  "ms": 1998
+}

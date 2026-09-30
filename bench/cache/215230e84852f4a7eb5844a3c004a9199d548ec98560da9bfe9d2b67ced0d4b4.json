@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you with your reimbursement! To get started, could you please share your order number and let me know what you need to be reimbursed for? With those details, I can guide you through the process.",
+      "escalationNote": "Customer seeking reimbursement but hasn't provided order number or reason; needs guidance on refund process."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 160
+  },
+  "ms": 1958
+}

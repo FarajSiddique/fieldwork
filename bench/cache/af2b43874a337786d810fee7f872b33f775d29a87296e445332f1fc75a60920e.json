@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you cancel your order. Could you please provide your order number so I can look up the details and process the cancellation for you right away?",
+      "escalationNote": "Customer wants to cancel an order but hasn't provided order number; needs assistance identifying order."
+    },
+    "inputTokens": 1376,
+    "outputTokens": 122
+  },
+  "ms": 4495
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.75,
+      "complexity": 2,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "502776",
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry your parcel hasn't arrived despite being marked delivered. This sounds urgent, especially with medication involved. Let me investigate with the courier immediately using your order and reference numbers to locate your package or arrange a resolution.",
+      "escalationNote": "Order #502776 marked delivered but not received; customer has medication deadline (Monday); courier ref 4471902; escalate to courier investigation and possible replacement/refund."
+    },
+    "inputTokens": 1423,
+    "outputTokens": 152
+  },
+  "ms": 2418
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.98,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Sorry you're having trouble! Payment issues can be frustrating. I'd like to help resolve this. Can you share your card type and whether you've updated your billing address recently? We'll get you sorted.",
+      "escalationNote": "Customer experiencing repeated card decline at checkout (3 attempts) with error code 400192; card works elsewhere; needs payment processing investigation."
+    },
+    "inputTokens": 1410,
+    "outputTokens": 140
+  },
+  "ms": 1914
+}

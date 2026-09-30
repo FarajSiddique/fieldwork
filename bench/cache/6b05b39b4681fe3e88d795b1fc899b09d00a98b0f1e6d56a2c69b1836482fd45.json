@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_payment_methods",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! You can view all our accepted payment methods on our website's checkout page or in your account settings. If you need more details, I'm here to assist.",
+      "escalationNote": "Customer requesting information about available payment methods; frustrated tone but straightforward inquiry."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 125
+  },
+  "ms": 1933
+}

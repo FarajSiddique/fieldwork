@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": "#816520",
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you check on order #816520. Let me look up the current status and tracking information for you right away.",
+      "escalationNote": "Customer requesting order status check for order #816520."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 113
+  },
+  "ms": 1715
+}

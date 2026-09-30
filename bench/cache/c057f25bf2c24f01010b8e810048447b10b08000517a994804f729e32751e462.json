@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "registration_problems",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.75,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for letting us know about the account creation issue. We appreciate you reporting this! Our team will investigate right away to get this sorted for you.",
+      "escalationNote": "Customer reporting problems during user account registration process - needs investigation of account creation system."
+    },
+    "inputTokens": 1378,
+    "outputTokens": 115
+  },
+  "ms": 2021
+}

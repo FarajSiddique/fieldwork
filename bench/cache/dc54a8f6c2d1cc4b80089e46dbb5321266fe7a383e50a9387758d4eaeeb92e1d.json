@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.9,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thank you for reaching out! I'd be happy to help you with a refund. To get started, could you please provide your order number and let me know what happened? This will help me understand your situation better.",
+      "escalationNote": "Customer requesting refund without providing order number or details about the purchase or issue."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 147
+  },
+  "ms": 1962
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_human_agent",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "I'd be happy to help connect you with an operator! You can reach our customer service team via phone, email, or live chat—all available through our website. An agent will be with you shortly to assist with your concern.",
+      "escalationNote": "Customer unable to find how to contact a human agent; needs assistance accessing customer support channels."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 136
+  },
+  "ms": 1747
+}

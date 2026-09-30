@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "set_up_shipping_address",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you add a new shipping address. You can update it in your account settings under 'Addresses' or during checkout. If you need more detailed guidance, I'm here to walk you through it!",
+      "escalationNote": "Customer wants to add a new shipping address to their account."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 134
+  },
+  "ms": 1825
+}

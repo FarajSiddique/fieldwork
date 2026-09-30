@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.75,
+      "complexity": 0,
+      "complexityConfidence": 0.65,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for reaching out! We'd love to help you find what you're looking for. Could you tell us which item you're interested in? Feel free to share the product name or any details, and we'll guide you through the purchase process.",
+      "escalationNote": "Customer interested in purchasing an item but hasn't specified which product; needs clarification on desired item."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 139
+  },
+  "ms": 1970
+}

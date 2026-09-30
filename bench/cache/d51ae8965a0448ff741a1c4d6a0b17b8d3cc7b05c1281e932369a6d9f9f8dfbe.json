@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "966498",
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you update order #966498. Could you please let me know what changes you'd like to make? I'll do my best to assist.",
+      "escalationNote": "Customer wants to update order #966498 but hasn't specified what changes are needed."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 125
+  },
+  "ms": 1809
+}

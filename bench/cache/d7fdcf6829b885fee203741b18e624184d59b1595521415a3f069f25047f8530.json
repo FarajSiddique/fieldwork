@@ -1,0 +1,43 @@
+{
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Vague ticket reporting an issue with payments; category, complexity, repeat status, and order details are all missing, so the on-call agent should contact the customer for specifics (error message, payment method, order ID, time of occurrence) before troubleshooting."
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 126,
+        "noCache": 126,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 81,
+        "text": 81,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 126,
+        "output_tokens": 81,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    }
+  },
+  "ms": 1250
+}

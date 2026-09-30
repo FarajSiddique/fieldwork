@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.78,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're experiencing payment difficulties! I'm here to help. Could you please describe the specific issue you encountered—such as a failed transaction, error message, or billing concern? This will help me assist you better.",
+      "escalationNote": "Customer reporting payment issues and requesting assistance; no order number provided; needs troubleshooting details."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 135
+  },
+  "ms": 1740
+}

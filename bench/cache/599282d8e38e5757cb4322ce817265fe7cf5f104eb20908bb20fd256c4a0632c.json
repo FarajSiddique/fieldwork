@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help with your refund request. To get started, could you share your order number? Once I have that, I can check your eligibility and guide you through the process.",
+      "escalationNote": "Customer asking about refund process but hasn't provided order number yet."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 143
+  },
+  "ms": 1664
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.99,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#875631",
+      "orderNumberConfidence": 0.99,
+      "reply": "Thanks for reaching out! I'd be happy to help cancel order #875631. Let me process that for you right away. You should receive a confirmation shortly.",
+      "escalationNote": "Customer requests cancellation of order #875631."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 114
+  },
+  "ms": 4193
+}

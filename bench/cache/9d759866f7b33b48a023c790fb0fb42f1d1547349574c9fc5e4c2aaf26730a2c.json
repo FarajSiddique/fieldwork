@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_human_agent",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help connect you with our team. Could you briefly share what you need assistance with? This helps us route you to the right person quickly.",
+      "escalationNote": "Customer requesting to speak with a human agent; no specific issue mentioned yet."
+    },
+    "inputTokens": 1378,
+    "outputTokens": 121
+  },
+  "ms": 1723
+}

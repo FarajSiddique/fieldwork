@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I understand you'd like information about termination penalties. I'm happy to help clarify what fees might apply to your situation. Could you provide your order number or account details so I can give you accurate information?",
+      "escalationNote": "Customer requesting details on cancellation/termination penalties; tone suggests frustration with previous experience or unclear policies."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 137
+  },
+  "ms": 1904
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.92,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! Our refund policy covers returns within 30 days of purchase for unused items in original condition. Refunds typically process within 5-7 business days. What specific situation would you like to know about?",
+      "escalationNote": "Customer asking about general refund policy and eligibility conditions."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 135
+  },
+  "ms": 1884
+}

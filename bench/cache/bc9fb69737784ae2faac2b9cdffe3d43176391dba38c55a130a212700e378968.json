@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.98,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#288029",
+      "orderNumberConfidence": 0.99,
+      "reply": "Hi! I'd be happy to help you track order #288029. Let me look up the current status and estimated delivery time for you right away.",
+      "escalationNote": "Customer requesting ETA/tracking status for order #288029."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 131
+  },
+  "ms": 1749
+}

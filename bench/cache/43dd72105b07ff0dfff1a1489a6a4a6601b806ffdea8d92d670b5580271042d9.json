@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_customer_service",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! We're happy to help. Our customer support team is available during business hours. Please check our website's contact page for specific times and ways to reach us—phone, email, or live chat.",
+      "escalationNote": "Customer asking for customer service hours and contact information."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 139
+  },
+  "ms": 2070
+}

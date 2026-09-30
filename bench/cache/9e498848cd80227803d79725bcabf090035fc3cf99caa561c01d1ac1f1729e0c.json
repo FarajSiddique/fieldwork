@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_period",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Great question! Shipping times vary depending on your location and chosen delivery method. I'd be happy to help—could you share your address or tell me which delivery option you're interested in?",
+      "escalationNote": "Customer asking about general shipping timeframes without specifying an order or location."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 123
+  },
+  "ms": 1931
+}

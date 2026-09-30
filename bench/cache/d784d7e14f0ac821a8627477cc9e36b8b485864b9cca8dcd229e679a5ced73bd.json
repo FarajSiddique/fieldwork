@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "create_account",
+      "intentConfidence": 0.75,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! Happy to help with your Premium account question. Please tell me what you'd like to know, and I'll walk you through the process. Looking forward to getting you set up!",
+      "escalationNote": "Customer inquiring about how to open or set up a Premium account."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 121
+  },
+  "ms": 1629
+}

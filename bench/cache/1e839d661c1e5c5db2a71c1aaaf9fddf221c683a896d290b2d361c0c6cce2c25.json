@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delivery_options",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Great question! You can view available shipping options during checkout when you enter your delivery address. If you'd like to see options beforehand, feel free to reach out and we're happy to help!",
+      "escalationNote": "Customer asking where to find shipping options available to them."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 120
+  },
+  "ms": 2242
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_shipping_address",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "640218",
+      "orderNumberConfidence": 0.99,
+      "reply": "Great news! Since your order hasn't shipped yet, we should be able to update the delivery address for you. I'll help get it changed to 14 Elm Street, 90210 right away. Let me process that now.",
+      "escalationNote": "Customer wants to change delivery address for order 640218 to 14 Elm Street, 90210 before shipment."
+    },
+    "inputTokens": 1419,
+    "outputTokens": 167
+  },
+  "ms": 1935
+}

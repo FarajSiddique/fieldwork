@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.98,
+      "reply": "Hi! I'd be happy to help you get your invoice. To locate it quickly, could you please provide your order number or the email address associated with your account? That'll help me find James Chen's invoice for you right away.",
+      "escalationNote": "Customer requesting invoice for James Chen; needs order number or account email to retrieve billing document."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 135
+  },
+  "ms": 1811
+}

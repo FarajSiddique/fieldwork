@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_refund",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.78,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thank you for reaching out! I'd be happy to help you with a refund. Could you please provide your order number or account details so I can look into your request and assist you further?",
+      "escalationNote": "Customer requesting refund of $390.43 without providing order number or context."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 127
+  },
+  "ms": 1690
+}

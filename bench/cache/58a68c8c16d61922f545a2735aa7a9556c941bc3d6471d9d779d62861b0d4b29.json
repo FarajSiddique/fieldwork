@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "newsletter_subscription",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're having trouble signing up for our newsletter! This can sometimes happen due to technical issues or account settings. I'd love to help you get subscribed. Could you share what happens when you try to sign up?",
+      "escalationNote": "Customer unable to subscribe to corporate newsletter; technical issue or account setting blocking signup."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 132
+  },
+  "ms": 1774
+}

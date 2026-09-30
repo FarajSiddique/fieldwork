@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you track your item! To find your delivery status, I'll need your order number. Could you please share that with me?",
+      "escalationNote": "Customer wants to track their order delivery status but hasn't provided an order number."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 117
+  },
+  "ms": 2004
+}

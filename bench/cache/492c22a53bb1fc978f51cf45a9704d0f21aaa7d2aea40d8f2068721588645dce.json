@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.75,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you check on your rebate status! Could you please provide your order number or the email associated with your account? This will allow me to look up the details and give you the latest update.",
+      "escalationNote": "Customer unable to view rebate status; needs account/order lookup to provide refund tracking information."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 135
+  },
+  "ms": 2162
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delete_account",
+      "intentConfidence": 0.75,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help with your pro account termination! To ensure I provide accurate information about the process, fees, and next steps, could you let me know if you're looking to close your account or have specific concerns?",
+      "escalationNote": "Customer seeking information about terminating their pro account; may need account details and policy clarification."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 152
+  },
+  "ms": 1995
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for checking in! I'd be happy to help you track your reimbursement. Could you please share your order number or the email address associated with your account? This will help me locate your refund status right away.",
+      "escalationNote": "Customer requesting update on pending refund/reimbursement status; no order number provided."
+    },
+    "inputTokens": 1388,
+    "outputTokens": 152
+  },
+  "ms": 1881
+}

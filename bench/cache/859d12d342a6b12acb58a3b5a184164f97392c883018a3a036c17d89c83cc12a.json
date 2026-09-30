@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "place_order",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you place an order. Could you tell me which items you're interested in? You can either share the product names or links, and I'll guide you through the ordering process.",
+      "escalationNote": "Customer wants to purchase multiple items; needs assistance with order placement."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 142
+  },
+  "ms": 1722
+}

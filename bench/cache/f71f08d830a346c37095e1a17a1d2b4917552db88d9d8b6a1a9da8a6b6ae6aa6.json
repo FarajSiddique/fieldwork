@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Happy to help! Our refund policy covers eligible returns within 30 days of purchase. Common reasons include defective items, wrong orders, or unmet expectations. I can walk you through the specific situations. Do you have an order you'd like assistance with?",
+      "escalationNote": "Customer inquires about refund policy and eligible reimbursement situations - general policy question."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 162
+  },
+  "ms": 2028
+}

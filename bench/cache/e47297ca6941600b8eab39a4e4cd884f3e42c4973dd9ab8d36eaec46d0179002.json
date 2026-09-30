@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you check your refund status. To look into this, I'll need your order number or the email associated with your account. Could you please share that information?",
+      "escalationNote": "Customer wants to check the status of a refund but hasn't provided an order number or account details."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 132
+  },
+  "ms": 1653
+}

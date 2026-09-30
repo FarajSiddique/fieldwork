@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_human_agent",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'm happy to help. Our customer service team is here for you. You can reach them via chat, email, or phone during business hours. What can I assist you with today?",
+      "escalationNote": "Customer requesting to speak with human agent; no specific issue mentioned yet."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 125
+  },
+  "ms": 1652
+}

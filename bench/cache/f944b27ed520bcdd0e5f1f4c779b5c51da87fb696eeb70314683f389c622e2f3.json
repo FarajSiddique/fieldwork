@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.72,
+      "complexity": 1,
+      "complexityConfidence": 0.65,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "#366408",
+      "orderNumberConfidence": 0.98,
+      "reply": "Thanks for reaching out! I'd be happy to help you add a product to order #366408. Could you share which product you'd like to add? I'll guide you through the process right away.",
+      "escalationNote": "Customer wants to add a product to existing order #366408; clarification needed on which product and order modification feasibility."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 138
+  },
+  "ms": 1883
+}

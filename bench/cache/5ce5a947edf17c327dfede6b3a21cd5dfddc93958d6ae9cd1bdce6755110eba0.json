@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.98,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! Our refund policy covers returns within 30 days of purchase for unused items in original condition. Specific circumstances depend on your order type. Let me get you the details that apply to your situation.",
+      "escalationNote": "Customer requesting information about refund policy and circumstances for eligibility."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 133
+  },
+  "ms": 1778
+}

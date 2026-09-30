@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "registration_problems",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're experiencing signup issues! I'm here to help. Could you please describe what's happening—for example, error messages, which step you're stuck on, or what you're trying to do?",
+      "escalationNote": "Customer reporting signup/registration problems, needs troubleshooting assistance."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 127
+  },
+  "ms": 1895
+}

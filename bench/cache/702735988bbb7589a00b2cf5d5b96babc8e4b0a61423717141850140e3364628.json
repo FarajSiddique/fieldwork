@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi! I'd be happy to help you find your invoice. You can typically access invoices through your account dashboard under 'Order History' or 'Invoices.' If you're having trouble locating invoice #85632, I can assist you further!",
+      "escalationNote": "Customer seeking invoice #85632; needs help accessing or retrieving their invoice."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 139
+  },
+  "ms": 1870
+}

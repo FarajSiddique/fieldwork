@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "payment_issue",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.7,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.6,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I'd love to help resolve your payment issue. Could you share more details about what's happening? For example, what error message did you see, or what went wrong?",
+      "escalationNote": "Customer reporting a payment issue but hasn't provided details about the specific problem or order involved."
+    },
+    "inputTokens": 1377,
+    "outputTokens": 127
+  },
+  "ms": 1892
+}

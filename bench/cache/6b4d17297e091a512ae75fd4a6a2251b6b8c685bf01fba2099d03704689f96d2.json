@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_customer_service",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Of course! I'm here to help. What's going on with your order or account? Let me know what you need, and I'll do my best to assist you right away.",
+      "escalationNote": "Customer requesting to speak with customer service; no specific issue mentioned yet."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 123
+  },
+  "ms": 1910
+}

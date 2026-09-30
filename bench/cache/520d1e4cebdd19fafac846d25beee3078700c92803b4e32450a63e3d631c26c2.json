@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "#845120",
+      "orderNumberConfidence": 0.98,
+      "reply": "I understand how important this is for your daughter's birthday! Let me check your order's status right away. While tracking shows in transit since Tuesday, delays can happen. I'll investigate and get back to you with an update as quickly as possible.",
+      "escalationNote": "Order #845120 delayed (in transit since Tuesday), needed urgently for daughter's birthday tomorrow; customer requests urgent delivery status check."
+    },
+    "inputTokens": 1422,
+    "outputTokens": 149
+  },
+  "ms": 2236
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_shipping_address",
+      "intentConfidence": 0.65,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you update your shipping address! Could you please provide your order number and the new address you'd like to use? This will ensure your delivery goes to the right place.",
+      "escalationNote": "Customer needs to update shipping address for an order; no order number provided yet."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 127
+  },
+  "ms": 1667
+}

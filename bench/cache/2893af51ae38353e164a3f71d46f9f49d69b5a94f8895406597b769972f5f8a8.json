@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you file a consumer claim. Could you please provide details about your issue, including your order number if applicable? This will help me better understand your situation and guide you through the process.",
+      "escalationNote": "Customer wants to lodge a consumer claim; needs to provide order number and details about the issue."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 129
+  },
+  "ms": 1607
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_refund",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I'd be happy to check on your refund status. To look up your $111.72 restitution, I'll need your order number or the email associated with your account. Once you share that, I can see exactly where things stand.",
+      "escalationNote": "Customer requesting status update on $111.72 refund; no order number provided."
+    },
+    "inputTokens": 1389,
+    "outputTokens": 145
+  },
+  "ms": 2063
+}

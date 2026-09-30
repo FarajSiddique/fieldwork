@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_human_agent",
+      "intentConfidence": 0.98,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I understand! I'd be happy to connect you with a member of our support team who can help with your account issue. Let me transfer you now—someone will be with you shortly.",
+      "escalationNote": "Customer has an account problem and requests to speak with a human agent instead of chatbot."
+    },
+    "inputTokens": 1397,
+    "outputTokens": 127
+  },
+  "ms": 1777
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "switch_account",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help you switch to a standard account! I'll guide you through the process. Could you please confirm your current account type and let me know if you have any specific questions about the switch?",
+      "escalationNote": "Customer wants to switch their account to standard account type."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 123
+  },
+  "ms": 1415
+}

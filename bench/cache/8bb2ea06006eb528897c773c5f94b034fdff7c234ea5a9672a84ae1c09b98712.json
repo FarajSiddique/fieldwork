@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_human_agent",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I understand you'd like to speak with someone directly. Let me connect you with a customer service representative who can better assist you. Thank you for your patience!",
+      "escalationNote": "Customer requests to speak with a human agent; unclear what their initial concern is."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 119
+  },
+  "ms": 1557
+}

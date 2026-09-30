@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "review",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.92,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.99,
+      "reply": "Absolutely! We'd love to hear your feedback. You can leave a review on our website in the customer reviews section, or contact us directly. Your opinion helps us improve our service. Thank you!",
+      "escalationNote": "Customer asking where they can leave a service review or feedback."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 136
+  },
+  "ms": 1814
+}

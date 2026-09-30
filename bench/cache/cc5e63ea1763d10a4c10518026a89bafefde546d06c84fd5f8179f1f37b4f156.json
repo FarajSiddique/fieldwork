@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Of course! We're happy to clarify our withdrawal penalty policy for you. Could you let us know which service or subscription you're asking about? That way, we can provide the most accurate details about any applicable fees.",
+      "escalationNote": "Customer inquiring about withdrawal penalties; appears to be general policy question rather than account-specific issue."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 137
+  },
+  "ms": 2011
+}

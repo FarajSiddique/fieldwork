@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_payment_methods",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! We're happy to help. We accept major credit cards (Visa, Mastercard, American Express), debit cards, PayPal, and bank transfers. Is there a specific payment method you'd like more information about?",
+      "escalationNote": "Customer inquiring about accepted payment methods."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 128
+  },
+  "ms": 1531
+}

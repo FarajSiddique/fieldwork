@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.95,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi! I'd be happy to help you download your bill. Bill #00108 can be accessed through your account dashboard under 'Invoices' or I can email it to you right away. Which would you prefer?",
+      "escalationNote": "Customer wants to download bill #00108 - straightforward invoice retrieval request."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 133
+  },
+  "ms": 1716
+}

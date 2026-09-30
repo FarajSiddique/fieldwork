@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "get_invoice",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.75,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Of course! I'd be happy to help you get your bill from four years ago. Please give me a moment to locate it in our system. Can you share any additional details like the approximate month or what you purchased?",
+      "escalationNote": "Customer requesting invoice/bill from four years ago; needs historical billing records retrieved."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 130
+  },
+  "ms": 1809
+}

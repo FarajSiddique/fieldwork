@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_customer_service",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! We're happy to help. You can reach our customer service team via email at support@company.com, or call us at 1-800-XXX-XXXX. We're available Monday-Friday, 9am-6pm EST. How can we assist you today?",
+      "escalationNote": "Customer seeking information on how to contact customer service."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 143
+  },
+  "ms": 1684
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.92,
+      "complexity": 2,
+      "complexityConfidence": 0.85,
+      "isRepeat": true,
+      "isRepeatConfidence": 0.98,
+      "orderNumber": "509933",
+      "orderNumberConfidence": 0.99,
+      "reply": "I sincerely apologize for the delayed response. Your complaint about the torn cushion deserves immediate attention. I'm escalating this with your photos and case number 22817 to our resolution team right away. We'll prioritize your repair or replacement request.",
+      "escalationNote": "Repeat complaint: Order #509933 sofa arrived with torn cushion; customer sent photos under case 22817 with no response; requests repair/replacement."
+    },
+    "inputTokens": 1419,
+    "outputTokens": 175
+  },
+  "ms": 2019
+}

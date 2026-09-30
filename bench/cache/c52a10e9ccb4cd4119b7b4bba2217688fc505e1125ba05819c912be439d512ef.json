@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.88,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.72,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I'd be happy to help you understand the early exit charge. To look into this, could you please share your order number or account details so I can locate your information?",
+      "escalationNote": "Customer asking about early exit/cancellation fee details; needs account lookup to provide specific information."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 131
+  },
+  "ms": 1786
+}

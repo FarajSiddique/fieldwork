@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_shipping_address",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're having trouble with your delivery address! I'm here to help get this sorted for you. Could you please share your order number and the correct address you'd like to use? I'll update it right away.",
+      "escalationNote": "Customer having difficulty updating delivery address; no order number provided yet."
+    },
+    "inputTokens": 1383,
+    "outputTokens": 131
+  },
+  "ms": 1917
+}

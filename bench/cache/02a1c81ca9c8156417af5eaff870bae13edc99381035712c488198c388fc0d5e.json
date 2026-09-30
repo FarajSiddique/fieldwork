@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "create_account",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.75,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd love to help you set up a platinum account! It's easier than you think. Let me walk you through the steps or connect you with someone who can guide you personally.",
+      "escalationNote": "Customer needs assistance creating a platinum account; unclear on the process."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 119
+  },
+  "ms": 1726
+}

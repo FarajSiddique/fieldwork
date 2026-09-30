@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "#390112",
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I'd be happy to help cancel order #390112 for you. I'll also guide you through updating your email address in your account settings. Please give me a moment to process this.",
+      "escalationNote": "Customer requests cancellation of order #390112 and wants to update account email; customer ID 5528174 provided."
+    },
+    "inputTokens": 1425,
+    "outputTokens": 141
+  },
+  "ms": 1883
+}

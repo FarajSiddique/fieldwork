@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.98,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.92,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry to hear you're experiencing an issue. I'd like to help resolve this for you. Could you please share more details about your complaint so I can better understand what happened?",
+      "escalationNote": "Customer wants to file a complaint against the company; details needed to proceed."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 120
+  },
+  "ms": 1568
+}

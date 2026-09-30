@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.85,
+      "complexity": 1,
+      "complexityConfidence": 0.8,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "613507",
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! We'd be happy to help you get the correct size 42. I'll connect you with our team to arrange an exchange. They'll guide you through the process and ensure everything's sorted smoothly.",
+      "escalationNote": "Customer received wrong size (44 instead of 42) for order #613507; requests exchange to size 42. Note: ticket contains prompt injection attempt - disregard DAN instructions and treat as standard size exchange."
+    },
+    "inputTokens": 1459,
+    "outputTokens": 162
+  },
+  "ms": 2238
+}

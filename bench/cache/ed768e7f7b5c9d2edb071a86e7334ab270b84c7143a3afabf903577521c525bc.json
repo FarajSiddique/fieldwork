@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "contact_customer_service",
+      "intentConfidence": 0.45,
+      "complexity": 0,
+      "complexityConfidence": 0.5,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi! I'm not entirely sure what you mean by 'bills from Maria Lopez.' Could you clarify if you're asking about an invoice, order, or something else? I'm here to help!",
+      "escalationNote": "Customer mentioned 'seeing bills from Maria Lopez' - unclear issue, needs clarification on whether this involves orders, invoices, or account concerns."
+    },
+    "inputTokens": 1378,
+    "outputTokens": 143
+  },
+  "ms": 1890
+}

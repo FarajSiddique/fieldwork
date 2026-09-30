@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "change_order",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": "#715859",
+      "orderNumberConfidence": 0.98,
+      "reply": "Thanks for reaching out! I'd love to help you remove those items from order #715859. Let me look into what's preventing the deletion. Can you tell me which products are giving you trouble?",
+      "escalationNote": "Customer unable to delete specific products from order #715859; investigating technical or policy restriction."
+    },
+    "inputTokens": 1384,
+    "outputTokens": 147
+  },
+  "ms": 2202
+}

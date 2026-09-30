@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "newsletter_subscription",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.92,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Great question! You can subscribe to our newsletter through your account settings or our website footer. Look for the newsletter signup option, enter your email, and you're all set to receive our latest updates!",
+      "escalationNote": "Customer asking how to subscribe to company newsletter."
+    },
+    "inputTokens": 1379,
+    "outputTokens": 118
+  },
+  "ms": 1639
+}

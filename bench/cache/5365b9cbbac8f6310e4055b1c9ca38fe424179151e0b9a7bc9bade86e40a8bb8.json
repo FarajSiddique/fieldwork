@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "edit_account",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.6,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you update your account information. Could you please let me know which details you'd like to modify? I'm here to assist!",
+      "escalationNote": "Customer wants to modify personal account information; needs clarification on specific details to update."
+    },
+    "inputTokens": 1379,
+    "outputTokens": 120
+  },
+  "ms": 1509
+}

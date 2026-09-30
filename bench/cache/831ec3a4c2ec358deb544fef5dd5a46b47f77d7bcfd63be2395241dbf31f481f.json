@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_invoice",
+      "intentConfidence": 0.85,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you view your bill! Bill #37777 can typically be accessed in your account dashboard under 'Invoices' or 'Billing History.' If you're having trouble locating it, let me know and I'll guide you through the steps.",
+      "escalationNote": "Customer needs help accessing bill #37777 from their account."
+    },
+    "inputTokens": 1387,
+    "outputTokens": 157
+  },
+  "ms": 1847
+}

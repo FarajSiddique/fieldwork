@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'm sorry you're experiencing an issue. I'm here to help you file a formal complaint. Could you please provide details about what happened and any relevant order information? This will help us investigate and resolve your concern promptly.",
+      "escalationNote": "Customer wants to file a formal consumer complaint; details to be provided."
+    },
+    "inputTokens": 1381,
+    "outputTokens": 127
+  },
+  "ms": 1774
+}

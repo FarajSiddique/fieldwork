@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "track_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": "#684301",
+      "orderNumberConfidence": 0.98,
+      "reply": "Hi! You can find your order's ETA in your account under 'Orders' or in the shipping confirmation email we sent you. If you need help locating it, I'm here to assist!",
+      "escalationNote": "Customer asking for ETA/tracking status of order #684301."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 127
+  },
+  "ms": 2354
+}

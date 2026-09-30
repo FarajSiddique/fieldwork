@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.98,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "Hi! I'd be happy to help you review invoice #85632. You can access it in your account under billing history, or let me know if you need me to pull up specific details for you.",
+      "escalationNote": "Customer wants to review invoice #85632."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 120
+  },
+  "ms": 1704
+}

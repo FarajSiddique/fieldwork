@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "delete_account",
+      "intentConfidence": 0.95,
+      "complexity": 2,
+      "complexityConfidence": 0.85,
+      "isRepeat": true,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I understand your frustration with the previous requests going unanswered. I'll help you close your account and remove your saved payment cards right away. Let me escalate this to ensure it's completed properly this time.",
+      "escalationNote": "Customer wants to delete account and remove saved cards; previously emailed twice without response; escalate for priority processing."
+    },
+    "inputTokens": 1400,
+    "outputTokens": 137
+  },
+  "ms": 1968
+}

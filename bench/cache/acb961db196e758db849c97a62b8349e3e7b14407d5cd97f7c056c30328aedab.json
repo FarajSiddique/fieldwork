@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": "958466",
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi there, thanks for reaching out, and no worries, we're happy to help you cancel order #958466. You can usually cancel from the 'My Orders' section of your account by selecting the order and choosing 'Cancel Order.' If that option isn't available, just reply here and we'll look into it and handle the cancellation with you. If there's anything else about the order you'd like to discuss, just let us know!",
+      "escalationNote": "Customer unsure how to cancel order #958466; needs cancellation guidance or assistance processing the cancellation."
+    },
+    "inputTokens": 1784,
+    "outputTokens": 272
+  },
+  "ms": 4453
+}

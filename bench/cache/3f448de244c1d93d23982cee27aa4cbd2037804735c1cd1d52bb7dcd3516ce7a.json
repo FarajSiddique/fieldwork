@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "registration_problems",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.7,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'm sorry you're having trouble signing up! I'm here to help. Could you tell me what error or issue you're seeing when you try to create your account? That way I can guide you through it.",
+      "escalationNote": "Customer experiencing sign-up/registration issue and needs assistance troubleshooting account creation."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 131
+  },
+  "ms": 1858
+}

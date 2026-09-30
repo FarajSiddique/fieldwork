@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_cancellation_fee",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.85,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "I'd be happy to help! Our cancellation fees depend on your specific situation and order status. Could you share your order number so I can check the exact penalty that would apply to your case?",
+      "escalationNote": "Customer inquiring about cancellation fees/penalties; no order number provided yet."
+    },
+    "inputTokens": 1378,
+    "outputTokens": 128
+  },
+  "ms": 1736
+}

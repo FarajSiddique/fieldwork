@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_refund_policy",
+      "intentConfidence": 0.35,
+      "complexity": 0,
+      "complexityConfidence": 0.6,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for reaching out! I'd be happy to help clarify our rebate options. Could you share more details about what you're looking for—like a specific product or promotion? This will help me give you accurate information.",
+      "escalationNote": "Customer inquiring about rebate eligibility but hasn't specified product, promotion, or order details yet."
+    },
+    "inputTokens": 1380,
+    "outputTokens": 139
+  },
+  "ms": 2166
+}

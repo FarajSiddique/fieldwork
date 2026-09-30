@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "complaint",
+      "intentConfidence": 0.92,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.88,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.95,
+      "reply": "I'd be happy to help you file a consumer complaint. Could you please provide details about what happened, including your order number if applicable, so I can assist you properly?",
+      "escalationNote": "Customer wants to file a consumer complaint/reclamation; no order number provided yet; requires escalation to resolve complaint."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 127
+  },
+  "ms": 1895
+}

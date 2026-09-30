@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "review",
+      "intentConfidence": 0.92,
+      "complexity": 0,
+      "complexityConfidence": 0.88,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Thanks for wanting to share your feedback! We'd love to hear your thoughts. You can leave a review on our website's product pages, or contact our customer service team for other feedback options.",
+      "escalationNote": "Customer wants to leave product feedback but doesn't know how to submit it."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 121
+  },
+  "ms": 1838
+}

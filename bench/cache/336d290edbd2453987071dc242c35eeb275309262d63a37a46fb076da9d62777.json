@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "recover_password",
+      "intentConfidence": 0.75,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.9,
+      "orderNumber": null,
+      "orderNumberConfidence": 1,
+      "reply": "Hi! I'd be happy to help you recover your account PIN. Please verify your identity by providing your email address or username associated with your account, and we'll send you instructions to reset it securely.",
+      "escalationNote": "Customer needs to recover account PIN - standard password recovery process."
+    },
+    "inputTokens": 1382,
+    "outputTokens": 123
+  },
+  "ms": 1861
+}

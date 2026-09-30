@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.95,
+      "complexity": 1,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": "#926086",
+      "orderNumberConfidence": 0.95,
+      "reply": "Thanks for reaching out! I understand you'd like to cancel order #926086 due to payment issues. I'll help you with that right away. Our team will process this and confirm the cancellation shortly.",
+      "escalationNote": "Customer requests cancellation of order #926086; mentions inability to pay for order."
+    },
+    "inputTokens": 1386,
+    "outputTokens": 147
+  },
+  "ms": 1859
+}

@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "cancel_order",
+      "intentConfidence": 0.97,
+      "complexity": 0,
+      "complexityConfidence": 0.85,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.95,
+      "orderNumber": "#537259",
+      "orderNumberConfidence": 0.9,
+      "reply": "Hi there! I'm happy to help you cancel order #537259. I'll look into it right away and check whether it can still be cancelled. If it has already shipped, I'll walk you through the next steps. You'll get a confirmation once the cancellation is processed. Is there anything else I can help you with?",
+      "escalationNote": "Customer requests cancellation of order #537259; no other details or prior issues mentioned."
+    },
+    "inputTokens": 1780,
+    "outputTokens": 230
+  },
+  "ms": 4391
+}

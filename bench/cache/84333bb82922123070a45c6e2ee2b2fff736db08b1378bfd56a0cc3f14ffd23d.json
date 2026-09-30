@@ -1,0 +1,19 @@
+{
+  "value": {
+    "output": {
+      "intent": "check_invoice",
+      "intentConfidence": 0.95,
+      "complexity": 0,
+      "complexityConfidence": 0.9,
+      "isRepeat": false,
+      "isRepeatConfidence": 0.8,
+      "orderNumber": null,
+      "orderNumberConfidence": 0.9,
+      "reply": "Of course! I'd be happy to help you review invoice #00108. Let me pull that up for you right away. You should be able to access it in your account dashboard, or I can assist you further if you need specific details.",
+      "escalationNote": "Customer requesting to view invoice #00108; standard lookup task."
+    },
+    "inputTokens": 1385,
+    "outputTokens": 132
+  },
+  "ms": 2003
+}
