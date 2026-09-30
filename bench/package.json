@@ -17,6 +17,7 @@
     "@typesafe-ai/sdk": "^0.6.0",
     "ai": "^7.0.122",
     "csv-parse": "^7.0.3",
+    "fieldwork": "workspace:*",
     "zod": "^4.6.5"
   }
 }

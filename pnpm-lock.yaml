@@ -35,6 +35,9 @@ importers:
       csv-parse:
         specifier: ^7.0.3
         version: 7.0.3
+      fieldwork:
+        specifier: workspace:*
+        version: link:../packages/fieldwork
       zod:
         specifier: ^4.6.5
         version: 4.6.5
